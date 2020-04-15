@@ -1,4 +1,6 @@
 # TRABAJO-INFORMATICA
 trabajo informatica EE309 19/20 
-buenas ejjeje\n
+buenas ejjeje
 Monti estuvo aqui
+
+maldita gordeyuyu
