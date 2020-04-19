@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "glut.h"
 
+///////// hello jagual you
+
 Bonus::Bonus(){
 	lado = 1.0f;
 	aceleracion.y = -9.8f;
