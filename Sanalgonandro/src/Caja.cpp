@@ -13,7 +13,7 @@ Caja::Caja() {
 }
 
 Caja::~Caja() {
-
+	//Monti tio bueno
 }
 
 void Caja::Dibuja() {
