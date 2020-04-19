@@ -8,7 +8,8 @@ Bonus::Bonus(){
 	//iajeifjawiehfia
 }
 Bonus::~Bonus() {
-
+	//Buenas noches
+	//Fdo. Sandrauc
 }
 
 void Bonus::Dibuja() {
