@@ -40,6 +40,7 @@ void Disparo::Dibuja() {
 void Disparo::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f*t*t);
 	velocidad = velocidad + aceleracion * t;
+	//pelotudo
 }
 
 void Disparo::SetPos(float ix, float iy) {
