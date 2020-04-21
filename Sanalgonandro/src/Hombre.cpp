@@ -5,7 +5,7 @@ Hombre::Hombre() {
 	altura = 1.8f;
 }
 Hombre::~Hombre() {
-
+	//gonzalo friki
 }
 
 void Hombre::SetAltura(float r) {
