@@ -15,18 +15,19 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		0.0, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-	esfera.Dibuja();
+	caja.Dibuja();
+	/*esfera.Dibuja();
 	esfera2.Dibuja();
 	caja.Dibuja();
 	hombre.Dibuja();
 	disparo.Dibuja();
 	plataforma.Dibuja();
-	bonus.Dibuja();
+	bonus.Dibuja();*/
 }
 
 void Mundo::Mueve()
 {
-	hombre.Mueve(0.025f);
+	/*hombre.Mueve(0.025f);
 	esfera.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
 	bonus.Mueve(0.025f);
@@ -36,7 +37,7 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera, plataforma);
 	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
-	Interaccion::rebote(esfera, esfera2);
+	Interaccion::rebote(esfera, esfera2);*/
 }
 
 void Mundo::Inicializa()
@@ -44,7 +45,7 @@ void Mundo::Inicializa()
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 30;
-	esfera.SetPos(2, 4);
+	/*esfera.SetPos(2, 4);
 	esfera.SetRadio(1.5f);
 	esfera.SetColor(0, 0, 255);
 	esfera.SetVel(5, 15);
@@ -55,7 +56,7 @@ void Mundo::Inicializa()
 	bonus.SetPos(5.0f, 5.0f);
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
-	hombre.SetPos(0, 0);
+	hombre.SetPos(0, 0);*/
 }
 
 void Mundo::Tecla(unsigned char key)

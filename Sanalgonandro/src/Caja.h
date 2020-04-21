@@ -5,10 +5,12 @@ class Caja {
 private:
 	friend class Interaccion;
 
-	Pared superior;
-	Pared derecha;
-	Pared inferior;
-	Pared izquierda;
+	Pared inferior1;
+	Pared inferior2;
+	Pared plataforma1;
+	Pared plataforma2;
+	Pared plataforma3;
+	Pared plataforma4;
 public:
 	Caja();
 	virtual ~Caja();

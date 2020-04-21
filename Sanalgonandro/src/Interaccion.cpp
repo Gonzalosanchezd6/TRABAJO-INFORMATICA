@@ -11,8 +11,8 @@ Interaccion::~Interaccion() {
 }
 
 void Interaccion::rebote(Hombre &h, Caja c) {
-	float xmax = c.inferior.limite2.x;
-	float xmin = c.inferior.limite1.x;
+	float xmax = c.inferior1.limite2.x;
+	float xmin = c.inferior1.limite1.x;
 	if (h.posicion.x > xmax) {
 		h.posicion.x = xmax;
 	}
@@ -35,10 +35,10 @@ bool Interaccion::rebote(Esfera &e, Pared p) {
 }
 
 void Interaccion::rebote(Esfera &e, Caja c) {
-	rebote(e, c.derecha);
+/*	rebote(e, c.derecha);
 	rebote(e, c.izquierda);
 	rebote(e, c.inferior);
-	rebote(e, c.superior);
+	rebote(e, c.superior);*/
 }
 
 /*bool Interaccion::rebote(Esfera &esfera1, Esfera &esfera2) {

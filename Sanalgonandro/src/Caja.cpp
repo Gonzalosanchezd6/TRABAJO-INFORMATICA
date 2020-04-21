@@ -2,14 +2,19 @@
 #include "glut.h"
 
 Caja::Caja() {
-	derecha.SetPos(10, 15, 10, 0);
-	izquierda.SetPos(-10, 0, -10, 15);
-	superior.SetPos(-10, 15, 10, 15);
-	inferior.SetPos(-10, 0, 10, 0);
-	inferior.SetColor(0, 100, 0);
-	derecha.SetColor(0, 150, 0);
-	izquierda.SetColor(0, 150, 0);
-	superior.SetColor(0, 100, 0);
+	inferior1.SetPos(-20, 1, -1, -10);
+	inferior1.SetColor(0, 100, 0);
+	inferior2.SetPos(1, 1, 20, -10);
+	inferior2.SetColor(0, 100, 0);
+
+	plataforma1.SetPos(-13, 5, -5, 3);
+	plataforma1.SetColor(100, 0, 0);
+	plataforma2.SetPos(-5, 8, 0, 6);
+	plataforma2.SetColor(100, 0, 0);
+	plataforma3.SetPos(0, 11, 8, 9);
+	plataforma3.SetColor(100, 0, 0);
+	plataforma4.SetPos(8, 14, 13, 12);
+	plataforma4.SetColor(100, 0, 0);
 }
 
 Caja::~Caja() {
@@ -17,8 +22,10 @@ Caja::~Caja() {
 }
 
 void Caja::Dibuja() {
-	inferior.Dibuja();
-	superior.Dibuja();
-	izquierda.Dibuja();
-	derecha.Dibuja();
+	inferior1.Dibuja();
+	inferior2.Dibuja();
+	plataforma1.Dibuja();
+	plataforma2.Dibuja();
+	plataforma3.Dibuja();
+	plataforma4.Dibuja();
 }
