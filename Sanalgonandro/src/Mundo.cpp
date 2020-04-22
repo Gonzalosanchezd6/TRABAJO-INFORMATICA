@@ -69,13 +69,13 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetVel(-5.0f, 0.0f);
+		hombre.SetPos((hombre.GetPosX()) - 0.2 , hombre.GetPosY());
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.SetVel(5.0f, 0.0f);
+		hombre.SetPos((hombre.GetPosX()) + 0.2, hombre.GetPosY());
 		break;
 	case GLUT_KEY_UP:
-		hombre.Salto();
+		hombre.SetCont(1);
 		break;
 	}
 }

@@ -4,6 +4,7 @@
 Hombre::Hombre() {
 	altura = 0.8f;
 	aceleracion.y = -9.8;
+	control = 0;
 }
 Hombre::~Hombre() {
 	//gonzalo friki
@@ -29,6 +30,16 @@ void Hombre::Dibuja() {
 void Hombre::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f*t*t);
 	velocidad = velocidad + aceleracion * t;
+	if (control == 1) {
+		float jump = posicion.y + 2.5;
+		SetAc(0,9.8);
+		do {
+			posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+			velocidad = velocidad + aceleracion * t;
+		} while (posicion.y <= jump);
+		SetAc(0, -9.8);
+		control = 0;
+	}
 }
 
 void Hombre::SetVel(float vx, float vy)
@@ -43,11 +54,15 @@ void Hombre::SetAc(float ax, float ay) {
 	aceleracion.y = ay;
 }
 
-void Hombre::Salto() {
+void Hombre::SetCont(int x) {
 
-	float jump = posicion.y + 5.0;
-	do {
-		posicion.y += 0.01;
-	} while (posicion.y <= jump);
-	SetAc(0, -9.8);
+	control = x;
+}
+
+float Hombre::GetPosX() {
+	return posicion.x;
+}
+
+float Hombre::GetPosY() {
+	return posicion.y;
 }

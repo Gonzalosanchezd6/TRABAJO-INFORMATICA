@@ -6,6 +6,7 @@ private:
 	friend class Interaccion;
 
 	float altura;
+	int control;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
@@ -17,6 +18,8 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
-	void Salto();
+	void SetCont(int x);
 	void SetAc(float ax, float ay);
+	float GetPosX();
+	float GetPosY();
 };
