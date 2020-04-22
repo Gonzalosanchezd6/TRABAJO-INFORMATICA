@@ -43,8 +43,8 @@ void Mundo::Mueve()
 void Mundo::Inicializa()
 {
 	x_ojo = 0;
-	y_ojo = 7.5;
-	z_ojo = 30;
+	y_ojo = 10;
+	z_ojo = 40;
 	/*esfera.SetPos(2, 4);
 	esfera.SetRadio(1.5f);
 	esfera.SetColor(0, 0, 255);
