@@ -2,7 +2,8 @@
 #include "glut.h"
 
 Hombre::Hombre() {
-	altura = 1.8f;
+	altura = 0.8f;
+	aceleracion.y = -9.8;
 }
 Hombre::~Hombre() {
 	//gonzalo friki
@@ -21,7 +22,7 @@ void Hombre::Dibuja() {
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(1.0f, 0.0f, 0.0f);
-		glutSolidSphere(altura, 20, 20);
+	glutSolidSphere(altura, 20, 20);
 	glPopMatrix();
 }
 
@@ -34,4 +35,19 @@ void Hombre::SetVel(float vx, float vy)
 {
 	velocidad.x = vx;
 	velocidad.y = vy;
+}
+
+void Hombre::SetAc(float ax, float ay) {
+
+	aceleracion.x = ax;
+	aceleracion.y = ay;
+}
+
+void Hombre::Salto() {
+
+	float jump = posicion.y + 5.0;
+	do {
+		posicion.y += 0.01;
+	} while (posicion.y <= jump);
+	SetAc(0, -9.8);
 }

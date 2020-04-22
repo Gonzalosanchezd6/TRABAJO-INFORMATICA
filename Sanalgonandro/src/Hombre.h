@@ -17,4 +17,6 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
+	void Salto();
+	void SetAc(float ax, float ay);
 };

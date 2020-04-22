@@ -15,11 +15,11 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		0.0, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+	hombre.Dibuja();
 	caja.Dibuja();
 	/*esfera.Dibuja();
 	esfera2.Dibuja();
 	caja.Dibuja();
-	hombre.Dibuja();
 	disparo.Dibuja();
 	plataforma.Dibuja();
 	bonus.Dibuja();*/
@@ -27,12 +27,12 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve()
 {
-	/*hombre.Mueve(0.025f);
-	esfera.Mueve(0.025f);
+	hombre.Mueve(0.025f);
+	Interaccion::rebote(hombre, caja);
+	/*esfera.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	disparo.Mueve(0.025f);
-	Interaccion::rebote(hombre, caja);
 	Interaccion::rebote(esfera, caja);
 	Interaccion::rebote(esfera, plataforma);
 	Interaccion::rebote(esfera2, caja);
@@ -55,8 +55,8 @@ void Mundo::Inicializa()
 	esfera2.SetVel(-5, 15);
 	bonus.SetPos(5.0f, 5.0f);
 	disparo.SetPos(-5.0, 0.0);
-	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
-	hombre.SetPos(0, 0);*/
+	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
+	hombre.SetPos(-10, 7);
 }
 
 void Mundo::Tecla(unsigned char key)
@@ -73,6 +73,9 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetVel(5.0f, 0.0f);
+		break;
+	case GLUT_KEY_UP:
+		hombre.Salto();
 		break;
 	}
 }

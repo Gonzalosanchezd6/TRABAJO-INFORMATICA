@@ -10,15 +10,16 @@ Interaccion::~Interaccion() {
 
 }
 
-void Interaccion::rebote(Hombre &h, Caja c) {
-	float xmax = c.inferior1.limite2.x;
-	float xmin = c.inferior1.limite1.x;
-	if (h.posicion.x > xmax) {
-		h.posicion.x = xmax;
+void Interaccion::rebote(Hombre &h, Pared p) {
+	Vector2D dir;
+	float dif = p.distancia(h.posicion, &dir) - h.altura;
+	if (dif <= 0.0f) {
+		h.aceleracion.y = 0.0f;
+		h.velocidad.y = 0.0f;
 	}
-	if (h.posicion.x < xmin) {
-		h.posicion.x = xmin;
-	}
+	/*else if (dif >= 0.0f) {
+		h.aceleracion.y = -9.8f;
+	}*/
 }
 
 bool Interaccion::rebote(Esfera &e, Pared p) {
@@ -34,44 +35,15 @@ bool Interaccion::rebote(Esfera &e, Pared p) {
 	return false; //no hay colision
 }
 
-void Interaccion::rebote(Esfera &e, Caja c) {
-/*	rebote(e, c.derecha);
-	rebote(e, c.izquierda);
-	rebote(e, c.inferior);
-	rebote(e, c.superior);*/
+void Interaccion::rebote(Hombre &h, Caja c) {
+	rebote(h, c.plataforma1);
+	rebote(h, c.plataforma2);
+	rebote(h, c.plataforma3);
+	rebote(h, c.plataforma4);
+	rebote(h, c.inferior1);
+	rebote(h, c.inferior2);
 }
 
-/*bool Interaccion::rebote(Esfera &esfera1, Esfera &esfera2) {
-	
-
-
-
-	/*float distancia;
-	distancia = sqrt(pow((e.posicion.x - edos.posicion.x), 2) + pow((e.posicion.y - edos.posicion.y), 2));
-	if (distancia < 0) {
-		distancia = -distancia;
-	}
-	if (distancia <= (e.radio + edos.radio)) {
-		return true;
-	}
-	return false;
-	
-	/*float i, j;
-	float x1, y1, x2, y2;
-
-	for (i = 0; i = 2 * 3.14159265; i += 0.001) {
-		x1 = e.posicion.x + e.radio*cos(i);
-		y1 = e.posicion.y + e.radio*sin(i);
-		for (j = 0; j = 2 * 3.14159265; j += 0.001) {
-			x2 = edos.posicion.x + edos.radio*cos(j);
-			y2 = edos.posicion.y + edos.radio*sin(j);
-			if (x1 == x2 && y1 == y2) {
-				return true;
-			}
-		}
-	}
-	return false;*/
-//}
 
 void Interaccion::rebote(Esfera &esfera1, Esfera &esfera2) {
 		
