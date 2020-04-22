@@ -17,3 +17,5 @@ public:
 	void SetPos(float ix, float iy);
 	void SetVel(float vx, float vy);
 };
+
+
