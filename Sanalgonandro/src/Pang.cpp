@@ -1,7 +1,15 @@
 #include "Mundo.h"
+#include "ETSIDI.h"
+#include <iostream>
 #include "glut.h" //debe ir siempre como ultimo include
 
+using namespace ETSIDI;
+using ETSIDI::getTexture;
+
+
+
 Mundo mundo;
+
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
@@ -34,6 +42,8 @@ int main(int argc,char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 	glutSpecialFunc(onSpecialKeyboardDown); //gestion de los cursores
 
+	
+
 	mundo.Inicializa();
 		
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -52,7 +62,6 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	mundo.Dibuja();
-	//monti feo
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();

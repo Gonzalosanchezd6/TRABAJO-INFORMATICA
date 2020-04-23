@@ -17,7 +17,7 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	caja.Dibuja();
-	bloque.Dibuja();
+	//bloque.Dibuja();
 	/*esfera.Dibuja();
 	esfera2.Dibuja();
 	caja.Dibuja();
@@ -39,7 +39,7 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
 	Interaccion::rebote(esfera, esfera2);*/
-	bloque.Mueve(0.025f);
+	//bloque.Mueve(0.025f);
 }
 
 void Mundo::Inicializa()
@@ -59,8 +59,8 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
-	bloque.SetPos(2,8);
-	bloque.SetVel(3, 0);
+	/*bloque.SetPos(2,8);
+	bloque.SetVel(3, 0);*/
 }
 
 void Mundo::Tecla(unsigned char key)
