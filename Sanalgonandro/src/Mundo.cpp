@@ -2,18 +2,19 @@
 #include <math.h>
 #include "glut.h"
 
-void Mundo::RotarOjo()
+/*void Mundo::RotarOjo()
 {
 	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
 	float ang=atan2(z_ojo,x_ojo);
 	ang+=0.05f;
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
-}
+}*/
+
 void Mundo::Dibuja()
 {
 	gluLookAt(x_ojo, y_ojo, z_ojo,
-		0.0, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
+		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	caja.Dibuja();
@@ -46,7 +47,7 @@ void Mundo::Inicializa()
 {
 	x_ojo = 0;
 	y_ojo = 10;
-	z_ojo = 40;
+	z_ojo = 50;
 	/*esfera.SetPos(2, 4);
 	esfera.SetRadio(1.5f);
 	esfera.SetColor(0, 0, 255);
@@ -74,9 +75,11 @@ void Mundo::teclaEspecial(unsigned char key)
 	{
 	case GLUT_KEY_LEFT:
 		hombre.SetPos((hombre.GetPosX()) - 0.2 , hombre.GetPosY());
+		x_ojo -= 0.2;
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetPos((hombre.GetPosX()) + 0.2, hombre.GetPosY());
+		x_ojo += 0.2;
 		break;
 	case GLUT_KEY_UP:
 		hombre.SetCont(1);

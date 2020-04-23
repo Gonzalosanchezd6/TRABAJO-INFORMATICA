@@ -7,7 +7,7 @@ Hombre::Hombre() {
 	control = 0;
 }
 Hombre::~Hombre() {
-	//gonzalo friki
+	
 }
 
 void Hombre::SetAltura(float r) {
@@ -34,12 +34,13 @@ void Hombre::Mueve(float t) {
 		float jump = posicion.y + 2.5;
 		SetAc(0,9.8);
 		do {
-			posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+			posicion = posicion + velocidad * t + aceleracion * (0.02f * t * t);
 			velocidad = velocidad + aceleracion * t;
 		} while (posicion.y <= jump);
 		SetAc(0, -9.8);
 		control = 0;
 	}
+
 }
 
 void Hombre::SetVel(float vx, float vy)
@@ -58,6 +59,7 @@ void Hombre::SetCont(int x) {
 
 	control = x;
 }
+
 
 float Hombre::GetPosX() {
 	return posicion.x;

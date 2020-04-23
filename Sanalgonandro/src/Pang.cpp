@@ -3,8 +3,8 @@
 #include <iostream>
 #include "glut.h" //debe ir siempre como ultimo include
 
-using namespace ETSIDI;
-using ETSIDI::getTexture;
+using namespace ETSIDI; //esto en teoria es para las imagenes, musica, texto,etc
+using ETSIDI::getTexture;//esto en teoria es para las imagenes, musica, texto,etc
 
 
 
@@ -78,6 +78,7 @@ void OnTimer(int value)
 {
 //poner aqui el código de animacion
 	mundo.Mueve();
+	//mundo.RotarOjo();
 
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);

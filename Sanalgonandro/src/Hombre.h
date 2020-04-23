@@ -10,6 +10,7 @@ private:
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
+
 public:
 	Hombre();
 	virtual ~Hombre();
@@ -22,4 +23,5 @@ public:
 	void SetAc(float ax, float ay);
 	float GetPosX();
 	float GetPosY();
+
 };
