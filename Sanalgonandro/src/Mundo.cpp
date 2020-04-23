@@ -40,14 +40,15 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
 	Interaccion::rebote(esfera, esfera2);*/
-	//bloque.Mueve(0.025f);
+	
+
 }
 
 void Mundo::Inicializa()
 {
 	x_ojo = 0;
-	y_ojo = 10;
-	z_ojo = 50;
+	y_ojo = 21;
+	z_ojo = 70;
 	/*esfera.SetPos(2, 4);
 	esfera.SetRadio(1.5f);
 	esfera.SetColor(0, 0, 255);
@@ -83,6 +84,7 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	case GLUT_KEY_UP:
 		hombre.SetCont(1);
+		y_ojo += 0.2;
 		break;
 	}
 }

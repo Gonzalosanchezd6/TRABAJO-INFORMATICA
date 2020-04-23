@@ -23,5 +23,5 @@ public:
 	void SetAc(float ax, float ay);
 	float GetPosX();
 	float GetPosY();
-
+	
 };

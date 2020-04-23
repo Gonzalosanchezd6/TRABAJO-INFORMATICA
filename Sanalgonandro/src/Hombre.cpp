@@ -68,3 +68,4 @@ float Hombre::GetPosX() {
 float Hombre::GetPosY() {
 	return posicion.y;
 }
+

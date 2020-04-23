@@ -9,11 +9,14 @@ Caja::Caja() {
 
 	plataforma1.SetPos(-13, 5, -5, 5);
 	plataforma1.SetColor(100, 0, 0);
-	plataforma2.SetPos(-5, 8, 0, 8);
+
+	plataforma2.SetPos(-3, 10, 5, 10);
 	plataforma2.SetColor(100, 0, 0);
-	plataforma3.SetPos(0, 11, 8, 11);
+
+	plataforma3.SetPos(7, 15, 15, 15);
 	plataforma3.SetColor(100, 0, 0);
-	plataforma4.SetPos(8, 14, 13, 14);
+
+	plataforma4.SetPos(17, 20, 25, 20);
 	plataforma4.SetColor(100, 0, 0);
 }
 
