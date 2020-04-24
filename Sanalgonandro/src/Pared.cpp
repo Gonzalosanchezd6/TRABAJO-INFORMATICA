@@ -1,7 +1,12 @@
 #include "Pared.h"
 #include "glut.h"
 
-Pared::Pared() {
+Pared::Pared(float x1, float y1, float x2, float y2) {
+	limite1.x = x1;
+	limite2.x = x2;
+	limite1.y = y1;
+	limite2.y = y2;
+
 	rojo = verde = azul = 125;
 }
 

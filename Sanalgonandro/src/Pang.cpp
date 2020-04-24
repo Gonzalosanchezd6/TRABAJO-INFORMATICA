@@ -3,13 +3,10 @@
 #include <iostream>
 #include "glut.h" //debe ir siempre como ultimo include
 
-using namespace ETSIDI; //esto en teoria es para las imagenes, musica, texto,etc
-using ETSIDI::getTexture;//esto en teoria es para las imagenes, musica, texto,etc
-
-
-
 Mundo mundo;
 
+using namespace ETSIDI; //esto en teoria es para las imagenes, musica, texto,etc
+using ETSIDI::getTexture;//esto en teoria es para las imagenes, musica, texto,etc
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos

@@ -35,14 +35,14 @@ bool Interaccion::rebote(Esfera &e, Pared p) {
 	return false; //no hay colision
 }
 
-void Interaccion::rebote(Hombre &h, Caja c) {
+/*void Interaccion::rebote(Hombre &h, Caja c) {
 	rebote(h, c.plataforma1);
 	rebote(h, c.plataforma2);
 	rebote(h, c.plataforma3);
 	rebote(h, c.plataforma4);
 	rebote(h, c.inferior1);
 	rebote(h, c.inferior2);
-}
+}*/
 
 
 void Interaccion::rebote(Esfera &esfera1, Esfera &esfera2) {
@@ -117,4 +117,13 @@ void Interaccion::rebote(Esfera &esfera1, Esfera &esfera2) {
 		esfera2.velocidad.x = modv2 * cos(fi2);
 		esfera2.velocidad.y = modv2 * sin(fi2);
 	}
+}
+
+bool Interaccion::Colision(Pared p, Hombre h) {
+	Vector2D dir;
+	float dif = p.distancia(h.posicion, &dir) - h.altura;
+	if (dif <= 0.0f) {
+		return true;
+	}
+	return false;
 }

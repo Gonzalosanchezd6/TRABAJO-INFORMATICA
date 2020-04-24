@@ -11,7 +11,7 @@ private:
 	Vector2D limite1;
 	Vector2D limite2;
 public:
-	Pared();
+	Pared(float x1, float y1, float x2, float y2);
 	virtual ~Pared();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);

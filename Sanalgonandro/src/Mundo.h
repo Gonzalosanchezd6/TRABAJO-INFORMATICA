@@ -5,7 +5,8 @@
 #include "Esfera.h"
 #include "Hombre.h"
 #include "Interaccion.h"
-#include "bloque.h"
+#include "Pared.h"
+#include "ListaPlataformas.h"
 
 class Mundo
 {
@@ -19,7 +20,8 @@ private: //se puede poner como private sin problema
 	Hombre hombre;
 	Caja caja;
 	Bonus bonus;
-	Pared plataforma;
+	//Pared plataforma;
+	ListaPlataformas plataformas;
 	
 public:
 	void Inicializa();

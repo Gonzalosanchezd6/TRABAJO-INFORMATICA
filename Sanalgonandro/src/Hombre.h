@@ -4,6 +4,7 @@
 class Hombre {
 private:
 	friend class Interaccion;
+	friend class ListaPlataformas;
 
 	float altura;
 	int control;

@@ -2,14 +2,14 @@
 #include <math.h>
 #include "glut.h"
 
-/*void Mundo::RotarOjo()
+void Mundo::RotarOjo()
 {
 	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
 	float ang=atan2(z_ojo,x_ojo);
 	ang+=0.05f;
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
-}*/
+}
 
 void Mundo::Dibuja()
 {
@@ -17,7 +17,8 @@ void Mundo::Dibuja()
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
-	caja.Dibuja();
+	plataformas.Dibuja();
+	//caja.Dibuja();
 	//bloque.Dibuja();
 	/*esfera.Dibuja();
 	esfera2.Dibuja();
@@ -30,7 +31,15 @@ void Mundo::Dibuja()
 void Mundo::Mueve()
 {
 	hombre.Mueve(0.025f);
-	Interaccion::rebote(hombre, caja);
+	Pared* aux = plataformas.Colision(hombre);
+	if (aux != 0) {
+		hombre.SetAc(0,0);
+		hombre.SetVel(0,0);
+	}
+	else if (aux == 0) {
+		hombre.SetAc(0, -9.8);
+	}
+	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
 	bonus.Mueve(0.025f);
@@ -61,8 +70,28 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
-	/*bloque.SetPos(2,8);
-	bloque.SetVel(3, 0);*/
+
+	Pared* inferior1 = new Pared(-20, 1, -1, 1);
+	inferior1->SetColor(0, 200, 0);
+	plataformas.Agregar(inferior1);
+
+	Pared* inferior2 = new Pared(1, 1, 20, 1);
+	inferior2->SetColor(0, 200, 0);
+	plataformas.Agregar(inferior2);
+
+	Pared* plat1 = new Pared(-13, 5, -5, 5);
+	plat1->SetColor(100, 0, 0);
+	plataformas.Agregar(plat1);
+	Pared* plat2 = new Pared(-3, 10, 5, 10);
+	plat2->SetColor(100, 0, 0);
+	plataformas.Agregar(plat2);
+	Pared* plat3 = new Pared(7, 15, 15, 15);
+	plat3->SetColor(100, 0, 0);
+	plataformas.Agregar(plat3);
+	Pared* plat4 = new Pared(17, 20, 25, 20);
+	plat4->SetColor(100, 0, 0);
+	plataformas.Agregar(plat4);
+
 }
 
 void Mundo::Tecla(unsigned char key)
@@ -84,7 +113,7 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	case GLUT_KEY_UP:
 		hombre.SetCont(1);
-		y_ojo += 0.2;
+		//y_ojo += 0.2;
 		break;
 	}
 }
