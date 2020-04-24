@@ -14,6 +14,7 @@ private: //se puede poner como private sin problema
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
+	int salto = 0;
 	Disparo disparo;
 	Esfera esfera;
 	Esfera esfera2;

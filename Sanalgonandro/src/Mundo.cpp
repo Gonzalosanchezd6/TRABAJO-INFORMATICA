@@ -33,10 +33,12 @@ void Mundo::Mueve()
 	hombre.Mueve(0.025f);
 	Pared* aux = plataformas.Colision(hombre);
 	if (aux != 0) {
+		salto = 1;
 		hombre.SetAc(0,0);
 		hombre.SetVel(0,0);
 	}
 	else if (aux == 0) {
+		salto = 0;
 		hombre.SetAc(0, -9.8);
 	}
 	//Interaccion::rebote(hombre, caja);
@@ -104,16 +106,18 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetPos((hombre.GetPosX()) - 0.2 , hombre.GetPosY());
-		x_ojo -= 0.2;
+		hombre.SetPos((hombre.GetPosX()) - 0.5 , hombre.GetPosY());
+		x_ojo -= 0.5;
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.SetPos((hombre.GetPosX()) + 0.2, hombre.GetPosY());
-		x_ojo += 0.2;
+		hombre.SetPos((hombre.GetPosX()) + 0.5, hombre.GetPosY());
+		x_ojo += 0.5;
 		break;
 	case GLUT_KEY_UP:
-		hombre.SetCont(1);
-		//y_ojo += 0.2;
+		if (salto == 1) {
+			hombre.SetCont(1);
+			//y_ojo += 0.2;
+		}
 		break;
 	}
 }
