@@ -7,7 +7,6 @@ private:
 	friend class ListaPlataformas;
 
 	float altura;
-	int control;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
@@ -20,8 +19,8 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
-	void SetCont(int x);
 	void SetAc(float ax, float ay);
+	bool Muerte();
 	float GetPosX();
 	float GetPosY();
 	

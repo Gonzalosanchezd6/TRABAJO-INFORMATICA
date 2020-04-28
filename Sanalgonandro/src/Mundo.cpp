@@ -31,6 +31,12 @@ void Mundo::Dibuja()
 void Mundo::Mueve()
 {
 	hombre.Mueve(0.025f);
+	if (hombre.Muerte()) {
+		hombre.SetPos(-10, 7);
+		hombre.SetAc(0, -8);
+		hombre.SetVel(0, 0);
+		x_ojo = 0;
+	}
 	Pared* aux = plataformas.Colision(hombre);
 	if (aux != 0) {
 		salto = 1;
@@ -73,11 +79,11 @@ void Mundo::Inicializa()
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
 
-	Pared* inferior1 = new Pared(-20, 1, -1, 1);
+	Pared* inferior1 = new Pared(-22, 1, 2, 1);
 	inferior1->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior1);
 
-	Pared* inferior2 = new Pared(1, 1, 20, 1);
+	Pared* inferior2 = new Pared(6, 1, 25, 1);
 	inferior2->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior2);
 
@@ -106,16 +112,18 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetPos((hombre.GetPosX()) - 0.5 , hombre.GetPosY());
-		x_ojo -= 0.5;
+		hombre.SetPos((hombre.GetPosX()) - 0.3 , hombre.GetPosY());
+		x_ojo -= 0.3;
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.SetPos((hombre.GetPosX()) + 0.5, hombre.GetPosY());
-		x_ojo += 0.5;
+		hombre.SetPos((hombre.GetPosX()) + 0.3, hombre.GetPosY());
+		x_ojo += 0.3;
 		break;
 	case GLUT_KEY_UP:
+
 		if (salto == 1) {
-			hombre.SetCont(1);
+			hombre.SetVel(0, 10.0f);
+			hombre.SetAc(0, -9.8f);
 			//y_ojo += 0.2;
 		}
 		break;
