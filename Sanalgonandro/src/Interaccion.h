@@ -2,6 +2,7 @@
 #include "Hombre.h"
 #include "Caja.h"
 #include "Esfera.h"
+#include "EnemigoLv1.h"
 
 class Interaccion {
 public:
@@ -13,4 +14,5 @@ public:
 	//static bool rebote(Esfera &esfera1, Esfera &esfera2);
 	static void rebote(Esfera &esfera1, Esfera &esfera2);
 	static bool Colision(Pared p, Hombre h);
+	static bool Choque(Hombre h, Enemigo1 e);
 };

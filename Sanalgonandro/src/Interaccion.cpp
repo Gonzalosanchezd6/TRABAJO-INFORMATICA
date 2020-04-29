@@ -127,3 +127,16 @@ bool Interaccion::Colision(Pared p, Hombre h) {
 	}
 	return false;
 }
+
+bool Interaccion::Choque(Hombre h, Enemigo1 e) {
+	Vector2D dif = h.posicion - e.posicion;
+	float d = dif.modulo();
+	float dentro = d - (h.altura + e.tamaño/2);
+
+	if (dentro < 0.0f) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

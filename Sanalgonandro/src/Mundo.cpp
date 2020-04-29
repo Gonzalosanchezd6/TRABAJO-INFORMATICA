@@ -18,6 +18,7 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	plataformas.Dibuja();
+	enemigo1.Dibuja();
 	//caja.Dibuja();
 	//bloque.Dibuja();
 	/*esfera.Dibuja();
@@ -31,7 +32,8 @@ void Mundo::Dibuja()
 void Mundo::Mueve()
 {
 	hombre.Mueve(0.025f);
-	if (hombre.Muerte()) {
+	enemigo1.Mueve(0.0025f);
+	if (hombre.Muerte(hombre, enemigo1)) {
 		hombre.SetPos(-10, 7);
 		hombre.SetAc(0, -8);
 		hombre.SetVel(0, 0);
@@ -47,6 +49,7 @@ void Mundo::Mueve()
 		salto = 0;
 		hombre.SetAc(0, -9.8);
 	}
+
 	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
@@ -78,6 +81,7 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
+	enemigo1.SetPos(11, 15.75);
 
 	Pared* inferior1 = new Pared(-22, 1, 2, 1);
 	inferior1->SetColor(0, 200, 0);

@@ -1,4 +1,5 @@
 #include "Hombre.h"
+#include "Interaccion.h"
 #include "glut.h"
 
 Hombre::Hombre() {
@@ -51,9 +52,9 @@ float Hombre::GetPosY() {
 	return posicion.y;
 }
 
-bool Hombre::Muerte() {
+bool Hombre::Muerte(Hombre h, Enemigo1 e) {
 
-	if (posicion.y < -3) {
+	if (posicion.y < -3 || Interaccion::Choque(h, e)) {
 		return true;
 	}
 	else {

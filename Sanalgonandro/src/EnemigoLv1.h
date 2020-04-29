@@ -1,28 +1,21 @@
 #pragma once
 #include "Vector2D.h"
-#include "EnemigoLv1.h"
 
-class Hombre {
+class Enemigo1 {
 private:
 	friend class Interaccion;
-	friend class ListaPlataformas;
 
-	float altura;
+	float tamaño;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
 
 public:
-	Hombre();
-	virtual ~Hombre();
-	void SetAltura(float r);
+	Enemigo1();
+	virtual ~Enemigo1();
 	void SetPos(float ix, float iy);
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
-	void SetAc(float ax, float ay);
-	bool Muerte(Hombre h, Enemigo1 e);
-	float GetPosX();
-	float GetPosY();
-	
+
 };

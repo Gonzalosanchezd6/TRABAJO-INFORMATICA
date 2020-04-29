@@ -7,6 +7,7 @@
 #include "Interaccion.h"
 #include "Pared.h"
 #include "ListaPlataformas.h"
+#include "EnemigoLv1.h"
 
 class Mundo
 {
@@ -21,8 +22,8 @@ private: //se puede poner como private sin problema
 	Hombre hombre;
 	Caja caja;
 	Bonus bonus;
-	//Pared plataforma;
 	ListaPlataformas plataformas;
+	Enemigo1 enemigo1;
 	
 public:
 	void Inicializa();
