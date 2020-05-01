@@ -15,4 +15,6 @@ public:
 	Vector2D operator + (Vector2D &); // (6) suma de vectores
 	float operator *(Vector2D &); // (7) producto escalar
 	Vector2D operator *(float num); // (8) producto por un escalar
+
+	friend bool operator==(const Vector2D& v1, const Vector2D& v2);
 };

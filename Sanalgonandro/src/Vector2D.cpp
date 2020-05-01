@@ -64,3 +64,10 @@ Vector2D Vector2D::operator *(float num) {
 
 	return res;
 }
+
+bool operator==(const Vector2D& v1, const Vector2D& v2) {
+	if ((v1.x == v2.x) && (v1.y == v2.y)) {
+		return true;
+	}
+	return false;
+}

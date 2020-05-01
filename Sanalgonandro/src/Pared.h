@@ -2,7 +2,7 @@
 #include "Vector2D.h"
 
 class Pared {
-private:
+protected:
 	friend class Interaccion;
 
 	unsigned char rojo;

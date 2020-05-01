@@ -62,3 +62,7 @@ bool Hombre::Muerte(Hombre h, Enemigo1 e) {
 	}
 
 }
+
+Vector2D Hombre::GetPos() {
+	return posicion;
+}

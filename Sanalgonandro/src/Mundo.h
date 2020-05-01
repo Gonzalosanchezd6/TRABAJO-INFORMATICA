@@ -8,6 +8,9 @@
 #include "Pared.h"
 #include "ListaPlataformas.h"
 #include "EnemigoLv1.h"
+#include "Llave.h"
+#include "ListaPremios.h"
+#include "Puerta.h"
 
 class Mundo
 {
@@ -24,6 +27,8 @@ private: //se puede poner como private sin problema
 	Bonus bonus;
 	ListaPlataformas plataformas;
 	Enemigo1 enemigo1;
+	ListaPremios premios;
+	Puerta puerta;
 	
 public:
 	void Inicializa();

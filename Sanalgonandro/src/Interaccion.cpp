@@ -140,3 +140,14 @@ bool Interaccion::Choque(Hombre h, Enemigo1 e) {
 		return false;
 	}
 }
+
+bool Interaccion::Choque(Hombre h, Llave l) {
+	Vector2D pos_l = l.GetPos();
+	Vector2D pos_h = h.GetPos();
+	//pos_h.y += h.altura / 2.0f;
+	float distancia = (pos_l - pos_h).modulo() - (h.altura + 1.5);
+	if (distancia < 0.1f) {
+		return true;
+	}
+	return false;
+}

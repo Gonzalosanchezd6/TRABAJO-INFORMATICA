@@ -4,7 +4,7 @@
 
 void Mundo::RotarOjo()
 {
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
+	float dist=sqrt(x_ojo*x_ojo + z_ojo*z_ojo);
 	float ang=atan2(z_ojo,x_ojo);
 	ang+=0.05f;
 	x_ojo=dist*cos(ang);
@@ -19,6 +19,9 @@ void Mundo::Dibuja()
 	hombre.Dibuja();
 	plataformas.Dibuja();
 	enemigo1.Dibuja();
+	premios.Dibuja();
+	puerta.Dibuja();
+	//llave.Dibuja();
 	//caja.Dibuja();
 	//bloque.Dibuja();
 	/*esfera.Dibuja();
@@ -48,6 +51,11 @@ void Mundo::Mueve()
 	else if (aux == 0) {
 		salto = 0;
 		hombre.SetAc(0, -9.8);
+	}
+
+	Llave* prem_aux = premios.colision(hombre);
+	if (aux != 0) {
+		premios.Eliminar(prem_aux);
 	}
 
 	//Interaccion::rebote(hombre, caja);
@@ -83,6 +91,13 @@ void Mundo::Inicializa()
 	hombre.SetPos(-10, 7);
 	enemigo1.SetPos(11, 15.75);
 
+	Llave* llave = new Llave();
+	llave->SetLlave(0.25, 0.5);
+	llave->SetPos(25, 22);
+	premios.agregar(llave);
+	//llave.SetLlave(0.25, 0.5);
+	//llave.SetPos(25, 21);
+
 	Pared* inferior1 = new Pared(-22, 1, 2, 1);
 	inferior1->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior1);
@@ -104,6 +119,8 @@ void Mundo::Inicializa()
 	plat4->SetColor(100, 0, 0);
 	plataformas.Agregar(plat4);
 
+	puerta.SetColor(130, 27, 5);
+	puerta.SetPos(20, 6, 23, 0);
 }
 
 void Mundo::Tecla(unsigned char key)
