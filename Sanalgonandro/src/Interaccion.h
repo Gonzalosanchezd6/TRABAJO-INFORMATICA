@@ -4,6 +4,7 @@
 #include "Esfera.h"
 #include "EnemigoLv1.h"
 #include "Llave.h"
+#include "EnemigoBolas.h"
 
 class Interaccion {
 public:
@@ -17,4 +18,5 @@ public:
 	static bool Colision(Pared p, Hombre h);
 	static bool Choque(Hombre h, Enemigo1 e);
 	static bool Choque(Hombre h, Llave l);
+	static bool Choque(Hombre h, EnemigoBolas b);
 };

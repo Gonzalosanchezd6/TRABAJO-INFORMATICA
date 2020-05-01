@@ -63,6 +63,17 @@ bool Hombre::Muerte(Hombre h, Enemigo1 e) {
 
 }
 
+bool Hombre::Muerte(Hombre h, EnemigoBolas b) {
+
+	if (posicion.y < -3 || Interaccion::Choque(h, b)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+
+}
+
 Vector2D Hombre::GetPos() {
 	return posicion;
 }

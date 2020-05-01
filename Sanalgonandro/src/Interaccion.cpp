@@ -151,3 +151,16 @@ bool Interaccion::Choque(Hombre h, Llave l) {
 	}
 	return false;
 }
+
+bool Interaccion::Choque(Hombre h, EnemigoBolas b) {
+	Vector2D dif = h.posicion - b.posicion;
+	float d = dif.modulo();
+	float dentro = d - (h.altura + b.radio / 2);
+
+	if (dentro < 0.0f) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2D.h"
 #include "EnemigoLv1.h"
+#include "EnemigoBolas.h"
 #include "Llave.h"
 
 class Hombre {
@@ -23,6 +24,7 @@ public:
 	void SetVel(float vx, float vy);
 	void SetAc(float ax, float ay);
 	bool Muerte(Hombre h, Enemigo1 e);
+	bool Muerte(Hombre h, EnemigoBolas b);
 	Vector2D GetPos();
 	float GetPosX();
 	float GetPosY();

@@ -21,6 +21,9 @@ void Mundo::Dibuja()
 	enemigo1.Dibuja();
 	premios.Dibuja();
 	puerta.Dibuja();
+
+	bolas.Dibuja();
+
 	//llave.Dibuja();
 	//caja.Dibuja();
 	//bloque.Dibuja();
@@ -36,12 +39,21 @@ void Mundo::Mueve()
 {
 	hombre.Mueve(0.025f);
 	enemigo1.Mueve(0.0025f);
+	bolas.Mueve(0.0025f);
 	if (hombre.Muerte(hombre, enemigo1)) {
 		hombre.SetPos(-10, 7);
 		hombre.SetAc(0, -8);
 		hombre.SetVel(0, 0);
 		x_ojo = 0;
 	}
+
+	if (hombre.Muerte(hombre, bolas)) {
+		hombre.SetPos(-10, 7);
+		hombre.SetAc(0, -8);
+		hombre.SetVel(0, 0);
+		x_ojo = 0;
+	}
+
 	Pared* aux = plataformas.Colision(hombre);
 	if (aux != 0) {
 		salto = 1;
@@ -90,6 +102,7 @@ void Mundo::Inicializa()
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
 	enemigo1.SetPos(11, 15.75);
+	bolas.SetPos(-10, 37);
 
 	Llave* llave = new Llave();
 	llave->SetLlave(0.25, 0.5);

@@ -87,6 +87,7 @@
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
+    <ClCompile Include="src\EnemigoBolas.cpp" />
     <ClCompile Include="src\EnemigoLv1.cpp" />
     <ClCompile Include="src\Esfera.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
+    <ClInclude Include="src\EnemigoBolas.h" />
     <ClInclude Include="src\EnemigoLv1.h" />
     <ClInclude Include="src\Esfera.h" />
     <ClInclude Include="src\Hombre.h" />

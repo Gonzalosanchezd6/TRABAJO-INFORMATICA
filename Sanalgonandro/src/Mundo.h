@@ -11,6 +11,7 @@
 #include "Llave.h"
 #include "ListaPremios.h"
 #include "Puerta.h"
+#include "EnemigoBolas.h"
 
 class Mundo
 {
@@ -27,6 +28,7 @@ private: //se puede poner como private sin problema
 	Bonus bonus;
 	ListaPlataformas plataformas;
 	Enemigo1 enemigo1;
+	EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
 	
