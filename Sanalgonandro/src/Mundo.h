@@ -12,6 +12,7 @@
 #include "ListaPremios.h"
 #include "Puerta.h"
 #include "EnemigoBolas.h"
+#include "ListaBolas.h"
 
 class Mundo
 {
@@ -31,8 +32,12 @@ private: //se puede poner como private sin problema
 	EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
-	
+	ListaBolas Bolas;
+
 public:
+	Mundo();
+	~Mundo();
+
 	void Inicializa();
 	void RotarOjo();
 	void Mueve();

@@ -92,6 +92,7 @@
     <ClCompile Include="src\Esfera.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaBolas.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaPremios.cpp" />
     <ClCompile Include="src\Llave.cpp" />
@@ -110,6 +111,7 @@
     <ClInclude Include="src\Esfera.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaBolas.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaPremios.h" />
     <ClInclude Include="src\Llave.h" />

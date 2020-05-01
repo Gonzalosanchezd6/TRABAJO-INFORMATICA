@@ -77,3 +77,8 @@ bool Hombre::Muerte(Hombre h, EnemigoBolas b) {
 Vector2D Hombre::GetPos() {
 	return posicion;
 }
+
+float Hombre::GetAltura() {
+	return altura;
+}
+

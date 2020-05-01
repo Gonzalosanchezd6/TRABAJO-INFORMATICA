@@ -2,6 +2,13 @@
 #include <math.h>
 #include "glut.h"
 
+Mundo::Mundo() {
+}
+
+Mundo::~Mundo() {
+	Bolas.destruirContenido();
+}
+
 void Mundo::RotarOjo()
 {
 	float dist=sqrt(x_ojo*x_ojo + z_ojo*z_ojo);
@@ -23,6 +30,7 @@ void Mundo::Dibuja()
 	puerta.Dibuja();
 
 	bolas.Dibuja();
+	Bolas.dibuja();
 
 	//llave.Dibuja();
 	//caja.Dibuja();
@@ -68,6 +76,12 @@ void Mundo::Mueve()
 	Llave* prem_aux = premios.colision(hombre);
 	if (aux != 0) {
 		premios.Eliminar(prem_aux);
+	}
+
+	Bolas.mueve(0.025f);
+	EnemigoBolas *aux_ = Bolas.colision(hombre);
+	if (aux != 0) { //si alguna esfera ha chocado 
+		Bolas.eliminar(aux_);
 	}
 
 	//Interaccion::rebote(hombre, caja);
@@ -134,11 +148,13 @@ void Mundo::Inicializa()
 
 	puerta.SetColor(130, 27, 5);
 	puerta.SetPos(20, 6, 23, 0);
+
+
+	
 }
 
-void Mundo::Tecla(unsigned char key)
-{
-
+void Mundo::Tecla(unsigned char key) {
+	
 }
 
 void Mundo::teclaEspecial(unsigned char key)
@@ -160,6 +176,15 @@ void Mundo::teclaEspecial(unsigned char key)
 			hombre.SetAc(0, -9.8f);
 			//y_ojo += 0.2;
 		}
+		break;
+	}
+
+	switch (key) {
+	case GLUT_KEY_LEFT:
+		Bolas.agregar(new EnemigoBolas(0.5f, 25, 37));
+		break;
+	case GLUT_KEY_RIGHT:
+		Bolas.agregar(new EnemigoBolas(0.5f, 25, 37));
 		break;
 	}
 }

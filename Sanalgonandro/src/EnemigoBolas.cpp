@@ -2,14 +2,25 @@
 #include "glut.h"
 
 EnemigoBolas::EnemigoBolas() {
-	radio = 0.3f;
-	aceleracion.y = -50.0f;
-	velocidad.y = -50.0f;
+	//radio = 0.3f;
+	//aceleracion.y = -50.0f;
+	//velocidad.y = -50.0f;
+	
 }
 
 EnemigoBolas::~EnemigoBolas() {
 
 }
+
+EnemigoBolas::EnemigoBolas(float rad, float x, float y, float vx, float vy) {
+	radio = rad;
+	posicion.x = x;
+	posicion.y = y;
+	velocidad.x = vx;
+	velocidad.y = vy;
+	aceleracion.y = -50.0f;
+}
+
 void EnemigoBolas::SetPos(float ix, float iy) {
 	posicion.x = ix;
 	posicion.y = iy;
@@ -24,10 +35,14 @@ void EnemigoBolas::Dibuja() {
 
 }
 void EnemigoBolas::Mueve(float t) {
-	posicion.x = posicion.x + velocidad.x * t + 0.5f * aceleracion.x * t * t;
-	posicion.y = posicion.y + velocidad.y * t + 0.5f * aceleracion.y * t * t;
-	velocidad.x = velocidad.x + aceleracion.x * t;
-	velocidad.y = velocidad.y + aceleracion.y * t;
+	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+	velocidad = velocidad + aceleracion * t;
+	if (posicion.x <= -20) {
+		setVel(3, 0);
+	}
+	if (posicion.x >= 25) {
+		setVel(-3, 0);
+	}
 
 
 }
@@ -36,4 +51,10 @@ void EnemigoBolas::SetAc(float ax, float ay) {
 
 	aceleracion.x = ax;
 	aceleracion.y = ay;
+}
+
+void EnemigoBolas::setVel(float vx, float vy)
+{
+	velocidad.x = vx;
+	velocidad.y = vy;
 }

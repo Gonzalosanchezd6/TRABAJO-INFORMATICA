@@ -28,5 +28,7 @@ public:
 	Vector2D GetPos();
 	float GetPosX();
 	float GetPosY();
+
+	float GetAltura();
 	
 };

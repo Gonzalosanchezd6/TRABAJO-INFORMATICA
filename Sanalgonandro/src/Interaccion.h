@@ -19,4 +19,6 @@ public:
 	static bool Choque(Hombre h, Enemigo1 e);
 	static bool Choque(Hombre h, Llave l);
 	static bool Choque(Hombre h, EnemigoBolas b);
+
+	static bool colision(EnemigoBolas e, Hombre h);
 };
