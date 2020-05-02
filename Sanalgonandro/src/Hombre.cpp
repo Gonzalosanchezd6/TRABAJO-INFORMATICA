@@ -5,7 +5,9 @@
 Hombre::Hombre() {
 	altura = 0.8f;
 	aceleracion.y = -9.8;
+	llaves = 0;
 }
+
 Hombre::~Hombre() {
 	
 }
@@ -80,5 +82,15 @@ Vector2D Hombre::GetPos() {
 
 float Hombre::GetAltura() {
 	return altura;
+}
+
+void Hombre::Premios(objetos ob) {
+	switch (ob) {
+	case LLAVE:
+		llaves += 1;
+		break;
+	default:
+		break;
+	}
 }
 

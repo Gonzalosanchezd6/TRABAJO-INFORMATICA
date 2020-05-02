@@ -74,8 +74,9 @@ void Mundo::Mueve()
 	}
 
 	Llave* prem_aux = premios.colision(hombre);
-	if (aux != 0) {
+	if (prem_aux != 0) {
 		premios.Eliminar(prem_aux);
+		hombre.Premios(Hombre::LLAVE);
 	}
 
 	Bolas.mueve(0.025f);
@@ -83,6 +84,8 @@ void Mundo::Mueve()
 	if (aux != 0) { //si alguna esfera ha chocado 
 		Bolas.eliminar(aux_);
 	}
+
+	
 
 	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
