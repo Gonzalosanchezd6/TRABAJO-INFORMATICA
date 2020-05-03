@@ -77,7 +77,15 @@ void Mundo::Mueve()
 	if (prem_aux != 0) {
 		premios.Eliminar(prem_aux);
 		hombre.Premios(Hombre::LLAVE);
+		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
+			puerta.SetColor(0, 0, 255);
+		}
 	}
+
+	//ESTO NO LO BORREIS, ES PARA PASAR DE NIVEL
+	/*if (hombre.Choque(hombre, puerta)) {
+		
+	}*/
 
 	Bolas.mueve(0.025f);
 	EnemigoBolas *aux_ = Bolas.colision(hombre);

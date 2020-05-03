@@ -3,6 +3,7 @@
 #include "EnemigoLv1.h"
 #include "EnemigoBolas.h"
 #include "Llave.h"
+#include "Puerta.h"
 
 class Hombre {
 private:
@@ -36,4 +37,6 @@ public:
 	float GetAltura();
 	
 	void Premios(objetos ob);
+	int NumPremios(objetos ob);
+	bool Choque(Hombre h, Puerta p);
 };

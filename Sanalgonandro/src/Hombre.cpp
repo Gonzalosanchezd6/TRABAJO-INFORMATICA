@@ -94,3 +94,23 @@ void Hombre::Premios(objetos ob) {
 	}
 }
 
+int Hombre::NumPremios(objetos ob) {
+	int num;
+	switch (ob) {
+	case LLAVE:
+		num = llaves;
+		return num;
+		break;
+	default:
+		break;
+	}
+	return 0;
+}
+
+bool Hombre::Choque(Hombre h, Puerta p) {
+	if (Interaccion::Colision(p, h)) {
+		return true;
+	}
+	return false;
+}
+
