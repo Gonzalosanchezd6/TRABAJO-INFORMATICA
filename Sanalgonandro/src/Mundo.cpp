@@ -49,17 +49,16 @@ void Mundo::Mueve()
 	enemigo1.Mueve(0.0025f);
 	bolas.Mueve(0.0025f);
 	if (hombre.Muerte(hombre, enemigo1)) {
-		hombre.SetPos(-10, 7);
-		hombre.SetAc(0, -8);
-		hombre.SetVel(0, 0);
+		hombre.restarVida();
 		x_ojo = 0;
+
 	}
 
 	if (hombre.Muerte(hombre, bolas)) {
-		hombre.SetPos(-10, 7);
-		hombre.SetAc(0, -8);
-		hombre.SetVel(0, 0);
+		hombre.restarVida();
 		x_ojo = 0;
+
+
 	}
 
 	Pared* aux = plataformas.Colision(hombre);

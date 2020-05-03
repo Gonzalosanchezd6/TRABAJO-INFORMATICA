@@ -5,6 +5,8 @@
 #include "Llave.h"
 #include "Puerta.h"
 
+#define MAX_VIDAS 5
+
 class Hombre {
 private:
 	friend class Interaccion;
@@ -15,6 +17,7 @@ private:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	int llaves;
+	int vidas;
 	
 
 public:
@@ -30,9 +33,12 @@ public:
 	void SetAc(float ax, float ay);
 	bool Muerte(Hombre h, Enemigo1 e);
 	bool Muerte(Hombre h, EnemigoBolas b);
+	void reinicia();// volver a la posicion inicial 
 	Vector2D GetPos();
 	float GetPosX();
 	float GetPosY();
+	void aumentarVida();
+	void restarVida();
 
 	float GetAltura();
 	

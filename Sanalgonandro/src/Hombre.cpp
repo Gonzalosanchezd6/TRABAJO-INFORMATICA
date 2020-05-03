@@ -6,6 +6,7 @@ Hombre::Hombre() {
 	altura = 0.8f;
 	aceleracion.y = -9.8;
 	llaves = 0;
+	vidas = 3;
 }
 
 Hombre::~Hombre() {
@@ -27,6 +28,26 @@ void Hombre::Dibuja() {
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glutSolidSphere(altura, 20, 20);
 	glPopMatrix();
+	///vidas
+	glTranslatef(-30, 45, 0);
+	int i;
+	for (i = 0; i < vidas; i++) {
+		
+		glColor3f(255.0f, 0.0f, 0.0f);
+		glutSolidSphere(0.7, 20, 20);
+		glTranslatef(1.3, 0, 0);
+		glutSolidSphere(0.7, 20, 20);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_TRIANGLES);
+		glVertex3f(-2.1f, -0.2f, 0);
+		glVertex3f(0.75f, -0.2f, 0.0f);
+		glVertex3f(-0.675f, -2.2f, 0);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glTranslatef(3, 0, 0);
+	}
+
+	glTranslatef(30-(3+1.3)*(float)i, -45, 0);
 }
 
 void Hombre::Mueve(float t) {
@@ -114,3 +135,24 @@ bool Hombre::Choque(Hombre h, Puerta p) {
 	return false;
 }
 
+void Hombre::reinicia() {
+	SetPos(-10, 7);
+	SetAc(0, -8);
+	SetVel(0, 0);
+}
+
+void Hombre::aumentarVida() {
+	if (vidas < MAX_VIDAS) {
+		vidas++;
+	}
+}
+
+void Hombre::restarVida() {
+	if (vidas > 0) {
+		vidas--;
+		reinicia();
+	}
+	else {
+		//Has perdido poner fin y vovler al la pantalla 1
+	}
+}

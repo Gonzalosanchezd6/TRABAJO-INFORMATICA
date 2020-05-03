@@ -80,5 +80,6 @@ EnemigoBolas* ListaBolas::operator [](int i) {
 		i = 0;
 		return lista[i];
 	}
+	return lista[i];
 }
 
