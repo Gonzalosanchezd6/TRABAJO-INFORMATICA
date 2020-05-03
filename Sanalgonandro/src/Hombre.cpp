@@ -6,7 +6,10 @@ Hombre::Hombre() {
 	altura = 0.8f;
 	aceleracion.y = -9.8;
 	llaves = 0;
-	vidas = 3;
+	for (int i = 0; i < 3; i++) {
+		Vida* aux = new Vida(-20+i*3,40);
+		vidas.Agregar(aux);
+	}
 }
 
 Hombre::~Hombre() {
@@ -28,7 +31,8 @@ void Hombre::Dibuja() {
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glutSolidSphere(altura, 20, 20);
 	glPopMatrix();
-	///vidas
+	vidas.Dibuja();
+	/*///vidas
 	glTranslatef(-30, 45, 0);
 	int i;
 	for (i = 0; i < vidas; i++) {
@@ -47,12 +51,13 @@ void Hombre::Dibuja() {
 		glTranslatef(3, 0, 0);
 	}
 
-	glTranslatef(30-(3+1.3)*(float)i, -45, 0);
+	glTranslatef(30-(3+1.3)*(float)i, -45, 0);*/
 }
 
 void Hombre::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f*t*t);
 	velocidad = velocidad + aceleracion * t;
+	vidas.Mueve(t);
 }
 
 void Hombre::SetVel(float vx, float vy)
@@ -142,17 +147,15 @@ void Hombre::reinicia() {
 }
 
 void Hombre::aumentarVida() {
-	if (vidas < MAX_VIDAS) {
-		vidas++;
-	}
+		Vida* aux = new Vida(-20 + vidas.nVidas() * 3, 40);
+		vidas.Agregar(aux);
 }
 
 void Hombre::restarVida() {
-	if (vidas > 0) {
-		vidas--;
+	
+	if (vidas.nVidas() > 0) {
+		vidas.Eliminar(vidas.nVidas()-1);
 		reinicia();
 	}
-	else {
-		//Has perdido poner fin y vovler al la pantalla 1
-	}
+
 }

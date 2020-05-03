@@ -4,6 +4,7 @@
 #include "EnemigoBolas.h"
 #include "Llave.h"
 #include "Puerta.h"
+#include"ListaVidas.h"
 
 #define MAX_VIDAS 5
 
@@ -17,7 +18,8 @@ private:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	int llaves;
-	int vidas;
+	ListaVidas vidas;
+	
 	
 
 public:

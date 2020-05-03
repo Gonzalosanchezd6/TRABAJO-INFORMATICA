@@ -173,3 +173,16 @@ bool Interaccion::colision(EnemigoBolas e, Hombre h) {
 		return true;
 	return false;
 }
+
+
+bool Interaccion::colision(Vida v, Hombre h) {
+	Vector2D pos = h.GetPos();
+	pos.y += h.GetAltura() / 2.0f;
+
+	float distancia = (v.posicion - pos).modulo();
+	if (distancia < 1) {
+		return true;
+	}
+	return false;
+
+}

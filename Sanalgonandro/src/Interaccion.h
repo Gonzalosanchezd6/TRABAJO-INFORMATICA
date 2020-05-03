@@ -6,6 +6,7 @@
 #include "Llave.h"
 #include "EnemigoBolas.h"
 #include "Puerta.h"
+#include"Vida.h"
 
 class Interaccion {
 public:
@@ -20,7 +21,9 @@ public:
 	static bool Choque(Hombre h, Enemigo1 e);
 	static bool Choque(Hombre h, Llave l);
 	static bool Choque(Hombre h, EnemigoBolas b);
+
 	//static bool Choque(Hombre h, Puerta p);
 
 	static bool colision(EnemigoBolas e, Hombre h);
+	static bool colision(Vida v, Hombre h);
 };
