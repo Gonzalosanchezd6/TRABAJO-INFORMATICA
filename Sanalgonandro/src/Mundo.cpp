@@ -1,6 +1,9 @@
 #include "Mundo.h"
 #include <math.h>
+#include <iostream>
 #include "glut.h"
+
+using namespace std;
 
 Mundo::Mundo() {
 }
@@ -20,6 +23,7 @@ void Mundo::RotarOjo()
 
 void Mundo::Dibuja()
 {
+	//void DibujarTexto(const char *texto, int longitud, int x, int y);
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
@@ -31,6 +35,10 @@ void Mundo::Dibuja()
 
 	bolas.Dibuja();
 	Bolas.dibuja();
+	std::string texto;
+	//texto.size = 20;
+	texto = "maldita gordeyuyu";
+	DibujarTexto(texto.data(), texto.size(), 200, 300);
 
 	//llave.Dibuja();
 	//caja.Dibuja();
@@ -197,4 +205,24 @@ void Mundo::teclaEspecial(unsigned char key)
 		Bolas.agregar(new EnemigoBolas(0.5f, 25, 37));
 		break;
 	}
+}
+void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {
+	glMatrixMode(GL_PROJECTION);
+	double* matla = new double[16];
+	glGetDoublev(GL_PROJECTION_MATRIX, matla);
+	glLoadIdentity();
+	glOrtho(0, 800, 0, 600, -5, 5);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glPushMatrix();
+	glLoadIdentity();
+	glRasterPos2i(x, y);
+	for (int i = 0; i < longitud; i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, (int)texto[i]);
+
+	}
+	glPopMatrix();
+	glMatrixMode(GL_PROJECTION);
+	glLoadMatrixd(matla);
+	glMatrixMode(GL_MODELVIEW);
 }

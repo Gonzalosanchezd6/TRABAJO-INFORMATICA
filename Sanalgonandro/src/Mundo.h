@@ -14,6 +14,7 @@
 #include "EnemigoBolas.h"
 #include "ListaBolas.h"
 
+
 class Mundo
 {
 private: //se puede poner como private sin problema
@@ -33,7 +34,7 @@ private: //se puede poner como private sin problema
 	ListaPremios premios;
 	Puerta puerta;
 	ListaBolas Bolas;
-
+	
 public:
 	Mundo();
 	~Mundo();
@@ -44,4 +45,6 @@ public:
 	void Dibuja();
 	void Tecla(unsigned char key);
 	void teclaEspecial(unsigned char key);
+
+	void DibujarTexto(const char* texto, int longitud, int x, int y);
 };
