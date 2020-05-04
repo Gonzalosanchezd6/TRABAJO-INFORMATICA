@@ -75,7 +75,7 @@
     <ClCompile Include="src\TextoInic.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="ListaDisparos.cpp">
+    <ClCompile Include="src\ListaDisparos.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,7 +137,7 @@
     <ClInclude Include="src\TextoInic.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ListaDisparos.h">
+    <ClInclude Include="src\ListaDisparos.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

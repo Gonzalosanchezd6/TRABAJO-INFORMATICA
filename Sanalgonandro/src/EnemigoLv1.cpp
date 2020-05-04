@@ -4,6 +4,7 @@
 Enemigo1::Enemigo1() {
 	tamaño = 1.5;
 	velocidad.x = -15.0;
+
 }
 Enemigo1::~Enemigo1() {
 
@@ -15,6 +16,7 @@ void Enemigo1::SetPos(float ix, float iy) {
 }
 
 void Enemigo1::Dibuja() {
+	
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(0.0f, 0.0f, 115);

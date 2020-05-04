@@ -4,7 +4,6 @@
 class Enemigo1 {
 private:
 	friend class Interaccion;
-
 	float tamaño;
 	Vector2D posicion;
 	Vector2D velocidad;
@@ -17,5 +16,4 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
-
 };

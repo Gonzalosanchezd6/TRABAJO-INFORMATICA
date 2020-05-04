@@ -1,51 +1,7 @@
 ﻿D:\Programas\Visual_19\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-  ListaDisparos.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\ListaDisparos.cpp(56,6): error C2665: 'Interaccion::colision': ninguna de las 2 sobrecargas pudo convertir todos los tipos de argumento
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Interaccion.h(28,14): message : puede ser 'bool Interaccion::colision(Vida,Hombre)'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Interaccion.h(27,14): message : o       'bool Interaccion::colision(EnemigoBolas,Hombre)'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\ListaDisparos.cpp(56,6): message : al hacer coincidir la lista de argumentos '(Disparo, Pared)'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\ListaDisparos.cpp(66,6): error C2665: 'Interaccion::colision': ninguna de las 2 sobrecargas pudo convertir todos los tipos de argumento
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Interaccion.h(28,14): message : puede ser 'bool Interaccion::colision(Vida,Hombre)'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Interaccion.h(27,14): message : o       'bool Interaccion::colision(EnemigoBolas,Hombre)'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\ListaDisparos.cpp(66,6): message : al hacer coincidir la lista de argumentos '(Disparo, Enemigo1)'
-  Bonus.cpp
-  Caja.cpp
-  Disparo.cpp
-  EnemigoBolas.cpp
   EnemigoLv1.cpp
-  Esfera.cpp
-  Hombre.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Interaccion.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  ListaBolas.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  ListaPlataformas.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  ListaPremios.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  ListaVidas.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Llave.cpp
-  Mundo.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
   Pang.cpp
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Pared.cpp
-  Puerta.cpp
-  TextoInic.cpp
-  Vector2D.cpp
   Generando código...
-  Compilando...
-  Vida.cpp
-  Generando código...
+  Pang.vcxproj -> D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe

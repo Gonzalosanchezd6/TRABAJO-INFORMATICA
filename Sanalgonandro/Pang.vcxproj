@@ -84,7 +84,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ListaDisparos.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
@@ -94,6 +93,7 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaBolas.cpp" />
+    <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaPremios.cpp" />
     <ClCompile Include="src\ListaVidas.cpp" />
@@ -107,7 +107,6 @@
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ListaDisparos.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
@@ -117,6 +116,7 @@
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaBolas.h" />
+    <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaPremios.h" />
     <ClInclude Include="src\ListaVidas.h" />

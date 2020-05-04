@@ -32,7 +32,7 @@ void Mundo::Dibuja()
 	enemigo1.Dibuja();
 	premios.Dibuja();
 	puerta.Dibuja();
-
+	disparos.dibuja();
 	bolas.Dibuja();
 	Bolas.dibuja();
 	std::string texto;
@@ -56,6 +56,7 @@ void Mundo::Mueve()
 	hombre.Mueve(0.025f);
 	enemigo1.Mueve(0.0025f);
 	bolas.Mueve(0.0025f);
+	disparos.mueve(0.0025f);
 	if (hombre.Muerte(hombre, enemigo1)) {
 		hombre.restarVida();
 		x_ojo = 0;
@@ -100,7 +101,12 @@ void Mundo::Mueve()
 		Bolas.eliminar(aux_);
 	}
 
-	
+
+	Disparo* var = disparos.colision(enemigo1);
+	if (var != 0) {
+		disparos.Eliminar(var);
+		
+	}
 
 	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
@@ -172,7 +178,18 @@ void Mundo::Inicializa()
 }
 
 void Mundo::Tecla(unsigned char key) {
-	
+	switch (key) {
+	case ' ':
+	{
+
+		Vector2D pos = hombre.GetPos();
+		Disparo* d = new Disparo(pos);
+		disparos.agregar(d);
+		break;
+	}
+
+
+	}
 }
 
 void Mundo::teclaEspecial(unsigned char key)
