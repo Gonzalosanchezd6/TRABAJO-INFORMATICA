@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ListaDisparos.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
@@ -106,6 +107,7 @@
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListaDisparos.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
