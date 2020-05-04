@@ -31,7 +31,7 @@ private: //se puede poner como private sin problema
 	Bonus bonus;
 	ListaPlataformas plataformas;
 	//Enemigo1 enemigo1;
-	EnemigoBolas bolas;
+	//EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
 	ListaBolas Bolas;

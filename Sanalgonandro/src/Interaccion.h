@@ -25,7 +25,6 @@ public:
 
 	//static bool Choque(Hombre h, Puerta p);
 
-	static bool colision(EnemigoBolas e, Hombre h);
 	static bool colision(Vida v, Hombre h);
 	static bool colision(Disparo d, Pared p);
 	static bool colision(Disparo d, Enemigo1 e);

@@ -165,14 +165,6 @@ bool Interaccion::Choque(Hombre h, EnemigoBolas b) {
 	}
 }
 
-bool Interaccion::colision(EnemigoBolas e, Hombre h) {
-	Vector2D pos = h.GetPos(); //la posicion de la base del hombre
-	pos.y += h.GetAltura() / 2.0f; //posicion del centro
-	float distancia = (e.posicion - pos).modulo();
-	if (distancia < e.radio)
-		return true;
-	return false;
-}
 
 
 bool Interaccion::colision(Vida v, Hombre h) {

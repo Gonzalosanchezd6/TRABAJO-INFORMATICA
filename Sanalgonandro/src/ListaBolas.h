@@ -20,7 +20,7 @@ public:
 	void eliminar(int index);
 	void eliminar(EnemigoBolas* e);
 	int getNumero() { return numero; }
-	EnemigoBolas* choque(Hombre h);
+	EnemigoBolas* choque(Hombre& h);
 	EnemigoBolas* ListaBolas::operator [](int i);
 
 	

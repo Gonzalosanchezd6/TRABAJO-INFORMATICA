@@ -33,7 +33,7 @@ void Mundo::Dibuja()
 	premios.Dibuja();
 	puerta.Dibuja();
 	disparos.dibuja();
-	bolas.Dibuja();
+	//bolas.Dibuja();
 	Bolas.dibuja();
 	std::string texto;
 	//texto.size = 20;
@@ -55,7 +55,7 @@ void Mundo::Mueve(){
 	hombre.Mueve(0.025f);
 	//enemigo1.Mueve(0.0025f);
 	enemigos.mueve(0.0025f);
-	bolas.Mueve(0.0025f);
+	//bolas.Mueve(0.0025f);
 	disparos.mueve(0.0025f);
 	////////////////**************************************************************************************************
 
@@ -75,15 +75,24 @@ void Mundo::Mueve(){
 		}
 	}
 
+	
+	for (int i = 0; i < Bolas.getNumero(); i++) {
+		EnemigoBolas* auxil = Bolas[i];
+		if (hombre.Muerte(hombre, *auxil)) {
+			hombre.restarVida();
+			x_ojo = 0;
+		}
+	}
+
+
+
 		
 	
 
-	if (hombre.Muerte(hombre, bolas)) {
+	/*if (hombre.Muerte(hombre, Bolas)) {
 		hombre.restarVida();
 		x_ojo = 0;
-
-
-	}
+	}*/
 
 	Pared* aux = plataformas.Colision(hombre);
 	if (aux != 0) {
@@ -115,6 +124,7 @@ void Mundo::Mueve(){
 	if (aux != 0) { //si alguna esfera ha chocado 
 		Bolas.eliminar(aux_);
 	}
+	
 
 
 	
@@ -152,11 +162,11 @@ void Mundo::Inicializa()
 	hombre.SetPos(-10, 7);
 	
 	Enemigo1* enemigo1 = new Enemigo1(11.0f, 15.75f);
-	Enemigo1* enemigo2= new Enemigo1(11.0f, 3.0f,15.05);
+	Enemigo1* enemigo2= new Enemigo1(11.0f, 1.75f,15.05);
 	enemigos.agregar(enemigo1);
 	enemigos.agregar(enemigo2);
 	
-	bolas.SetPos(-10, 37);
+	//bolas.SetPos(-10, 37);
 
 	Llave* llave = new Llave();
 	llave->SetLlave(0.25, 0.5);
@@ -231,12 +241,12 @@ void Mundo::teclaEspecial(unsigned char key)
 	}
 
 	switch (key) {
-	case GLUT_KEY_LEFT:
-		Bolas.agregar(new EnemigoBolas(0.5f, -10, 37));
+	case GLUT_KEY_DOWN:
+		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
 		break;
-	case GLUT_KEY_RIGHT:
-		Bolas.agregar(new EnemigoBolas(0.5f, -10, 37));
-		break;
+	/*case GLUT_KEY_RIGHT:
+		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
+		break;*/
 	}
 }
 void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {

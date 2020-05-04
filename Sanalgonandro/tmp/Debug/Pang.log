@@ -2,11 +2,4 @@
   ListaBolas.cpp
 C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Mundo.cpp
-C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Pang.cpp
-C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-C:\Users\Gonzo\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Generando código...
   Pang.vcxproj -> C:\Users\Gonzo\Source\Repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe
