@@ -6,6 +6,14 @@ Enemigo1::Enemigo1() {
 	velocidad.x = -15.0;
 
 }
+
+Enemigo1::Enemigo1(float x, float y) {
+	tamaño = 1.5;
+	velocidad.x = -15.0;
+	posicion.x = x;
+	posicion.y = y;
+}
+
 Enemigo1::~Enemigo1() {
 
 }
@@ -13,6 +21,7 @@ Enemigo1::~Enemigo1() {
 void Enemigo1::SetPos(float ix, float iy) {
 	posicion.x = ix;
 	posicion.y = iy;
+
 }
 
 void Enemigo1::Dibuja() {

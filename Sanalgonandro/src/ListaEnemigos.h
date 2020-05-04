@@ -16,8 +16,9 @@ public:
 	void Eliminar(int index);
 	void mueve(float t);
 	void dibuja();
+	int num() { return numero; }
 	Enemigo1* Choque(Hombre h);
-	
+	Enemigo1* ListaEnemigos::operator[](int i);
 
 };
 

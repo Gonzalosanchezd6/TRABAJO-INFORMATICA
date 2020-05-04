@@ -81,3 +81,12 @@ Enemigo1* ListaEnemigos::Choque(Hombre h) {
 	}
 	return 0;
 }
+
+Enemigo1* ListaEnemigos::operator[](int i) {
+
+	if (i >= numero)//si me paso, devuelvo la ultima
+		i = numero - 1;
+	if (i < 0) //si el indice es negativo, devuelvo la primera
+		i = 0;
+	return lista[i];
+}

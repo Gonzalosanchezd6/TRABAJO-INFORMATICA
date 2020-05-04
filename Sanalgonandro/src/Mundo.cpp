@@ -29,7 +29,8 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	plataformas.Dibuja();
-	enemigo1.Dibuja();
+	//enemigo1.Dibuja();
+	enemigos.dibuja();
 	premios.Dibuja();
 	puerta.Dibuja();
 	disparos.dibuja();
@@ -51,17 +52,32 @@ void Mundo::Dibuja()
 	bonus.Dibuja();*/
 }
 
-void Mundo::Mueve()
-{
+void Mundo::Mueve(){
 	hombre.Mueve(0.025f);
-	enemigo1.Mueve(0.0025f);
+	//enemigo1.Mueve(0.0025f);
+	enemigos.mueve(0.0025f);
 	bolas.Mueve(0.0025f);
 	disparos.mueve(0.0025f);
-	if (hombre.Muerte(hombre, enemigo1)) {
-		hombre.restarVida();
-		x_ojo = 0;
+	////////////////**************************************************************************************************
 
+	
+	for (int i = 0; i < enemigos.num(); i++) {
+		Enemigo1 *auxi = enemigos[0];
+		if (hombre.Muerte(hombre, *auxi)) {
+			hombre.restarVida();
+			x_ojo = 0;
+
+		}
+	
+		Disparo* var = disparos.colision(*auxi);
+		if (var != 0) {
+			disparos.Eliminar(var);
+			enemigos.Eliminar(auxi);
+		}
 	}
+
+		
+	
 
 	if (hombre.Muerte(hombre, bolas)) {
 		hombre.restarVida();
@@ -101,13 +117,6 @@ void Mundo::Mueve()
 		Bolas.eliminar(aux_);
 	}
 
-
-	Disparo* var = disparos.colision(enemigo1);
-	if (var != 0) {
-		disparos.Eliminar(var);
-		
-	}
-
 	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
@@ -139,7 +148,10 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
-	enemigo1.SetPos(11, 15.75);
+
+	Enemigo1* enemigo1 = new Enemigo1(11.0f,15.75f);
+	enemigos.agregar(enemigo1);
+
 	bolas.SetPos(-10, 37);
 
 	Llave* llave = new Llave();

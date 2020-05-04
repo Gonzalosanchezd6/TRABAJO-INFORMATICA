@@ -14,6 +14,7 @@
 #include "EnemigoBolas.h"
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
+#include"ListaEnemigos.h"
 
 class Mundo
 {
@@ -29,13 +30,13 @@ private: //se puede poner como private sin problema
 	Caja caja;
 	Bonus bonus;
 	ListaPlataformas plataformas;
-	Enemigo1 enemigo1;
+	//Enemigo1 enemigo1;
 	EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
 	ListaBolas Bolas;
 	ListaDisparos disparos;
-	
+	ListaEnemigos enemigos;
 public:
 	Mundo();
 	~Mundo();
