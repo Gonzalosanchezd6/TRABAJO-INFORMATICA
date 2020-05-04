@@ -18,7 +18,7 @@ EnemigoBolas::EnemigoBolas(float rad, float x, float y, float vx, float vy) {
 	posicion.y = y;
 	velocidad.x = vx;
 	velocidad.y = vy;
-	aceleracion.y = -50.0f;
+	aceleracion.y = -9.8f;
 }
 
 void EnemigoBolas::SetPos(float ix, float iy) {
@@ -37,13 +37,6 @@ void EnemigoBolas::Dibuja() {
 void EnemigoBolas::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-	/*if (posicion.x <= -20) {
-		setVel(3, 0);
-	}
-	if (posicion.x >= 25) {
-		setVel(-3, 0);
-	}*/
-
 
 }
 

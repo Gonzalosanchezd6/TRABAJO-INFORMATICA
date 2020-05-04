@@ -22,7 +22,7 @@ public:
 	int getNumero() { return numero; }
 	EnemigoBolas* choque(Hombre& h);
 	EnemigoBolas* ListaBolas::operator [](int i);
-
+	EnemigoBolas* choque(ListaPlataformas& p);
 	
 };
 

@@ -72,6 +72,7 @@ EnemigoBolas* ListaBolas::choque(Hombre& h) {
 	return 0; //no hay colisión 
 }
 
+
 EnemigoBolas* ListaBolas::operator [](int i) {
 	if (i >= numero) { //si me paso, devuelvo la ultima 
 		i = numero - 1;
@@ -81,5 +82,16 @@ EnemigoBolas* ListaBolas::operator [](int i) {
 		return lista[i];
 	}
 	return lista[i];
+}
+
+EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
+	for (int i = 0; i < numero; i++) {
+		for (int j = 0; j < p.getNum(); j++) {
+			if (Interaccion::Colision(*p[j] , *lista[i])) {
+				return lista[i];
+			}
+		}
+	}
+	return 0; //no hay colisión 
 }
 

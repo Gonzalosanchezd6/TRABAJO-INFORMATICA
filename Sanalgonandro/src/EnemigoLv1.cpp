@@ -3,7 +3,6 @@
 
 Enemigo1::Enemigo1() {
 	tamaño = 1.5;
-	velocidad.x = -15.0;
 }
 
 Enemigo1::Enemigo1(float x, float y,float vx, float vy) {

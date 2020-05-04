@@ -33,39 +33,26 @@ void Mundo::Dibuja()
 	premios.Dibuja();
 	puerta.Dibuja();
 	disparos.dibuja();
-	//bolas.Dibuja();
 	Bolas.dibuja();
 	std::string texto;
 	//texto.size = 20;
 	texto = "maldita gordeyuyu";
 	DibujarTexto(texto.data(), texto.size(), 200, 300);
-
-	//llave.Dibuja();
-	//caja.Dibuja();
-	//bloque.Dibuja();
-	/*esfera.Dibuja();
-	esfera2.Dibuja();
-	caja.Dibuja();
-	disparo.Dibuja();
-	plataforma.Dibuja();
-	bonus.Dibuja();*/
 }
 
 void Mundo::Mueve(){
 	hombre.Mueve(0.025f);
-	//enemigo1.Mueve(0.0025f);
 	enemigos.mueve(0.0025f);
-	//bolas.Mueve(0.0025f);
 	disparos.mueve(0.0025f);
-	////////////////**************************************************************************************************
+	Bolas.mueve(0.025f);
 
+	//////////////////////////////////////////////////////////////////////////////////
 	
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
 			hombre.restarVida();
 			x_ojo = 0;
-
 		}
 	
 		Disparo* var = disparos.colision(*auxi);
@@ -77,22 +64,21 @@ void Mundo::Mueve(){
 
 	
 	for (int i = 0; i < Bolas.getNumero(); i++) {
-		EnemigoBolas* auxil = Bolas[i];
-		if (hombre.Muerte(hombre, *auxil)) {
-			hombre.restarVida();
-			x_ojo = 0;
-		}
+		EnemigoBolas* auxx = Bolas.choque(hombre);
+		if (auxx != 0) { //si alguna esfera ha chocado 
+			if (hombre.Muerte(hombre, *auxx)) {
+				hombre.restarVida();
+				x_ojo = 0;
+			}
+			Bolas.eliminar(auxx);
+		}	
 	}
 
+	EnemigoBolas* auxiliar = Bolas.choque(plataformas);
+	if (auxiliar != 0) {
+		Bolas.eliminar(auxiliar);
+	}
 
-
-		
-	
-
-	/*if (hombre.Muerte(hombre, Bolas)) {
-		hombre.restarVida();
-		x_ojo = 0;
-	}*/
 
 	Pared* aux = plataformas.Colision(hombre);
 	if (aux != 0) {
@@ -119,28 +105,6 @@ void Mundo::Mueve(){
 		
 	}*/
 
-	Bolas.mueve(0.025f);
-	EnemigoBolas *aux_ = Bolas.choque(hombre);
-	if (aux != 0) { //si alguna esfera ha chocado 
-		Bolas.eliminar(aux_);
-	}
-	
-
-
-	
-
-	//Interaccion::rebote(hombre, caja);
-	/*esfera.Mueve(0.025f);
-	esfera2.Mueve(0.025f);
-	bonus.Mueve(0.025f);
-	disparo.Mueve(0.025f);
-	Interaccion::rebote(esfera, caja);
-	Interaccion::rebote(esfera, plataforma);
-	Interaccion::rebote(esfera2, caja);
-	Interaccion::rebote(esfera2, plataforma);
-	Interaccion::rebote(esfera, esfera2);*/
-	
-
 }
 
 void Mundo::Inicializa()
@@ -148,32 +112,19 @@ void Mundo::Inicializa()
 	x_ojo = 0;
 	y_ojo = 21;
 	z_ojo = 70;
-	/*esfera.SetPos(2, 4);
-	esfera.SetRadio(1.5f);
-	esfera.SetColor(0, 0, 255);
-	esfera.SetVel(5, 15);
-	esfera2.SetColor(200, 60, 10);
-	esfera2.SetRadio(2);
-	esfera2.SetPos(-2, 4);
-	esfera2.SetVel(-5, 15);
-	bonus.SetPos(5.0f, 5.0f);
-	disparo.SetPos(-5.0, 0.0);
-	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
+	
 	hombre.SetPos(-10, 7);
 	
-	Enemigo1* enemigo1 = new Enemigo1(11.0f, 15.75f);
+	Enemigo1* enemigo1 = new Enemigo1(11.0f, 15.75f, -15.0f);
 	Enemigo1* enemigo2= new Enemigo1(11.0f, 1.75f,15.05);
 	enemigos.agregar(enemigo1);
 	enemigos.agregar(enemigo2);
 	
-	//bolas.SetPos(-10, 37);
 
 	Llave* llave = new Llave();
 	llave->SetLlave(0.25, 0.5);
 	llave->SetPos(25, 22);
 	premios.agregar(llave);
-	//llave.SetLlave(0.25, 0.5);
-	//llave.SetPos(25, 21);
 
 	Pared* inferior1 = new Pared(-22, 1, 2, 1);
 	inferior1->SetColor(0, 200, 0);
@@ -198,23 +149,17 @@ void Mundo::Inicializa()
 
 	puerta.SetColor(130, 27, 5);
 	puerta.SetPos(20, 6, 23, 0);
-
-
-	
 }
 
 void Mundo::Tecla(unsigned char key) {
 	switch (key) {
-	case ' ':
-	{
+	case ' ': {
 
 		Vector2D pos = hombre.GetPos();
 		Disparo* d = new Disparo(pos);
 		disparos.agregar(d);
 		break;
 	}
-
-
 	}
 }
 
@@ -229,25 +174,17 @@ void Mundo::teclaEspecial(unsigned char key)
 	case GLUT_KEY_RIGHT:
 		hombre.SetPos((hombre.GetPosX()) + 0.3, hombre.GetPosY());
 		x_ojo += 0.3;
+		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
 		break;
 	case GLUT_KEY_UP:
 
 		if (salto == 1) {
 			hombre.SetVel(0, 10.0f);
 			hombre.SetAc(0, -9.8f);
-			//y_ojo += 0.2;
 		}
 		break;
 	}
 
-	switch (key) {
-	case GLUT_KEY_DOWN:
-		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
-		break;
-	/*case GLUT_KEY_RIGHT:
-		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
-		break;*/
-	}
 }
 void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {
 	glMatrixMode(GL_PROJECTION);
