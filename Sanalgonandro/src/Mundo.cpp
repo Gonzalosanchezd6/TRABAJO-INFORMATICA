@@ -111,10 +111,13 @@ void Mundo::Mueve(){
 	}*/
 
 	Bolas.mueve(0.025f);
-	EnemigoBolas *aux_ = Bolas.colision(hombre);
+	EnemigoBolas *aux_ = Bolas.choque(hombre);
 	if (aux != 0) { //si alguna esfera ha chocado 
 		Bolas.eliminar(aux_);
 	}
+
+
+	
 
 	//Interaccion::rebote(hombre, caja);
 	/*esfera.Mueve(0.025f);
@@ -229,10 +232,10 @@ void Mundo::teclaEspecial(unsigned char key)
 
 	switch (key) {
 	case GLUT_KEY_LEFT:
-		Bolas.agregar(new EnemigoBolas(0.5f, 25, 37));
+		Bolas.agregar(new EnemigoBolas(0.5f, -10, 37));
 		break;
 	case GLUT_KEY_RIGHT:
-		Bolas.agregar(new EnemigoBolas(0.5f, 25, 37));
+		Bolas.agregar(new EnemigoBolas(0.5f, -10, 37));
 		break;
 	}
 }

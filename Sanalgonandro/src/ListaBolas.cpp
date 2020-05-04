@@ -63,9 +63,9 @@ void ListaBolas::eliminar(EnemigoBolas* e) {
 	}
 }
 
-EnemigoBolas* ListaBolas::colision(Hombre &h) {
+EnemigoBolas* ListaBolas::choque(Hombre h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::colision(*(lista[i]), h)) {
+		if (Interaccion::Choque(h, *lista[i])) {
 			return lista[i];
 		}
 	}

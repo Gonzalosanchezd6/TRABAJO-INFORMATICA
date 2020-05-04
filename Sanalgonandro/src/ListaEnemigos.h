@@ -2,6 +2,7 @@
 #include"EnemigoLv1.h"
 #include"Hombre.h"
 #define MAX_ENEMIG 10
+
 class ListaEnemigos{
 	Enemigo1* lista[MAX_ENEMIG];
 	int numero;

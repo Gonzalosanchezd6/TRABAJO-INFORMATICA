@@ -16,15 +16,13 @@ public:
 	bool agregar(EnemigoBolas* e);
 	void dibuja();
 	void mueve(float t);
-
-
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(EnemigoBolas* e);
-
-	EnemigoBolas* colision(Hombre& h);
-	EnemigoBolas* operator [](int i);
-
 	int getNumero() { return numero; }
+	EnemigoBolas* choque(Hombre h);
+	EnemigoBolas* ListaBolas::operator [](int i);
+
+	
 };
 

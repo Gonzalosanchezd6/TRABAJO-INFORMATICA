@@ -37,12 +37,12 @@ void EnemigoBolas::Dibuja() {
 void EnemigoBolas::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-	if (posicion.x <= -20) {
+	/*if (posicion.x <= -20) {
 		setVel(3, 0);
 	}
 	if (posicion.x >= 25) {
 		setVel(-3, 0);
-	}
+	}*/
 
 
 }
