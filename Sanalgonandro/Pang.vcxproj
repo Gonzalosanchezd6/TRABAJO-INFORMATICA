@@ -94,6 +94,7 @@
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaBolas.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
+    <ClCompile Include="src\ListaEnemigos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaPremios.cpp" />
     <ClCompile Include="src\ListaVidas.cpp" />
@@ -117,6 +118,7 @@
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaBolas.h" />
     <ClInclude Include="src\ListaDisparos.h" />
+    <ClInclude Include="src\ListaEnemigos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaPremios.h" />
     <ClInclude Include="src\ListaVidas.h" />

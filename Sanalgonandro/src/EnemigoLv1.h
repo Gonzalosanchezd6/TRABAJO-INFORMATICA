@@ -16,4 +16,5 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
+	Vector2D GetPos() { return posicion; }
 };
