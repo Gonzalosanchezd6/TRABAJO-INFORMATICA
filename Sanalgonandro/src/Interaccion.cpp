@@ -191,7 +191,7 @@ bool Interaccion::colision(Vida v, Hombre h) {
 bool Interaccion::colision(Disparo d, Pared p) {
 	Vector2D dir;
 	float dif = p.distancia(d.GetPos(), &dir) - d.GetRadio();
-	if (dif <= 0.0f) {
+	if (dif <= 0.1f) {
 		return true;
 	}
 	return false;
@@ -202,7 +202,7 @@ bool Interaccion::colision(Disparo d, Enemigo1 e) {
 	Vector2D dif = d.GetPos() - e.posicion;
 	float dis = dif.modulo();
 	float dentro = dis - (e.tamaño / 2);
-	if (dentro < 0.0f) {
+	if (dentro < 0.1f) {
 		return true;
 	}
 	else {

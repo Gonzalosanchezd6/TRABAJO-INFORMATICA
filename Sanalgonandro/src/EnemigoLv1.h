@@ -11,7 +11,7 @@ private:
 
 public:
 	Enemigo1();
-	Enemigo1(float x, float y);
+	Enemigo1(float x, float y, float vx=-15.0f, float vy=0.0f);
 	virtual ~Enemigo1();
 	void SetPos(float ix, float iy);
 	void Dibuja();

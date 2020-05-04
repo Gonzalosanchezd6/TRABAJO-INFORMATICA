@@ -4,12 +4,12 @@
 Enemigo1::Enemigo1() {
 	tamaño = 1.5;
 	velocidad.x = -15.0;
-
 }
 
-Enemigo1::Enemigo1(float x, float y) {
+Enemigo1::Enemigo1(float x, float y,float vx, float vy) {
 	tamaño = 1.5;
-	velocidad.x = -15.0;
+	velocidad.x = vx;
+	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
 }

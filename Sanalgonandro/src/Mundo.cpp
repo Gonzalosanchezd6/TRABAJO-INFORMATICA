@@ -29,7 +29,6 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	plataformas.Dibuja();
-	//enemigo1.Dibuja();
 	enemigos.dibuja();
 	premios.Dibuja();
 	puerta.Dibuja();
@@ -62,7 +61,7 @@ void Mundo::Mueve(){
 
 	
 	for (int i = 0; i < enemigos.num(); i++) {
-		Enemigo1 *auxi = enemigos[0];
+		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
 			hombre.restarVida();
 			x_ojo = 0;
@@ -148,10 +147,12 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0, 0.0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);*/
 	hombre.SetPos(-10, 7);
-
-	Enemigo1* enemigo1 = new Enemigo1(11.0f,15.75f);
+	
+	Enemigo1* enemigo1 = new Enemigo1(11.0f, 15.75f);
+	Enemigo1* enemigo2= new Enemigo1(11.0f, 3.0f,15.05);
 	enemigos.agregar(enemigo1);
-
+	enemigos.agregar(enemigo2);
+	
 	bolas.SetPos(-10, 37);
 
 	Llave* llave = new Llave();
