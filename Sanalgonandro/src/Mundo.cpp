@@ -81,15 +81,15 @@ void Mundo::Mueve(){
 
 
 	Pared* aux = plataformas.Colision(hombre);
-	if (aux != 0 && hombre.GetVel().y <= 0) {
+	if (aux != 0 && (hombre.GetPos().y - (hombre.GetAltura()-0.25)) >= aux->GetPos().y) {
 		salto = 1;
 		hombre.SetAc(0,0);
 		hombre.SetVel(0,0);
 	}
-	else if (aux != 0 && hombre.GetVel().y >= 0) {
+	else if (aux != 0 && (hombre.GetPos().y - (hombre.GetAltura()-0.25)) <= aux->GetPos().y) {
 		salto = 0;
 		hombre.SetAc(0, 0);
-		hombre.SetVel(0, -6.0f);
+		hombre.SetVel(0, -5.0f);
 	}
 	else if (aux == 0) {
 		salto = 0;

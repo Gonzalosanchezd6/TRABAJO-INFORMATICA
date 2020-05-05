@@ -17,4 +17,5 @@ public:
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float lim1x, float lim1y, float lim2x, float lim2y);
 	float distancia(Vector2D punto, Vector2D *direccion = 0);
+	Vector2D GetPos() { return limite1; };
 };
