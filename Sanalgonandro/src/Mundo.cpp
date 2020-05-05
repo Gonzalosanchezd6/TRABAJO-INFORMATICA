@@ -81,10 +81,15 @@ void Mundo::Mueve(){
 
 
 	Pared* aux = plataformas.Colision(hombre);
-	if (aux != 0) {
+	if (aux != 0 && hombre.GetVel().y <= 0) {
 		salto = 1;
 		hombre.SetAc(0,0);
 		hombre.SetVel(0,0);
+	}
+	else if (aux != 0 && hombre.GetVel().y >= 0) {
+		salto = 0;
+		hombre.SetAc(0, 0);
+		hombre.SetVel(0, -6.0f);
 	}
 	else if (aux == 0) {
 		salto = 0;
@@ -168,11 +173,11 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetPos((hombre.GetPosX()) - 0.3 , hombre.GetPosY());
+		hombre.SetPos((hombre.GetPos().x) - 0.3 , hombre.GetPos().y);
 		x_ojo -= 0.3;
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.SetPos((hombre.GetPosX()) + 0.3, hombre.GetPosY());
+		hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 		x_ojo += 0.3;
 		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
 		break;

@@ -72,14 +72,6 @@ void Hombre::SetAc(float ax, float ay) {
 	aceleracion.y = ay;
 }
 
-float Hombre::GetPosX() {
-	return posicion.x;
-}
-
-float Hombre::GetPosY() {
-	return posicion.y;
-}
-
 bool Hombre::Muerte(Hombre h, Enemigo1 e) {
 
 	if (posicion.y < -3 || Interaccion::Choque(h, e)) {

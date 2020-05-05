@@ -37,8 +37,7 @@ public:
 	bool Muerte(Hombre h, EnemigoBolas b);
 	void reinicia();// volver a la posicion inicial 
 	Vector2D GetPos();
-	float GetPosX();
-	float GetPosY();
+	Vector2D GetVel() { return velocidad; };
 	void aumentarVida();
 	void restarVida();
 
