@@ -1,7 +1,9 @@
 #include "Mundo.h"
 #include <math.h>
 #include <iostream>
+#include <cstdlib>
 #include "glut.h"
+
 
 using namespace std;
 
@@ -168,18 +170,25 @@ void Mundo::Tecla(unsigned char key) {
 	}
 }
 
-void Mundo::teclaEspecial(unsigned char key)
-{
+void Mundo::teclaEspecial(unsigned char key) {
+
+	double i = -10 + (rand() % 40);
+
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetPos((hombre.GetPos().x) - 0.3 , hombre.GetPos().y);
+		hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 		x_ojo -= 0.3;
+
+		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
+
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 		x_ojo += 0.3;
-		Bolas.agregar(new EnemigoBolas(0.5f, 0, 37));
+
+		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
+
 		break;
 	case GLUT_KEY_UP:
 
@@ -191,6 +200,7 @@ void Mundo::teclaEspecial(unsigned char key)
 	}
 
 }
+
 void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {
 	glMatrixMode(GL_PROJECTION);
 	double* matla = new double[16];
