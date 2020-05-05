@@ -42,7 +42,9 @@ void Disparo::Dibuja() {
 void Disparo::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-
+	if (posicion.x >= origen.x + 3.5) {
+		origen = origen + velocidad * t + aceleracion * (0.5f * t * t);
+	}
 }
 
 void Disparo::SetPos(float ix, float iy) {
