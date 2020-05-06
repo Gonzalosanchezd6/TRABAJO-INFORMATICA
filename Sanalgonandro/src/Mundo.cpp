@@ -48,6 +48,13 @@ void Mundo::Mueve(){
 	disparos.mueve(0.0025f);
 	Bolas.mueve(0.025f);
 
+	
+
+	if (Bolas.Crear(0.2f) == true) {
+		double i = -15 + (rand() % 35);
+		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////
 	
 	for (int i = 0; i < enemigos.num(); i++) {
@@ -112,6 +119,7 @@ void Mundo::Mueve(){
 		
 	}*/
 
+	
 }
 
 void Mundo::Inicializa()
@@ -172,7 +180,7 @@ void Mundo::Tecla(unsigned char key) {
 
 void Mundo::teclaEspecial(unsigned char key) {
 
-	double i = -10 + (rand() % 40);
+	
 
 	switch (key)
 	{
@@ -180,14 +188,14 @@ void Mundo::teclaEspecial(unsigned char key) {
 		hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 		x_ojo -= 0.3;
 
-		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
+		
 
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 		x_ojo += 0.3;
 
-		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
+		
 
 		break;
 	case GLUT_KEY_UP:

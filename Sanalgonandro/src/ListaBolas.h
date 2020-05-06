@@ -9,6 +9,7 @@ class ListaBolas {
 private:
 	EnemigoBolas* lista[MAX_BOLAS];
 	int numero;
+	float random = 0;
 public:
 	ListaBolas();
 	virtual ~ListaBolas();
@@ -23,6 +24,8 @@ public:
 	EnemigoBolas* choque(Hombre& h);
 	EnemigoBolas* ListaBolas::operator [](int i);
 	EnemigoBolas* choque(ListaPlataformas& p);
+
+	bool Crear(float t);
 	
 };
 

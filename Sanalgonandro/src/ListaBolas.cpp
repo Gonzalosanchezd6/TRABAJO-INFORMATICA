@@ -1,6 +1,7 @@
 #include "ListaBolas.h"
 #include "EnemigoBolas.h"
 #include "Interaccion.h"
+#include <cstdlib>
 
 ListaBolas::ListaBolas() {
 	numero = 0;
@@ -95,3 +96,24 @@ EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
 	return 0; //no hay colisión 
 }
 
+/*void ListaBolas::Crear(float t) {
+	random += t;
+	
+	if (random == 1) {
+		double i = -15 + (rand() % 35);
+		agregar(new EnemigoBolas(0.5f, i, 37));
+		random = 0;
+	}
+}*/
+
+bool ListaBolas::Crear(float t) {
+	random += t;
+
+	if (random == 1) {
+		random = 0;
+		return true;
+	}
+	else {
+		return false;
+	}
+}

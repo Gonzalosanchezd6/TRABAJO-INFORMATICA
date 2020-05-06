@@ -1,4 +1,5 @@
 #include "EnemigoBolas.h"
+
 #include "glut.h"
 
 EnemigoBolas::EnemigoBolas() {
@@ -27,6 +28,7 @@ void EnemigoBolas::SetPos(float ix, float iy) {
 
 }
 void EnemigoBolas::Dibuja() {
+	
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(100, 100, 100);
@@ -51,3 +53,5 @@ void EnemigoBolas::setVel(float vx, float vy)
 	velocidad.x = vx;
 	velocidad.y = vy;
 }
+
+

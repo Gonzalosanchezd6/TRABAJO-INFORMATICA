@@ -21,6 +21,8 @@ public:
 	void SetAc(float ax, float ay);
 	void setVel(float vx, float vy);
 
+	
+
 };
 
 
