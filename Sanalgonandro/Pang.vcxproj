@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Animado.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\EnemigoBolas.cpp" />
@@ -106,6 +107,7 @@
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Animado.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\EnemigoBolas.h" />
