@@ -1,24 +1,24 @@
 #pragma once
-#include "Vector2D.h"
+//#include "Vector2D.h"
 #include "EnemigoLv1.h"
 #include "EnemigoBolas.h"
 #include "Llave.h"
 #include "Puerta.h"
-#include"ListaVidas.h"
-
+//#include"ListaVidas.h"
+#include"Animado.h"
 #define MAX_VIDAS 5
 
-class Hombre {
+class Hombre:public Animado{
 private:
 	friend class Interaccion;
 	friend class ListaPlataformas;
 
 	float altura;
-	Vector2D posicion;
-	Vector2D velocidad;
-	Vector2D aceleracion;
+	//Vector2D posicion;
+	//Vector2D velocidad;
+	//Vector2D aceleracion;
 	int llaves;
-	ListaVidas vidas;
+	//ListaVidas vidas;
 	
 	
 
@@ -27,17 +27,17 @@ public:
 
 	Hombre();
 	virtual ~Hombre();
-	void SetAltura(float r);
-	void SetPos(float ix, float iy);
+	//void SetAltura(float r);
+	//void SetPos(float ix, float iy);
 	void Dibuja();
 	void Mueve(float t);
-	void SetVel(float vx, float vy);
-	void SetAc(float ax, float ay);
+	//void SetVel(float vx, float vy);
+	//void SetAc(float ax, float ay);
 	bool Muerte(Hombre h, Enemigo1 e);
 	bool Muerte(Hombre h, EnemigoBolas b);
 	void reinicia();// volver a la posicion inicial 
-	Vector2D GetPos();
-	Vector2D GetVel() { return velocidad; };
+	//Vector2D GetPos();
+	//Vector2D GetVel() { return velocidad; };
 	void aumentarVida();
 	void restarVida();
 

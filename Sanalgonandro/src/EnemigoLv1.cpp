@@ -17,11 +17,11 @@ Enemigo1::~Enemigo1() {
 
 }
 
-void Enemigo1::SetPos(float ix, float iy) {
+/*void Enemigo1::SetPos(float ix, float iy) {
 	posicion.x = ix;
 	posicion.y = iy;
 
-}
+}*/
 
 void Enemigo1::Dibuja() {
 	
@@ -33,8 +33,9 @@ void Enemigo1::Dibuja() {
 }
 
 void Enemigo1::Mueve(float t) {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;
+	/*posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+	velocidad = velocidad + aceleracion * t;*/
+	Animado::Mueve(t);
 	if (posicion.x <= 7.75) {
 		SetVel(15.0, 0);
 	}
@@ -43,8 +44,8 @@ void Enemigo1::Mueve(float t) {
 	}
 }
 
-void Enemigo1::SetVel(float vx, float vy)
+/*void Enemigo1::SetVel(float vx, float vy)
 {
 	velocidad.x = vx;
 	velocidad.y = vy;
-}
+}*/

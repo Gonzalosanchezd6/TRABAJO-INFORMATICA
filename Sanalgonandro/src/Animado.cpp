@@ -2,7 +2,7 @@
 #include"Animado.h"
 Animado::Animado(){
 }
-Animado::Animado(int nvida, float x , float y , float vx , float vy ){
+Animado::Animado( float x , float y , int nvida, float vx , float vy ){
 	///TO DO 
 	// constructor tipico
 
