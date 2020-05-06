@@ -48,10 +48,8 @@ void Mundo::Mueve(){
 	disparos.mueve(0.0025f);
 	Bolas.mueve(0.025f);
 
-	
-
-	if (Bolas.Crear(0.2f) == true) {
-		double i = -15 + (rand() % 35);
+	if (Bolas.Crear(0.025f) == true) {
+		double i = -20 + (rand() % 47);
 		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
 	}
 

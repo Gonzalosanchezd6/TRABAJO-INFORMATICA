@@ -109,7 +109,7 @@ EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
 bool ListaBolas::Crear(float t) {
 	random += t;
 
-	if (random == 1) {
+	if (random >= 1) {
 		random = 0;
 		return true;
 	}
