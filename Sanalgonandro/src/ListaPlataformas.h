@@ -4,6 +4,7 @@
 
 #include "Pared.h"
 #include "Hombre.h"
+#include "EnemigoLv1.h"
 #include "ListaBolas.h"
 
 class ListaPlataformas {
@@ -13,6 +14,8 @@ public:
 	bool Agregar(Pared* p);
 	void Dibuja();
 	Pared* Colision(Hombre& h);
+	static bool colision(ListaPlataformas l, Enemigo1 e);
+	//Pared* colision(Enemigo1& e);
 	int getNum() { return numero; }
 	Pared* operator [](int i);
 private:

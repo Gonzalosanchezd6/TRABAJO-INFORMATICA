@@ -48,6 +48,8 @@ void Mundo::Mueve(){
 	disparos.mueve(0.0025f);
 	Bolas.mueve(0.025f);
 
+	enemigos.Choque(plataformas);
+
 	if (Bolas.Crear(0.025f) == true) {
 		double i = -20 + (rand() % 47);
 		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
@@ -139,7 +141,7 @@ void Mundo::Inicializa()
 	llave->SetPos(25, 22);
 	premios.agregar(llave);
 
-	Pared* inferior1 = new Pared(-22, 1, 2, 1);
+	Pared* inferior1 = new Pared(-22, 1.01, 2, 1.01);
 	inferior1->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior1);
 

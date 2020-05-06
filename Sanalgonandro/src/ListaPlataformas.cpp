@@ -44,6 +44,15 @@ Pared* ListaPlataformas::Colision(Hombre& h) {
 	return 0;
 }
 
+bool ListaPlataformas::colision(ListaPlataformas l, Enemigo1 e) {
+	for (int i = 0; i < l.numero; i++) {
+		if (Interaccion::colision(*(l.lista[i]), e)) {
+			return true;
+		}
+	}
+	return false;
+}
+
 Pared* ListaPlataformas::operator [](int i) {
 	if (i >= numero) { //si me paso, devuelvo la ultima 
 		i = numero - 1;

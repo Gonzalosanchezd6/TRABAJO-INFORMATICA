@@ -62,3 +62,12 @@ float Pared::distancia(Vector2D punto, Vector2D *direccion)
 		*direccion = dir.Unitario();
 	return distancia;
 }
+
+Vector2D Pared::GetPos(int num) {
+	if (num == 1) {
+		return limite1;
+	}
+	else {
+		return limite2;
+	}
+}

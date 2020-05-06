@@ -24,4 +24,5 @@ public:
 	static bool colision(Disparo d, Pared p);
 	static bool colision(Disparo d, Enemigo1 e);
 	static bool Colision(Pared p, EnemigoBolas b);
+	static bool colision(Pared p, Enemigo1 e);
 };

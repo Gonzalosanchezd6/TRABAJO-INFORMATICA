@@ -36,16 +36,27 @@ void Enemigo1::Mueve(float t) {
 	/*posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;*/
 	Animado::Mueve(t);
-	if (posicion.x <= 7.75) {
+	/*if (posicion.x <= 7.75) {
 		SetVel(15.0, 0);
 	}
 	if (posicion.x >= 14.25) {
 		SetVel(-15.0, 0);
-	}
+	}*/
 }
 
-/*void Enemigo1::SetVel(float vx, float vy)
-{
+Vector2D Enemigo1::GetPos() {
+	return posicion;
+}
+
+float Enemigo1::GetTam() {
+	return tamaño;
+}
+
+Vector2D Enemigo1::GetVel() {
+	return velocidad;
+}
+
+void Enemigo1::SetVel(float vx, float vy) {
 	velocidad.x = vx;
 	velocidad.y = vy;
-}*/
+}

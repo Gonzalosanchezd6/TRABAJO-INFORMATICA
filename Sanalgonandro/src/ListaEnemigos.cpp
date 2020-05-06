@@ -82,6 +82,17 @@ Enemigo1* ListaEnemigos::Choque(Hombre h) {
 	return 0;
 }
 
+Enemigo1* ListaEnemigos::Choque(ListaPlataformas l) {
+	for (int i = 0; i < numero; i++) {
+		if (ListaPlataformas::colision(l, *(lista[i]))) {
+			float vel = (lista[i])->GetVel().x;
+			lista[i]->SetVel(-vel, 0);
+			return lista[i];
+		}
+	}
+	return nullptr;
+}
+
 Enemigo1* ListaEnemigos::operator[](int i) {
 
 	if (i >= numero)//si me paso, devuelvo la ultima
