@@ -130,46 +130,66 @@ void Mundo::Inicializa()
 	
 	hombre.SetPos(-10, 7);
 	
-	Enemigo1* enemigo1 = new Enemigo1(11.0f, 15.75f, -15.0f);
-	Enemigo1* enemigo2= new Enemigo1(11.0f, 1.75f,15.05);
+	Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
+	Enemigo1* enemigo2= new Enemigo1(64.0f, 10.76f, 15.05);
 	enemigos.agregar(enemigo1);
 	enemigos.agregar(enemigo2);
 	
 
 	Llave* llave = new Llave();
 	llave->SetLlave(0.25, 0.5);
-	llave->SetPos(25, 22);
+	llave->SetPos(30, 17);
 	premios.agregar(llave);
 
-	Pared* inferior1 = new Pared(-22, 1.01, 2, 1.01);
+	Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
 	inferior1->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior1);
 
-	Pared* inferior2 = new Pared(6, 1, 25, 1);
+	Pared* inferior2 = new Pared(15, 1, 45, 1);
 	inferior2->SetColor(0, 200, 0);
 	plataformas.Agregar(inferior2);
 
-	Pared* plat1 = new Pared(-13, 5, -5, 5);
+	Pared* inferior3 = new Pared(56, 1.01, 86, 1.01);
+	inferior3->SetColor(0, 200, 0);
+	plataformas.Agregar(inferior3);
+
+	Pared* pared1 = new Pared(-22, 1, -22, 22);
+	pared1->SetColor(0, 150, 0);
+	plataformas.Agregar(pared1);
+
+	Pared* pared2 = new Pared(86, 1, 86, 22);
+	pared2->SetColor(0, 150, 0);
+	plataformas.Agregar(pared2);
+
+	Pared* plat1 = new Pared(3, 6, 16, 6);
 	plat1->SetColor(100, 0, 0);
 	plataformas.Agregar(plat1);
-	Pared* plat2 = new Pared(-3, 10, 5, 10);
+	Pared* plat2 = new Pared(-10, 10, -1, 10);
 	plat2->SetColor(100, 0, 0);
 	plataformas.Agregar(plat2);
-	Pared* plat3 = new Pared(7, 15, 15, 15);
+	Pared* plat3 = new Pared(3, 14, 16, 14);
 	plat3->SetColor(100, 0, 0);
 	plataformas.Agregar(plat3);
-	Pared* plat4 = new Pared(17, 20, 25, 20);
+	Pared* plat4 = new Pared(23, 12.5, 37, 12.5);
 	plat4->SetColor(100, 0, 0);
 	plataformas.Agregar(plat4);
+	Pared* plat5 = new Pared(44, 14, 57, 14);
+	plat5->SetColor(100, 0, 0);
+	plataformas.Agregar(plat5);
+	Pared* plat6 = new Pared(44, 6, 57, 6);
+	plat6->SetColor(100, 0, 0);
+	plataformas.Agregar(plat6);
+	Pared* plat7 = new Pared(61, 10.01, 70, 10.01);
+	plat7->SetColor(100, 0, 0);
+	plataformas.Agregar(plat7);
 
 	puerta.SetColor(130, 27, 5);
-	puerta.SetPos(20, 6, 23, 0);
+	puerta.SetPos(28.5, 6, 31.5, 0);
 }
 
 void Mundo::Tecla(unsigned char key) {
 	switch (key) {
 	case ' ': {
-
 		Vector2D pos = hombre.GetPos();
 		Disparo* d = new Disparo(pos);
 		disparos.agregar(d);

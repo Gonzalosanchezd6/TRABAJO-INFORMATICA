@@ -116,7 +116,7 @@ bool Interaccion::Colision(Pared p, EnemigoBolas b) {
 bool Interaccion::colision(Pared p, Enemigo1 e) {
 	float pos1 = e.GetPos().x + (e.GetTam() / 2);
 	float pos2 = e.GetPos().x - (e.GetTam() / 2);
-	if (e.GetPos().y == (p.GetPos(1).y + 0.75f)) {
+	if (e.GetPos().y == (p.GetPos(2).y + 0.75f)) {
 		if ((pos2 <= p.GetPos(1).x) || (pos1 >= p.GetPos(2).x)) {
 			return true;
 		}

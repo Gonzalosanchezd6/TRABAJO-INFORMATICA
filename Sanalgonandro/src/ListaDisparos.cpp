@@ -44,7 +44,7 @@ void ListaDisparos::dibuja() {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
-		if (pos.x > 40) {
+		if (pos.x > 86) {
 			Eliminar(i);
 		}
 	}
