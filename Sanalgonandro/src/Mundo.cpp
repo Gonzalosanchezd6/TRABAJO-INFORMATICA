@@ -55,18 +55,6 @@ void Mundo::Mueve(){
 		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////
-	/*for(int i = 0; i < disparos.num(); i++) {
-		Disparo* auxiliardisp = disparos[i];
-		Vector2D klk = auxiliardisp->GetOrig;
-		Vector2D klk2 = auxiliardisp->GetPos;
-		if (klk2.x >= (klk.x + 15)) {
-			disparos.Eliminar(i);
-		}
-	}*/
-	
-
-
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
