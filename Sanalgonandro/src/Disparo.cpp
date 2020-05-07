@@ -8,12 +8,13 @@ Disparo::Disparo() {
 	origendisp = origen;
 }
 
-Disparo::Disparo(Vector2D Orig) {
+Disparo::Disparo(int d, Vector2D Orig) {
 	radio = 0.25f;
 	origendisp = Orig;
 	origen = Orig;
 	velocidad.x = 200.0f;
 	posicion = origen;
+	disparo = d;
 }
 
 
@@ -42,13 +43,26 @@ void Disparo::Dibuja() {
 }
 
 void Disparo::Mueve(float t) {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;
-	if (posicion.x >= origen.x + 3.5) {
-		origen = origen + velocidad * t + aceleracion * (0.5f * t * t);
+	
+	if (disparo == 1) {
+		posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+		velocidad = velocidad + aceleracion * t;
+		if (posicion.x >= origen.x + 3.5) {
+			origen = origen + velocidad * t + aceleracion * (0.5f * t * t);
+		}
+		else if (posicion.x <= origen.x - 3.5) {
+			origen = origen + velocidad * t + aceleracion * (0.5f * t * t);
+		}
 	}
-	if (posicion.x <= origen.x - 3.5) {
-		origen = origen + velocidad * t + aceleracion * (0.5f * t * t);
+	else if (disparo == 0) {
+		posicion = posicion - velocidad * t - aceleracion * (0.5f * t * t);
+		velocidad = velocidad - aceleracion * t;
+		if (posicion.x >= origen.x + 3.5) {
+			origen = origen - velocidad * t - aceleracion * (0.5f * t * t);
+		}
+		else if (posicion.x <= origen.x - 3.5) {
+			origen = origen - velocidad * t - aceleracion * (0.5f * t * t);
+		}
 	}
 }
 

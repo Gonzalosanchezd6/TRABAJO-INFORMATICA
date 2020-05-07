@@ -192,7 +192,7 @@ void Mundo::Tecla(unsigned char key) {
 	switch (key) {
 	case ' ': {
 		Vector2D pos = hombre.GetPos();
-		Disparo* d = new Disparo(pos);
+		Disparo* d = new Disparo(dispder, pos);
 		disparos.agregar(d);
 		break;
 	}
@@ -208,15 +208,13 @@ void Mundo::teclaEspecial(unsigned char key) {
 	case GLUT_KEY_LEFT:
 		hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 		x_ojo -= 0.3;
-
-		
+		dispder = 0;
 
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 		x_ojo += 0.3;
-
-		
+		dispder = 1;
 
 		break;
 	case GLUT_KEY_UP:

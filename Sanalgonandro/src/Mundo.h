@@ -21,6 +21,7 @@ private: //se puede poner como private sin problema
 	float y_ojo;
 	float z_ojo;
 	int salto = 0;
+	int dispder = 1;
 	Disparo disparo;
 	Hombre hombre;
 	Bonus bonus;

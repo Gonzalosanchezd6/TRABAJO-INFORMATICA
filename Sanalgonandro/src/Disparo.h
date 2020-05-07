@@ -4,6 +4,7 @@
 class Disparo {
 private:
 	float radio;
+	int disparo;
 	Vector2D origendisp;
 	Vector2D origen;
 	Vector2D posicion;
@@ -11,7 +12,7 @@ private:
 	Vector2D aceleracion;
 public:
 	Disparo();
-	Disparo(Vector2D Orig);
+	Disparo(int d, Vector2D Orig);
 	virtual ~Disparo();
 	void Dibuja();
 	void Mueve(float t);

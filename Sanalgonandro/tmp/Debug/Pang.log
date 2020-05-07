@@ -1,5 +1,34 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (tmp\Debug\) contains files shared from another project (Pang.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Disparo.cpp
+  Hombre.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  Interaccion.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaBolas.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaDisparos.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaEnemigos.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaPlataformas.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaPremios.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaVidas.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
   Mundo.cpp
 C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  Pang.cpp
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  Generando código...
   Pang.vcxproj -> C:\Users\Usuario\Documents\Alvaro\Informatica\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe
