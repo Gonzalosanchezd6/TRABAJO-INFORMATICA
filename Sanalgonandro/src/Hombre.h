@@ -33,6 +33,7 @@ public:
 	void Mueve(float t);
 	//void SetVel(float vx, float vy);
 	//void SetAc(float ax, float ay);
+	bool Muerte();
 	bool Muerte(Hombre h, Enemigo1 e);
 	bool Muerte(Hombre h, EnemigoBolas b);
 	void reinicia();// volver a la posicion inicial 

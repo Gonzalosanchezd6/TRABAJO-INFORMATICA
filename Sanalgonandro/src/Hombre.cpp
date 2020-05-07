@@ -78,7 +78,18 @@ void Hombre::SetAc(float ax, float ay) {
 
 bool Hombre::Muerte(Hombre h, Enemigo1 e) {
 
-	if (posicion.y < -3 || Interaccion::Choque(h, e)) {
+	if (Interaccion::Choque(h, e)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+
+}
+
+bool Hombre::Muerte() {
+
+	if (posicion.y < -3) {
 		return true;
 	}
 	else {
@@ -97,7 +108,6 @@ bool Hombre::Muerte(Hombre h, EnemigoBolas b) {
 	}
 
 }
-
 
 
 float Hombre::GetAltura() {

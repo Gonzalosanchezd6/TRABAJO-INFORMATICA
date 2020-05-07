@@ -59,7 +59,7 @@ void Mundo::Mueve(){
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
 			hombre.restarVida();
-			x_ojo = 0;
+			x_ojo = 7;
 		}
 	
 		Disparo* var = disparos.colision(*auxi);
@@ -69,12 +69,17 @@ void Mundo::Mueve(){
 		}
 	}
 
+	if (hombre.Muerte()) {
+		hombre.restarVida();
+		x_ojo = 7;
+	}
+
 	for (int i = 0; i < Bolas.getNumero(); i++) {
 		EnemigoBolas* auxx = Bolas.choque(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, *auxx)) {
 				hombre.restarVida();
-				x_ojo = 0;
+				x_ojo = 7;
 			}
 			Bolas.eliminar(auxx);
 		}	
@@ -125,7 +130,7 @@ void Mundo::Mueve(){
 
 void Mundo::Inicializa()
 {
-	x_ojo = 0;
+	x_ojo = 7;
 	y_ojo = 21;
 	z_ojo = 70;
 	
@@ -206,14 +211,28 @@ void Mundo::teclaEspecial(unsigned char key) {
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
-		x_ojo -= 0.3;
-		dispder = 0;
+		if (hombre.GetPos().x >= -20.85) {
+			hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
+			if (x_ojo >= 7 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
+				x_ojo -= 0.3;
+			}
+		}
+		else {
+			hombre.SetPos(-20.85, hombre.GetPos().y);
+		}
+		dispder = 0; 
 
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
-		x_ojo += 0.3;
+		if (hombre.GetPos().x <= 84.85) {
+			hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
+			if (x_ojo <= 57 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
+				x_ojo += 0.3;
+			}
+		}
+		else {
+			hombre.SetPos(84.86, hombre.GetPos().y);
+		}
 		dispder = 1;
 
 		break;

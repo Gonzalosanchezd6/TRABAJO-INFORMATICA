@@ -123,3 +123,4 @@ bool Interaccion::colision(Pared p, Enemigo1 e) {
 	}
 	return false;
 }
+
