@@ -16,6 +16,7 @@ public:
 	void dibuja();
 	Disparo* colision(Pared p);
 	Disparo* colision(Enemigo1 e);
+	int num() { return numero; }
 
 private:
 	Disparo* lista[MAX_DISPAROS];

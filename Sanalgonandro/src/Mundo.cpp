@@ -38,8 +38,8 @@ void Mundo::Dibuja()
 	Bolas.dibuja();
 	std::string texto;
 	//texto.size = 20;
-	texto = "maldita gordeyuyu";
-	DibujarTexto(texto.data(), texto.size(), 200, 300);
+	texto = "SUPER BOLA BROS";
+	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);
 }
 
 void Mundo::Mueve(){
@@ -56,7 +56,17 @@ void Mundo::Mueve(){
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
+	/*for(int i = 0; i < disparos.num(); i++) {
+		Disparo* auxiliardisp = disparos[i];
+		Vector2D klk = auxiliardisp->GetOrig;
+		Vector2D klk2 = auxiliardisp->GetPos;
+		if (klk2.x >= (klk.x + 15)) {
+			disparos.Eliminar(i);
+		}
+	}*/
 	
+
+
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
@@ -71,7 +81,6 @@ void Mundo::Mueve(){
 		}
 	}
 
-	
 	for (int i = 0; i < Bolas.getNumero(); i++) {
 		EnemigoBolas* auxx = Bolas.choque(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
@@ -82,6 +91,8 @@ void Mundo::Mueve(){
 			Bolas.eliminar(auxx);
 		}	
 	}
+
+
 
 	EnemigoBolas* auxiliar = Bolas.choque(plataformas);
 	if (auxiliar != 0) {
@@ -113,6 +124,8 @@ void Mundo::Mueve(){
 			puerta.SetColor(0, 0, 255);
 		}
 	}
+
+
 
 	//ESTO NO LO BORREIS, ES PARA PASAR DE NIVEL
 	/*if (hombre.Choque(hombre, puerta)) {

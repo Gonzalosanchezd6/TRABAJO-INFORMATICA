@@ -74,6 +74,7 @@ Disparo* ListaDisparos::colision(Enemigo1 e) {
 
 
 void ListaDisparos::Eliminar(int index) {
+	Vector2D referencia;
 	if ((index < 0) || (index >= numero)) {
 		return;
 	}
