@@ -22,6 +22,8 @@ private: //se puede poner como private sin problema
 	float z_ojo;
 	int salto = 0;
 	int dispder = 1;
+	bool muerte;
+	bool FinLevel;
 	Disparo disparo;
 	Hombre hombre;
 	Bonus bonus;
@@ -45,4 +47,6 @@ public:
 	void teclaEspecial(unsigned char key);
 
 	void DibujarTexto(const char* texto, int longitud, int x, int y);
+	bool GetMuerte() { return muerte; }
+	bool GetFin() { return FinLevel; }
 };

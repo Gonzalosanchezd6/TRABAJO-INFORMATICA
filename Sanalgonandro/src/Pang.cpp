@@ -1,9 +1,11 @@
-#include "Mundo.h"
+#include "Coordinador.h"
+//#include "Mundo.h"
 #include "ETSIDI.h"
 #include <iostream>
 #include "glut.h" //debe ir siempre como ultimo include
 
-Mundo mundo;
+Coordinador coordinador;
+//Mundo mundo;
 
 using namespace ETSIDI; //esto en teoria es para las imagenes, musica, texto,etc
 using ETSIDI::getTexture;//esto en teoria es para las imagenes, musica, texto,etc
@@ -40,8 +42,8 @@ int main(int argc,char* argv[])
 	glutSpecialFunc(onSpecialKeyboardDown); //gestion de los cursores
 
 	
-
-	mundo.Inicializa();
+	//mundo.Inicializa();
+	
 		
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();	
@@ -49,8 +51,7 @@ int main(int argc,char* argv[])
 	return 0;   
 }
 
-void OnDraw(void)
-{
+void OnDraw(void) {
 	//Borrado de la pantalla	
    	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -58,23 +59,24 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);	
 	glLoadIdentity();
 	
-	mundo.Dibuja();
+	coordinador.Dibuja();
+	//mundo.Dibuja();
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
-void OnKeyboardDown(unsigned char key, int x_t, int y_t)
-{
+void OnKeyboardDown(unsigned char key, int x_t, int y_t) {
 	//poner aqui el código de teclado
-	mundo.Tecla(key);
+	coordinador.Tecla(key);
+	//mundo.Tecla(key);
 
 	glutPostRedisplay();
 }
 
-void OnTimer(int value)
-{
+void OnTimer(int value) {
 //poner aqui el código de animacion
-	mundo.Mueve();
+	coordinador.Mueve();
+	//mundo.Mueve();
 	//mundo.RotarOjo();
 
 	//no borrar estas lineas
@@ -82,7 +84,7 @@ void OnTimer(int value)
 	glutPostRedisplay();
 }
 
-void onSpecialKeyboardDown(int key, int x, int y)
-{
-	mundo.teclaEspecial(key);
+void onSpecialKeyboardDown(int key, int x, int y) {
+	coordinador.teclaEspecial(key);
+	//mundo.teclaEspecial(key);
 }

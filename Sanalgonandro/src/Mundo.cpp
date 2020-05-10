@@ -8,6 +8,8 @@
 using namespace std;
 
 Mundo::Mundo() {
+	FinLevel = false;
+	muerte = false;
 }
 
 Mundo::~Mundo() {
@@ -43,6 +45,11 @@ void Mundo::Dibuja()
 }
 
 void Mundo::Mueve(){
+	if (hombre.GetVidas() == 0) {
+		muerte = true;
+	}
+
+
 	hombre.Mueve(0.025f);
 	enemigos.mueve(0.0025f);
 	disparos.mueve(0.0025f);
@@ -118,18 +125,18 @@ void Mundo::Mueve(){
 		}
 	}
 
+	if (hombre.NumPremios(Hombre::LLAVE) == 1) {
+		if (hombre.Choque(hombre, puerta)) {
+			FinLevel = true;
+		}
+	}
 
-
-	//ESTO NO LO BORREIS, ES PARA PASAR DE NIVEL
-	/*if (hombre.Choque(hombre, puerta)) {
-		
-	}*/
-
-	
 }
 
-void Mundo::Inicializa()
-{
+void Mundo::Inicializa() {
+	FinLevel = false;
+	muerte = false;
+
 	x_ojo = 7;
 	y_ojo = 21;
 	z_ojo = 70;

@@ -163,3 +163,7 @@ void Hombre::restarVida() {
 	}
 
 }
+
+int Hombre::GetVidas() {
+	return vidas.nVidas();
+}

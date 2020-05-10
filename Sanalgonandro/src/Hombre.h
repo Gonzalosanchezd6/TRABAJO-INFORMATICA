@@ -41,6 +41,7 @@ public:
 	//Vector2D GetVel() { return velocidad; };
 	void aumentarVida();
 	void restarVida();
+	int GetVidas();
 
 	float GetAltura();
 	
