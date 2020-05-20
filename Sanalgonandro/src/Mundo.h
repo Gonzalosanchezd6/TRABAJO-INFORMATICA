@@ -13,6 +13,8 @@
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
 #include"ListaEnemigos.h"
+#include"Listas.h"
+
 
 class Mundo
 {
@@ -24,7 +26,7 @@ private: //se puede poner como private sin problema
 	int dispder = 1;
 	bool muerte;
 	bool FinLevel;
-	Disparo disparo;
+	Disparo *disparo;
 	Hombre hombre;
 	Bonus bonus;
 	ListaPlataformas plataformas;
@@ -33,8 +35,10 @@ private: //se puede poner como private sin problema
 	ListaPremios premios;
 	Puerta puerta;
 	ListaBolas Bolas;
-	ListaDisparos disparos;
+	//ListaDisparos disparos;
 	ListaEnemigos enemigos;
+	Listas<Disparo> disparos;
+	
 public:
 	Mundo();
 	~Mundo();

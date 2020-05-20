@@ -1,0 +1,134 @@
+#pragma once
+#define MAX_ELEM 10
+
+template <class T>
+
+class Listas {
+public:
+	Listas();
+	virtual ~Listas();
+	bool agregar(T* d);
+	void destruirContenido();
+	void Eliminar(T* d);
+	void Eliminar(int index);
+	void mueve(float t);
+	void dibuja();
+	//Disparo* colision(Pared p);
+	//Disparo* colision(Enemigo1 e);
+	int num() { return numero; }
+	
+private:
+	T* lista[MAX_DISPAROS];
+	int numero;
+};
+
+
+template <class T>
+inline
+Listas<T>::Listas() {
+	numero = 0;
+	for (int i = 0; i < MAX_ELEM; i++) {//poner los punteros a null
+		lista[i] = 0;
+	}
+}
+
+template <class T>
+inline
+Listas<T>::~Listas() {
+
+}
+
+template <class T>
+inline
+bool Listas< T>::agregar(T* d) {
+	for (int i = 0; i < numero; i++) {// si ya existe que no se vuelva a añadir
+		if (lista[i] == d) {
+			return false;
+		}
+	}
+	if (numero < MAX_ELEM) {
+		lista[numero++] = d;
+		return true;
+	}
+	else {
+		return false;// no se ha podido agregar una esfera
+	}
+}
+
+template <class T>
+inline
+void Listas< T>::destruirContenido() {
+	for (int i = 0; i < numero; i++) {
+		delete lista[i];
+		numero = 0;
+	}
+}
+
+template <class T>
+inline
+void  Listas< T>::mueve(float t) {
+	for (int i = 0; i < numero; i++) {
+		lista[i]->Mueve(t);
+	}
+}
+
+template <class T>
+inline
+void Listas< T>::dibuja() {
+	for (int i = 0; i < numero; i++) {
+		lista[i]->Dibuja();
+		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
+		if (pos.x > (lista[i]->GetOrig().x + 15.0f) || pos.x < (lista[i]->GetOrig().x - 15.0f)) {
+			Eliminar(i);
+		}
+	}
+
+}
+/*
+T* Listas<class T>::colision(Pared p) {
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::colision(*lista[i], p)) {
+			lista[i]->SetVel(0.0f, 0.0f);
+			return lista[i];
+		}
+	}
+	return 0;
+}
+
+
+Disparo* ListaDisparos::colision(Enemigo1 e) {
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::colision(*lista[i], e)) {
+			lista[i]->SetVel(0.0f, 0.0f);
+			return lista[i];
+		}
+	}
+	return 0;
+}
+
+*/
+
+template <class T>
+inline
+void Listas< T>::Eliminar(int index) {
+	Vector2D referencia;
+	if ((index < 0) || (index >= numero)) {
+		return;
+	}
+	delete lista[index];
+	numero--;
+	for (int i = index; i < numero; i++) {
+		lista[i] = lista[i + 1];
+	}
+}
+
+template <class T>
+inline
+void Listas< T>::Eliminar(T* d) {
+	for (int i = 0; i < numero; i++) {
+		if (lista[i] == d) {
+			Eliminar(i);
+			return;
+		}
+	}
+}
