@@ -13,7 +13,7 @@
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
 #include"ListaEnemigos.h"
-#include"Listas.h"
+#include"Lista.h"
 
 
 class Mundo
@@ -37,7 +37,8 @@ private: //se puede poner como private sin problema
 	ListaBolas Bolas;
 	//ListaDisparos disparos;
 	ListaEnemigos enemigos;
-	Listas<Disparo> disparos;
+	Lista<Disparo> disparos;
+	//Lista<Enemigo1>enemigos;
 	
 public:
 	Mundo();

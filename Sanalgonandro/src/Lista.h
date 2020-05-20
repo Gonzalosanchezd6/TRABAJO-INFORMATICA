@@ -5,10 +5,10 @@
 
 template <class T>
 
-class Listas {
+class Lista {
 public:
-	Listas();
-	virtual ~Listas();
+	Lista();
+	virtual ~Lista();
 	bool agregar(T* d);
 	void destruirContenido();
 	void Eliminar(T* d);
@@ -17,6 +17,7 @@ public:
 	void dibuja();
 	T* colision(Pared p);
 	T* colision(Enemigo1 e);
+	//T* colision(Hombre& h);
 	int num() { return numero; }
 	
 private:
@@ -27,7 +28,7 @@ private:
 
 template <class T>
 inline
-Listas<T>::Listas() {
+Lista<T>::Lista() {
 	numero = 0;
 	for (int i = 0; i < MAX_ELEM; i++) {//poner los punteros a null
 		lista[i] = 0;
@@ -36,13 +37,13 @@ Listas<T>::Listas() {
 
 template <class T>
 inline
-Listas<T>::~Listas() {
+Lista<T>::~Lista() {
 
 }
 
 template <class T>
 inline
-bool Listas< T>::agregar(T* d) {
+bool Lista< T>::agregar(T* d) {
 	for (int i = 0; i < numero; i++) {// si ya existe que no se vuelva a añadir
 		if (lista[i] == d) {
 			return false;
@@ -59,7 +60,7 @@ bool Listas< T>::agregar(T* d) {
 
 template <class T>
 inline
-void Listas< T>::destruirContenido() {
+void Lista< T>::destruirContenido() {
 	for (int i = 0; i < numero; i++) {
 		delete lista[i];
 		numero = 0;
@@ -68,7 +69,7 @@ void Listas< T>::destruirContenido() {
 
 template <class T>
 inline
-void  Listas< T>::mueve(float t) {
+void  Lista< T>::mueve(float t) {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
 	}
@@ -76,7 +77,7 @@ void  Listas< T>::mueve(float t) {
 
 template <class T>
 inline
-void Listas< T>::dibuja() {
+void Lista< T>::dibuja() {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
@@ -89,7 +90,7 @@ void Listas< T>::dibuja() {
 
 template <class T>
 inline
-T* Listas<T>::colision(Pared p) {
+T* Lista<T>::colision(Pared p) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], p)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -101,7 +102,7 @@ T* Listas<T>::colision(Pared p) {
 
 template <class T>
 inline
-T* Listas<T>::colision(Enemigo1 e) {
+T* Lista<T>::colision(Enemigo1 e) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], e)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -114,7 +115,7 @@ T* Listas<T>::colision(Enemigo1 e) {
 
 template <class T>
 inline
-void Listas< T>::Eliminar(int index) {
+void Lista< T>::Eliminar(int index) {
 	Vector2D referencia;
 	if ((index < 0) || (index >= numero)) {
 		return;
@@ -128,7 +129,7 @@ void Listas< T>::Eliminar(int index) {
 
 template <class T>
 inline
-void Listas< T>::Eliminar(T* d) {
+void Lista< T>::Eliminar(T* d) {
 	for (int i = 0; i < numero; i++) {
 		if (lista[i] == d) {
 			Eliminar(i);
@@ -136,3 +137,5 @@ void Listas< T>::Eliminar(T* d) {
 		}
 	}
 }
+
+

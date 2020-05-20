@@ -121,7 +121,7 @@
     <ClInclude Include="src\ListaEnemigos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaPremios.h" />
-    <ClInclude Include="src\Listas.h" />
+    <ClInclude Include="src\Lista.h" />
     <ClInclude Include="src\ListaVidas.h" />
     <ClInclude Include="src\Llave.h" />
     <ClInclude Include="src\Mundo.h" />
