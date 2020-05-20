@@ -2,8 +2,4 @@
   Mundo.cpp
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\ef\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\ef\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Pang.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\ef\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(9,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\ef\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Generando código...
   Pang.vcxproj -> D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\ef\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe

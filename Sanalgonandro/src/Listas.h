@@ -1,5 +1,7 @@
 #pragma once
 #define MAX_ELEM 10
+#include"Interaccion.h"
+#include"EnemigoLv1.h"
 
 template <class T>
 
@@ -13,8 +15,8 @@ public:
 	void Eliminar(int index);
 	void mueve(float t);
 	void dibuja();
-	//Disparo* colision(Pared p);
-	//Disparo* colision(Enemigo1 e);
+	T* colision(Pared p);
+	T* colision(Enemigo1 e);
 	int num() { return numero; }
 	
 private:
@@ -84,8 +86,10 @@ void Listas< T>::dibuja() {
 	}
 
 }
-/*
-T* Listas<class T>::colision(Pared p) {
+
+template <class T>
+inline
+T* Listas<T>::colision(Pared p) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], p)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -95,8 +99,9 @@ T* Listas<class T>::colision(Pared p) {
 	return 0;
 }
 
-
-Disparo* ListaDisparos::colision(Enemigo1 e) {
+template <class T>
+inline
+T* Listas<T>::colision(Enemigo1 e) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], e)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -106,7 +111,6 @@ Disparo* ListaDisparos::colision(Enemigo1 e) {
 	return 0;
 }
 
-*/
 
 template <class T>
 inline

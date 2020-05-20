@@ -69,11 +69,11 @@ void Mundo::Mueve(){
 			x_ojo = 7;
 		}
 	
-		/*Disparo* var = disparos.colision(*auxi);
+		Disparo* var = disparos.colision(*auxi);
 		if (var != 0) {
 			disparos.Eliminar(var);
 			enemigos.Eliminar(auxi);
-		}*/
+		}
 	}
 
 	if (hombre.Muerte()) {
