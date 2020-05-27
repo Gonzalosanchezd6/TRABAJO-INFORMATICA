@@ -2,6 +2,9 @@
 //#include "Vector2D.h"
 #include "EnemigoLv1.h"
 #include "EnemigoBolas.h"
+
+//////////////////no se pq no se agrega
+
 #include "Llave.h"
 #include "Puerta.h"
 //#include"ListaVidas.h"
@@ -36,6 +39,9 @@ public:
 	bool Muerte();
 	bool Muerte(Hombre h, Enemigo1 e);
 	bool Muerte(Hombre h, EnemigoBolas b);
+
+	bool Muerte(Hombre h, EnemigoDuro ed);
+
 	void reinicia();// volver a la posicion inicial 
 	//Vector2D GetPos();
 	//Vector2D GetVel() { return velocidad; };

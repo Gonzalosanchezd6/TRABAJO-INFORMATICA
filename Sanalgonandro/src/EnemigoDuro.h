@@ -1,7 +1,7 @@
 #pragma once
 #include "Animado.h"
 #include "Vector2D.h"
-#define MAX_VIDASENE 2
+#define MAX_VIDAS 2
 
 class EnemigoDuro:public Animado
 {

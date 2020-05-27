@@ -7,6 +7,7 @@
 #include"Vida.h"
 #include"Disparo.h"
 #include "ListaPlataformas.h"
+#include "EnemigoDuro"
 
 class Interaccion {
 public:
