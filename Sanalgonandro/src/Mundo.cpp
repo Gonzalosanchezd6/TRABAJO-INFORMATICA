@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "glut.h"
-
+#include "ETSIDI.h"
 
 using namespace std;
 
@@ -65,7 +65,9 @@ void Mundo::Mueve(){
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
+			ETSIDI::play("sonidos/PacManDies.mp3");
 			hombre.restarVida();
+			ETSIDI::play("sonidos/PacManDies.mp3");
 			x_ojo = 7;
 		}
 	
