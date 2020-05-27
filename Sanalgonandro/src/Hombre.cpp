@@ -110,6 +110,10 @@ bool Hombre::Muerte(Hombre h, EnemigoBolas b) {
 }
 
 
+
+
+
+
 float Hombre::GetAltura() {
 	return altura;
 }

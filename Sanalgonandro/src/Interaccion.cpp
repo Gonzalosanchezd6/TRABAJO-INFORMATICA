@@ -69,6 +69,7 @@ bool Interaccion::Choque(Hombre h, EnemigoBolas b) {
 
 
 
+
 bool Interaccion::colision(Vida v, Hombre h) {
 	Vector2D pos = h.GetPos();
 	pos.y += h.GetAltura() / 2.0f;
@@ -123,4 +124,3 @@ bool Interaccion::colision(Pared p, Enemigo1 e) {
 	}
 	return false;
 }
-
