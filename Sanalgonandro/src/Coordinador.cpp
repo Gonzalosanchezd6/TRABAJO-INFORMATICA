@@ -14,9 +14,11 @@ void Coordinador::Mueve() {
 		mundo.Mueve();
 		if (mundo.GetMuerte()) {
 			estado = GAMEOVER;
+			ETSIDI::play("sonidos/GameOver.mp3");
 		}
 		else if (mundo.GetFin()) {
 			estado = HISTORIA;
+			ETSIDI::play("sonidos/YouWin.mp3");
 		}
 	}
 }
