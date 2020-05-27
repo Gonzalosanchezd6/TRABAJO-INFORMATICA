@@ -65,7 +65,7 @@ void Mundo::Mueve(){
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, *auxi)) {
-			ETSIDI::play("sonidos/PacManDies.mp3");
+			
 			hombre.restarVida();
 			ETSIDI::play("sonidos/PacManDies.mp3");
 			x_ojo = 7;
@@ -75,11 +75,13 @@ void Mundo::Mueve(){
 		if (var != 0) {
 			disparos.Eliminar(var);
 			enemigos.Eliminar(auxi);
+			ETSIDI::play("sonidos/Bala.mp3");
 		}
 	}
 
 	if (hombre.Muerte()) {
 		hombre.restarVida();
+		ETSIDI::play("sonidos/PacManDies.mp3");
 		x_ojo = 7;
 	}
 
@@ -88,6 +90,7 @@ void Mundo::Mueve(){
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, *auxx)) {
 				hombre.restarVida();
+				ETSIDI::play("sonidos/PacManDies.mp3");
 				x_ojo = 7;
 			}
 			Bolas.eliminar(auxx);
