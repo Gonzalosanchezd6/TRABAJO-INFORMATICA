@@ -22,7 +22,7 @@ public:
 	void eliminar(EnemigoBolas* e);
 	int getNumero() { return numero; }
 	EnemigoBolas* choque(Hombre& h);
-	EnemigoBolas* ListaBolas::operator [](int i);
+	EnemigoBolas* operator [](int i);
 	EnemigoBolas* choque(ListaPlataformas& p);
 
 	bool Crear(float t);

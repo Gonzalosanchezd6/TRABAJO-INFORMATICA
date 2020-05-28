@@ -34,10 +34,11 @@ private: //se puede poner como private sin problema
 	//EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
-	ListaBolas Bolas;
+	//ListaBolas Bolas;
 	//ListaDisparos disparos;
 	ListaEnemigos enemigos;
 	Lista<Disparo> disparos;
+	Lista<EnemigoBolas> Bolas;
 	//Lista<Enemigo1>enemigos;
 	
 public:

@@ -85,23 +85,23 @@ void Mundo::Mueve(){
 		x_ojo = 7;
 	}
 
-	for (int i = 0; i < Bolas.getNumero(); i++) {
-		EnemigoBolas* auxx = Bolas.choque(hombre);
+	for (int i = 0; i < Bolas.num(); i++) {
+		EnemigoBolas* auxx = Bolas.colision(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, *auxx)) {
 				hombre.restarVida();
 				ETSIDI::play("sonidos/PacManDies.mp3");
 				x_ojo = 7;
 			}
-			Bolas.eliminar(auxx);
+			Bolas.Eliminar(auxx);
 		}	
 	}
 
 
 
-	EnemigoBolas* auxiliar = Bolas.choque(plataformas);
+	EnemigoBolas* auxiliar = Bolas.colision(plataformas);
 	if (auxiliar != 0) {
-		Bolas.eliminar(auxiliar);
+		Bolas.Eliminar(auxiliar);
 	}
 
 

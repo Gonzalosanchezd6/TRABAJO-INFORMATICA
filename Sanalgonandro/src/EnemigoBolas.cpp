@@ -22,11 +22,7 @@ EnemigoBolas::EnemigoBolas(float rad, float x, float y, float vx, float vy) {
 	aceleracion.y = -9.8f;
 }
 
-void EnemigoBolas::SetPos(float ix, float iy) {
-	posicion.x = ix;
-	posicion.y = iy;
 
-}
 void EnemigoBolas::Dibuja() {
 	
 	glPushMatrix();
@@ -37,21 +33,9 @@ void EnemigoBolas::Dibuja() {
 
 }
 void EnemigoBolas::Mueve(float t) {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;
-
+	Animado::Mueve(t);
 }
 
-void EnemigoBolas::SetAc(float ax, float ay) {
 
-	aceleracion.x = ax;
-	aceleracion.y = ay;
-}
-
-void EnemigoBolas::setVel(float vx, float vy)
-{
-	velocidad.x = vx;
-	velocidad.y = vy;
-}
 
 

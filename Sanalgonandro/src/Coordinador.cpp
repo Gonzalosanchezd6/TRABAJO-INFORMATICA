@@ -44,7 +44,7 @@ void Coordinador::Dibuja() {
 		mundo.Dibuja();
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -5, 10);
+		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -5, 10);//NO SE VE *************!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
 	}
 	else if (estado == FIN) {
@@ -56,7 +56,7 @@ void Coordinador::Dibuja() {
 	else if (estado == HISTORIA) {
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("--Inserte texto aqui jeje xd--", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
+		ETSIDI::printxy("Pulsa -C- para continuar",-5, 9);
 	}
 }
 
