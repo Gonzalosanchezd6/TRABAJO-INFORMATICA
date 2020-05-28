@@ -88,7 +88,7 @@ EnemigoBolas* ListaBolas::operator [](int i) {
 EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
 	for (int i = 0; i < numero; i++) {
 		for (int j = 0; j < p.getNum(); j++) {
-			if (Interaccion::Colision(*p[j] , *lista[i])) {
+			if (Interaccion::colision(*p[j] , *lista[i])) {
 				return lista[i];
 			}
 		}

@@ -13,9 +13,6 @@ public:
 	virtual ~Enemigo1();
 	void Dibuja();
 	void Mueve(float t);
-
-	Vector2D GetPos();
 	float GetTam();
-	Vector2D GetVel();
-	void SetVel(float vx, float vy);
+
 };

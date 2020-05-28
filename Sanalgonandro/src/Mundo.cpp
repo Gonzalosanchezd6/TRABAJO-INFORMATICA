@@ -33,11 +33,11 @@ void Mundo::Dibuja()
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	hombre.Dibuja();
 	plataformas.Dibuja();
-	enemigos.dibuja();
+	enemigos.Dibuja();
 	premios.Dibuja();
 	puerta.Dibuja();
-	disparos.dibuja();
-	Bolas.dibuja();
+	disparos.Dibuja();
+	Bolas.Dibuja();
 	std::string texto;
 	//texto.size = 20;
 	texto = "SUPER BOLA BROS";
@@ -51,11 +51,11 @@ void Mundo::Mueve(){
 
 
 	hombre.Mueve(0.025f);
-	enemigos.mueve(0.0025f);
-	disparos.mueve(0.0025f);
-	Bolas.mueve(0.025f);
+	enemigos.Mueve(0.0025f);
+	disparos.Mueve(0.0025f);
+	Bolas.Mueve(0.025f);
 
-	enemigos.Choque(plataformas);
+	enemigos.colision(plataformas);
 
 	if (Bolas.Crear(0.025f) == true) {
 		double i = -20 + (rand() % 47);
@@ -105,7 +105,7 @@ void Mundo::Mueve(){
 	}
 
 
-	Pared* aux = plataformas.Colision(hombre);
+	Pared* aux = plataformas.colision(hombre);
 	if ((aux != 0) && ((hombre.GetPos().y - (hombre.GetAltura()/2)) >= aux->GetPos().y)) {
 		salto = 1;
 		hombre.SetAc(0,0);

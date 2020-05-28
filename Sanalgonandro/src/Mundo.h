@@ -10,8 +10,8 @@
 #include "ListaPremios.h"
 #include "Puerta.h"
 #include "EnemigoBolas.h"
-#include "ListaBolas.h"
-#include"ListaDisparos.h"
+//#include "ListaBolas.h"
+//#include"ListaDisparos.h"
 #include"ListaEnemigos.h"
 #include"Lista.h"
 
@@ -36,9 +36,10 @@ private: //se puede poner como private sin problema
 	Puerta puerta;
 	//ListaBolas Bolas;
 	//ListaDisparos disparos;
-	ListaEnemigos enemigos;
-	Lista<Disparo> disparos;
-	Lista<EnemigoBolas> Bolas;
+	//ListaEnemigos enemigos;
+	Lista<Enemigo1, 10> enemigos;
+	Lista<Disparo,10> disparos;
+	Lista<EnemigoBolas,1000> Bolas;
 	//Lista<Enemigo1>enemigos;
 	
 public:

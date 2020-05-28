@@ -16,11 +16,11 @@ public:
 	void destruirContenido();
 	void Eliminar(Enemigo1* e);
 	void Eliminar(int index);
-	void mueve(float t);
-	void dibuja();
+	void Mueve(float t);
+	void Dibuja();
 	int num() { return numero; }
 	Enemigo1* Choque(Hombre h);
-	Enemigo1* Choque(ListaPlataformas l);
+	Enemigo1* colision(ListaPlataformas l);
 	Enemigo1* ListaEnemigos::operator[](int i);
 
 };

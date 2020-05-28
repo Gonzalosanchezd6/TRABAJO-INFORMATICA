@@ -13,7 +13,7 @@ public:
 	virtual ~ListaPlataformas();
 	bool Agregar(Pared* p);
 	void Dibuja();
-	Pared* Colision(Hombre& h);
+	Pared* colision(Hombre& h);
 	static bool colision(ListaPlataformas l, Enemigo1 e);
 	//Pared* colision(Enemigo1& e);
 	int getNum() { return numero; }

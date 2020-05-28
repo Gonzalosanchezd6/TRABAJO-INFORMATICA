@@ -21,7 +21,7 @@ void Interaccion::rebote(Hombre &h, Pared p) {
 }
 
 
-bool Interaccion::Colision(Pared p, Hombre h) {
+bool Interaccion::colision(Pared p, Hombre h) {
 	Vector2D dir;
 	float dif = p.distancia(h.posicion, &dir) - h.altura;
 	if (dif <= 0.0f) {
@@ -105,7 +105,7 @@ bool Interaccion::colision(Disparo d, Enemigo1 e) {
 	}
 }
 
-bool Interaccion::Colision(Pared p, EnemigoBolas b) {
+bool Interaccion::colision(Pared p, EnemigoBolas b) {
 	Vector2D dir;
 	float dif = p.distancia(b.posicion, &dir) - b.radio;
 	if (dif <= 0.0f) {

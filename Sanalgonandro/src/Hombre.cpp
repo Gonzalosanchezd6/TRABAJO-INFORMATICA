@@ -142,7 +142,7 @@ int Hombre::NumPremios(objetos ob) {
 }
 
 bool Hombre::Choque(Hombre h, Puerta p) {
-	if (Interaccion::Colision(p, h)) {
+	if (Interaccion::colision(p, h)) {
 		return true;
 	}
 	return false;

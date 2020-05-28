@@ -3,6 +3,9 @@
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Coordinador.cpp(36,52): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  ListaEnemigos.cpp
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
   Mundo.cpp
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'

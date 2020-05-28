@@ -17,12 +17,6 @@ Enemigo1::~Enemigo1() {
 
 }
 
-/*void Enemigo1::SetPos(float ix, float iy) {
-	posicion.x = ix;
-	posicion.y = iy;
-
-}*/
-
 void Enemigo1::Dibuja() {
 	
 	glPushMatrix();
@@ -30,6 +24,7 @@ void Enemigo1::Dibuja() {
 	glColor3f(0.0f, 0.0f, 115);
 	glutSolidCube(tamaño);
 	glPopMatrix();
+
 }
 
 void Enemigo1::Mueve(float t) {
@@ -42,21 +37,16 @@ void Enemigo1::Mueve(float t) {
 	if (posicion.x >= 14.25) {
 		SetVel(-15.0, 0);
 	}*/
+
+	
 }
 
-Vector2D Enemigo1::GetPos() {
-	return posicion;
-}
+
 
 float Enemigo1::GetTam() {
 	return tamaño;
 }
 
-Vector2D Enemigo1::GetVel() {
-	return velocidad;
-}
 
-void Enemigo1::SetVel(float vx, float vy) {
-	velocidad.x = vx;
-	velocidad.y = vy;
-}
+
+

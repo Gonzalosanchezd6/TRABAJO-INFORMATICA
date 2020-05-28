@@ -35,9 +35,9 @@ void ListaPlataformas::Dibuja() {
 	}
 }
 
-Pared* ListaPlataformas::Colision(Hombre& h) {
+Pared* ListaPlataformas::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Colision(*(lista[i]), h)) {
+		if (Interaccion::colision(*(lista[i]), h)) {
 			return lista[i];
 		}
 	}

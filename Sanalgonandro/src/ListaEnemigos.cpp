@@ -56,13 +56,13 @@ void ListaEnemigos::Eliminar(int index) {
 	}
 }
 
-void ListaEnemigos::mueve(float t) {
+void ListaEnemigos::Mueve(float t) {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
 	}
 }
 
-void ListaEnemigos::dibuja() {
+void ListaEnemigos::Dibuja() {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
@@ -82,7 +82,7 @@ Enemigo1* ListaEnemigos::Choque(Hombre h) {
 	return 0;
 }
 
-Enemigo1* ListaEnemigos::Choque(ListaPlataformas l) {
+Enemigo1* ListaEnemigos::colision(ListaPlataformas l) {
 	for (int i = 0; i < numero; i++) {
 		if (ListaPlataformas::colision(l, *(lista[i]))) {
 			float vel = (lista[i])->GetVel().x;

@@ -1,10 +1,10 @@
 #pragma once
-#define MAX_ELEM 10
+//#define MAX_ELEM 10
 #include"Interaccion.h"
 #include"EnemigoLv1.h"
 #include"ListaPlataformas.h"
 
-template <class T>
+template <class T,int n>
 
 class Lista {
 public:
@@ -14,8 +14,8 @@ public:
 	void destruirContenido();
 	void Eliminar(T* d);
 	void Eliminar(int index);
-	void mueve(float t);
-	void dibuja();
+	void Mueve(float t);
+	void Dibuja();
 	T* colision(Pared p);
 	T* colision(Enemigo1 e);
 	T* colision(Hombre& h);
@@ -24,30 +24,31 @@ public:
 	bool Crear(float t);
 	T* operator[](int i);
 private:
-	T* lista[MAX_DISPAROS];
+	static const int MAX_ELEM = n;
+	T* lista[MAX_ELEM];
 	int numero;
-	float random = 0;
+	float random = 0;	
 };
 
 
-template <class T>
+template <class T, int n>
 inline
-Lista<T>::Lista() {
+Lista<T,n>::Lista() {
 	numero = 0;
 	for (int i = 0; i < MAX_ELEM; i++) {//poner los punteros a null
 		lista[i] = 0;
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-Lista<T>::~Lista() {
+Lista<T, n>::~Lista() {
 
 }
 
-template <class T>
+template <class T, int n>
 inline
-bool Lista< T>::agregar(T* d) {
+bool Lista<T, n>::agregar(T* d) {
 	for (int i = 0; i < numero; i++) {// si ya existe que no se vuelva a añadir
 		if (lista[i] == d) {
 			return false;
@@ -62,26 +63,26 @@ bool Lista< T>::agregar(T* d) {
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-void Lista< T>::destruirContenido() {
+void Lista<T, n>::destruirContenido() {
 	for (int i = 0; i < numero; i++) {
 		delete lista[i];
 		numero = 0;
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-void  Lista< T>::mueve(float t) {
+void  Lista<T, n>::Mueve(float t) {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-void Lista< T>::dibuja() {
+void Lista<T, n>::Dibuja() {
 	/*for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
@@ -95,9 +96,9 @@ void Lista< T>::dibuja() {
 
 }
 
-template <class T>
+template <class T, int n>
 inline
-T* Lista<T>::colision(Pared p) {
+T* Lista<T, n>::colision(Pared p) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], p)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -107,9 +108,9 @@ T* Lista<T>::colision(Pared p) {
 	return 0;
 }
 
-template <class T>
+template<class T, int n>
 inline
-T* Lista<T>::colision(Enemigo1 e) {
+T* Lista<T, n>::colision(Enemigo1 e) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*lista[i], e)) {
 			lista[i]->SetVel(0.0f, 0.0f);
@@ -119,9 +120,9 @@ T* Lista<T>::colision(Enemigo1 e) {
 	return 0;
 }
 
-template <class T>
+template <class T, int n>
 inline
-T* Lista<T>::colision(Hombre& h) {
+T* Lista<T, n>::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::Choque(h, *lista[i])) {
 			return lista[i];
@@ -130,12 +131,12 @@ T* Lista<T>::colision(Hombre& h) {
 	return 0; //no hay colisión 
 }
 
-template <class T>
+template <class T, int n>
 inline
-T* Lista<T>::colision(ListaPlataformas& p) {
+T* Lista<T, n>::colision(ListaPlataformas& p) {
 	for (int i = 0; i < numero; i++) {
 		for (int j = 0; j < p.getNum(); j++) {
-			if (Interaccion::Colision(*p[j], *lista[i])) {
+			if (Interaccion::colision(*p[j], *lista[i])) {
 				return lista[i];
 			}
 		}
@@ -143,9 +144,9 @@ T* Lista<T>::colision(ListaPlataformas& p) {
 	return 0; //no hay colisión 
 }
 
-template <class T>
+template <class T, int n>
 inline
-void Lista< T>::Eliminar(int index) {
+void Lista<T, n>::Eliminar(int index) {
 	Vector2D referencia;
 	if ((index < 0) || (index >= numero)) {
 		return;
@@ -157,9 +158,9 @@ void Lista< T>::Eliminar(int index) {
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-void Lista< T>::Eliminar(T* d) {
+void Lista<T, n>::Eliminar(T* d) {
 	for (int i = 0; i < numero; i++) {
 		if (lista[i] == d) {
 			Eliminar(i);
@@ -168,9 +169,9 @@ void Lista< T>::Eliminar(T* d) {
 	}
 }
 
-template <class T>
+template <class T, int n>
 inline
-bool Lista<T>::Crear(float t) {
+bool Lista<T, n>::Crear(float t) {
 	random += t;
 
 	if (random >= 1) {
@@ -183,9 +184,9 @@ bool Lista<T>::Crear(float t) {
 }
 
 
-template <class T>
+template <class T, int n>
 inline
-T* Lista<T>::operator[](int i) {
+T* Lista<T, n>::operator[](int i) {
 	if (i >= numero) { //si me paso, devuelvo la ultima 
 		i = numero - 1;
 	}
