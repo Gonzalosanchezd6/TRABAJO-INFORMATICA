@@ -1,25 +1,21 @@
 #pragma once
-#include "Vector2D.h"
+#include "Animado.h"
 
-class Disparo {
+class Disparo: public Animado {
 private:
 	float radio;
 	int disparo;
 	Vector2D origendisp;
 	Vector2D origen;
-	Vector2D posicion;
-	Vector2D velocidad;
-	Vector2D aceleracion;
+	
 public:
 	Disparo();
 	Disparo(int d, Vector2D Orig);
 	virtual ~Disparo();
 	void Dibuja();
 	void Mueve(float t);
-	void SetPos(float ix, float iy);
 	void SetOrig(float ix, float iy);
-	Vector2D GetPos() { return posicion; }
 	Vector2D GetOrig() { return origendisp; }
 	float GetRadio() { return radio; }
-	void SetVel(float vx, float vy) { velocidad.x = vx, velocidad.y = vy; }
+	
 };
