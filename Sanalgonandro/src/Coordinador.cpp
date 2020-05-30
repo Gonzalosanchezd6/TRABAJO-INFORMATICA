@@ -17,8 +17,14 @@ void Coordinador::Mueve() {
 			ETSIDI::play("sonidos/GameOver.mp3");
 		}
 		else if (mundo.GetFin()) {
-			estado = HISTORIA;
-			ETSIDI::play("sonidos/YouWin.mp3");
+			if (mundo.cargarNivel()) {
+				estado = HISTORIA;
+			}
+			else {
+				estado = FIN;
+				ETSIDI::play("sonidos/YouWin.mp3");
+			}
+			
 		}
 	}
 }
@@ -75,10 +81,12 @@ void Coordinador::Tecla(unsigned char key) {
 	}
 	else if (estado == GAMEOVER) {
 		if (key == 'c')
+			mundo.reset();
 			estado = INICIO;
 	}
 	else if (estado == FIN) {
 		if (key == 'c')
+			mundo.reset();
 			estado = INICIO;
 	}
 	else if (estado == HISTORIA) {

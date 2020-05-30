@@ -10,6 +10,7 @@ using namespace std;
 Mundo::Mundo() {
 	FinLevel = false;
 	muerte = false;
+	nivel = 0;
 }
 
 Mundo::~Mundo() {
@@ -130,11 +131,24 @@ void Mundo::Mueve(){
 		}
 	}
 
-	if (hombre.NumPremios(Hombre::LLAVE) == 1) {
-		if (hombre.Choque(hombre, puerta)) {
-			FinLevel = true;
+
+	/////////////////////////
+	//CONDICIONES PARA PASARSE CADA NIVEL
+	if (nivel == 1) {
+		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
+			if (hombre.Choque(hombre, puerta)) {
+				FinLevel = true;
+			}
 		}
 	}
+	if (nivel == 2) {
+		if (hombre.NumPremios(Hombre::LLAVE) == 2) {
+			if (hombre.Choque(hombre, puerta)) {
+				FinLevel = true;
+			}
+		}
+	}
+	
 
 }
 
@@ -146,63 +160,7 @@ void Mundo::Inicializa() {
 	y_ojo = 21;
 	z_ojo = 70;
 	
-	hombre.SetPos(-10, 7);
-	
-	Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
-	Enemigo1* enemigo2= new Enemigo1(64.0f, 10.76f, 15.05);
-	enemigos.agregar(enemigo1);
-	enemigos.agregar(enemigo2);
-	
-
-	Llave* llave = new Llave();
-	llave->SetLlave(0.25, 0.5);
-	llave->SetPos(30, 17);
-	premios.agregar(llave);
-
-	Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
-	inferior1->SetColor(0, 200, 0);
-	plataformas.Agregar(inferior1);
-
-	Pared* inferior2 = new Pared(15, 1, 45, 1);
-	inferior2->SetColor(0, 200, 0);
-	plataformas.Agregar(inferior2);
-
-	Pared* inferior3 = new Pared(56, 1.01, 86, 1.01);
-	inferior3->SetColor(0, 200, 0);
-	plataformas.Agregar(inferior3);
-
-	Pared* pared1 = new Pared(-22, 1, -22, 22);
-	pared1->SetColor(0, 150, 0);
-	plataformas.Agregar(pared1);
-
-	Pared* pared2 = new Pared(86, 1, 86, 22);
-	pared2->SetColor(0, 150, 0);
-	plataformas.Agregar(pared2);
-
-	Pared* plat1 = new Pared(3, 6, 16, 6);
-	plat1->SetColor(100, 0, 0);
-	plataformas.Agregar(plat1);
-	Pared* plat2 = new Pared(-10, 10, -1, 10);
-	plat2->SetColor(100, 0, 0);
-	plataformas.Agregar(plat2);
-	Pared* plat3 = new Pared(3, 14, 16, 14);
-	plat3->SetColor(100, 0, 0);
-	plataformas.Agregar(plat3);
-	Pared* plat4 = new Pared(23, 12.5, 37, 12.5);
-	plat4->SetColor(100, 0, 0);
-	plataformas.Agregar(plat4);
-	Pared* plat5 = new Pared(44, 14, 57, 14);
-	plat5->SetColor(100, 0, 0);
-	plataformas.Agregar(plat5);
-	Pared* plat6 = new Pared(44, 6, 57, 6);
-	plat6->SetColor(100, 0, 0);
-	plataformas.Agregar(plat6);
-	Pared* plat7 = new Pared(61, 10.01, 70, 10.01);
-	plat7->SetColor(100, 0, 0);
-	plataformas.Agregar(plat7);
-
-	puerta.SetColor(130, 27, 5);
-	puerta.SetPos(28.5, 6, 31.5, 0);
+	cargarNivel();
 }
 
 void Mundo::Tecla(unsigned char key) {
@@ -278,4 +236,142 @@ void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadMatrixd(matla);
 	glMatrixMode(GL_MODELVIEW);
+}
+
+bool Mundo::cargarNivel() {
+	nivel++;
+	FinLevel = false;
+	x_ojo = 7;
+	y_ojo = 21;
+	z_ojo = 70;
+	//hay que destruir cosas y eso
+	enemigos.destruirContenido();
+
+
+	if (nivel == 1) {
+		hombre.SetPos(-10, 7);
+
+		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
+		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
+		enemigos.agregar(enemigo1);
+		enemigos.agregar(enemigo2);
+
+
+		Llave* llave = new Llave();
+		llave->SetLlave(0.25, 0.5);
+		llave->SetPos(30, 17);
+		premios.agregar(llave);
+
+		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
+		inferior1->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior1);
+
+		Pared* inferior2 = new Pared(15, 1, 45, 1);
+		inferior2->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior2);
+
+		Pared* inferior3 = new Pared(56, 1.01, 86, 1.01);
+		inferior3->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior3);
+
+		Pared* pared1 = new Pared(-22, 1, -22, 22);
+		pared1->SetColor(0, 150, 0);
+		plataformas.Agregar(pared1);
+
+		Pared* pared2 = new Pared(86, 1, 86, 22);
+		pared2->SetColor(0, 150, 0);
+		plataformas.Agregar(pared2);
+
+		Pared* plat1 = new Pared(3, 6, 16, 6);
+		plat1->SetColor(100, 0, 0);
+		plataformas.Agregar(plat1);
+		Pared* plat2 = new Pared(-10, 10, -1, 10);
+		plat2->SetColor(100, 0, 0);
+		plataformas.Agregar(plat2);
+		Pared* plat3 = new Pared(3, 14, 16, 14);
+		plat3->SetColor(100, 0, 0);
+		plataformas.Agregar(plat3);
+		Pared* plat4 = new Pared(23, 12.5, 37, 12.5);
+		plat4->SetColor(100, 0, 0);
+		plataformas.Agregar(plat4);
+		Pared* plat5 = new Pared(44, 14, 57, 14);
+		plat5->SetColor(100, 0, 0);
+		plataformas.Agregar(plat5);
+		Pared* plat6 = new Pared(44, 6, 57, 6);
+		plat6->SetColor(100, 0, 0);
+		plataformas.Agregar(plat6);
+		Pared* plat7 = new Pared(61, 10.01, 70, 10.01);
+		plat7->SetColor(100, 0, 0);
+		plataformas.Agregar(plat7);
+
+		puerta.SetColor(130, 27, 5);
+		puerta.SetPos(28.5, 6, 31.5, 0);
+	}
+	if (nivel == 2) {
+		hombre.SetPos(-10, 7);
+
+		Llave* llave = new Llave();
+		llave->SetLlave(0.25, 0.5);
+		llave->SetPos(30, 17);
+		premios.agregar(llave);
+
+		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
+		inferior1->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior1);
+
+		Pared* inferior2 = new Pared(15, 1, 45, 1);
+		inferior2->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior2);
+
+		Pared* inferior3 = new Pared(56, 1.01, 86, 1.01);
+		inferior3->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior3);
+
+		Pared* pared1 = new Pared(-22, 1, -22, 22);
+		pared1->SetColor(0, 150, 0);
+		plataformas.Agregar(pared1);
+
+		Pared* pared2 = new Pared(86, 1, 86, 22);
+		pared2->SetColor(0, 150, 0);
+		plataformas.Agregar(pared2);
+
+		Pared* plat1 = new Pared(3, 6, 16, 6);
+		plat1->SetColor(100, 0, 0);
+		plataformas.Agregar(plat1);
+		Pared* plat2 = new Pared(-10, 10, -1, 10);
+		plat2->SetColor(100, 0, 0);
+		plataformas.Agregar(plat2);
+		Pared* plat3 = new Pared(3, 14, 16, 14);
+		plat3->SetColor(100, 0, 0);
+		plataformas.Agregar(plat3);
+		Pared* plat4 = new Pared(23, 12.5, 37, 12.5);
+		plat4->SetColor(100, 0, 0);
+		plataformas.Agregar(plat4);
+		Pared* plat5 = new Pared(44, 14, 57, 14);
+		plat5->SetColor(100, 0, 0);
+		plataformas.Agregar(plat5);
+		Pared* plat6 = new Pared(44, 6, 57, 6);
+		plat6->SetColor(100, 0, 0);
+		plataformas.Agregar(plat6);
+		Pared* plat7 = new Pared(61, 10.01, 70, 10.01);
+		plat7->SetColor(100, 0, 0);
+		plataformas.Agregar(plat7);
+
+		puerta.SetColor(0, 27, 5);
+		puerta.SetPos(28.5, 6, 31.5, 0);
+	}
+	if (nivel <= 2) {
+		return true;
+	}
+	return false;
+}
+
+void Mundo::reset() {
+	nivel = 1;
+	int v = 3 - hombre.GetVidas();//para que solo puedas tener max 3 vidas, ya que lo llamamos tb cuando terminas todos los levels
+	for (int i = 0; i < v; i++) {
+		hombre.aumentarVida();
+	}
+	muerte = false;
+	nivel = 0;
 }

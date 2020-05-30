@@ -1,19 +1,6 @@
-﻿D:\Programas\Visual_19\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
   Coordinador.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Coordinador.cpp(36,52): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-  ListaEnemigos.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  ListaPremios.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Mundo.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Pang.cpp
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
-D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
-  Generando código...
-  Pang.vcxproj -> D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Coordinador.cpp(42,52): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  Pang.vcxproj -> C:\Users\Usuario\Source\Repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe

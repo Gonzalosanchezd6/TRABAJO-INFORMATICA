@@ -26,6 +26,7 @@ private: //se puede poner como private sin problema
 	int dispder = 1;
 	bool muerte;
 	bool FinLevel;
+	int nivel;
 	Disparo *disparo;
 	Hombre hombre;
 	Bonus bonus;
@@ -53,4 +54,7 @@ public:
 	void DibujarTexto(const char* texto, int longitud, int x, int y);
 	bool GetMuerte() { return muerte; }
 	bool GetFin() { return FinLevel; }
+
+	bool cargarNivel();
+	void reset();
 };
