@@ -6,6 +6,9 @@ D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TR
   ListaEnemigos.cpp
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
+  ListaPremios.cpp
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'
   Mundo.cpp
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11,1): warning C4005: 'MAX_VIDAS': redefinición de macro
 D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(5): message : vea la definición anterior de 'MAX_VIDAS'

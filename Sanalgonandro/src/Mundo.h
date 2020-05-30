@@ -13,7 +13,7 @@
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
 #include"ListaEnemigos.h"
-#include"Lista.h"
+
 
 
 class Mundo
@@ -30,8 +30,6 @@ private: //se puede poner como private sin problema
 	Hombre hombre;
 	Bonus bonus;
 	ListaPlataformas plataformas;
-	//Enemigo1 enemigo1;
-	//EnemigoBolas bolas;
 	ListaPremios premios;
 	Puerta puerta;
 	ListaBolas Bolas;
