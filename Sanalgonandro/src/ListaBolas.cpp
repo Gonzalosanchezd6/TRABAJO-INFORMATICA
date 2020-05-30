@@ -3,6 +3,51 @@
 #include "Interaccion.h"
 #include <cstdlib>
 
+
+/*
+ListaBolas::~ListaBolas() {
+}
+
+
+
+
+
+EnemigoBolas* ListaBolas::colision(ListaPlataformas& p) {
+	for (int i = 0; i < Lista::num(); i++) {
+		for (int j = 0; j < p.getNum(); j++) {
+			if (Interaccion::colision(*p[j] , *operator[](i))) {
+				return operator[](i);
+			}
+		}
+	}
+	return 0; //no hay colisión 
+}
+*/
+/*void ListaBolas::Crear(float t) {
+	random += t;
+	
+	if (random == 1) {
+		double i = -15 + (rand() % 35);
+		agregar(new EnemigoBolas(0.5f, i, 37));
+		random = 0;
+	}
+}*/
+/*
+bool ListaBolas::Crear(float t) {
+	random += t;
+
+	if (random >= 1) {
+		random = 0;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+*/
+
+
+
 ListaBolas::ListaBolas() {
 	numero = 0;
 	for (int i = 0; i < MAX_BOLAS; i++)
@@ -12,7 +57,7 @@ ListaBolas::ListaBolas() {
 ListaBolas::~ListaBolas() {
 }
 
-bool ListaBolas::agregar(EnemigoBolas *e) {
+bool ListaBolas::agregar(EnemigoBolas* e) {
 	if (numero < MAX_BOLAS) {
 		for (int i = 0; i < numero; i++) {
 			if (lista[i] == e) {
@@ -28,13 +73,13 @@ bool ListaBolas::agregar(EnemigoBolas *e) {
 	}
 }
 
-void ListaBolas::dibuja() {
+void ListaBolas::Dibuja() {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 	}
 }
 
-void ListaBolas::mueve(float t) {
+void ListaBolas::Mueve(float t) {
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
 	}
@@ -47,7 +92,7 @@ void ListaBolas::destruirContenido() {
 	numero = 0;
 }
 
-void ListaBolas::eliminar(int index) {
+void ListaBolas::Eliminar(int index) {
 	if ((index < 0) || (index >= numero))
 		return;
 	delete lista[index];
@@ -55,16 +100,16 @@ void ListaBolas::eliminar(int index) {
 	for (int i = index; i < numero; i++)
 		lista[i] = lista[i + 1];
 }
-void ListaBolas::eliminar(EnemigoBolas* e) {
+void ListaBolas::Eliminar(EnemigoBolas* e) {
 	for (int i = 0; i < numero; i++) {
 		if (lista[i] == e) {
-			eliminar(i);
+			Eliminar(i);
 			return;
 		}
 	}
 }
 
-EnemigoBolas* ListaBolas::choque(Hombre& h) {
+EnemigoBolas* ListaBolas::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::Choque(h, *lista[i])) {
 			return lista[i];
@@ -85,10 +130,10 @@ EnemigoBolas* ListaBolas::operator [](int i) {
 	return lista[i];
 }
 
-EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
+EnemigoBolas* ListaBolas::colision(ListaPlataformas& p) {
 	for (int i = 0; i < numero; i++) {
 		for (int j = 0; j < p.getNum(); j++) {
-			if (Interaccion::colision(*p[j] , *lista[i])) {
+			if (Interaccion::colision(*p[j], *lista[i])) {
 				return lista[i];
 			}
 		}
@@ -98,7 +143,7 @@ EnemigoBolas* ListaBolas::choque(ListaPlataformas& p) {
 
 /*void ListaBolas::Crear(float t) {
 	random += t;
-	
+
 	if (random == 1) {
 		double i = -15 + (rand() % 35);
 		agregar(new EnemigoBolas(0.5f, i, 37));

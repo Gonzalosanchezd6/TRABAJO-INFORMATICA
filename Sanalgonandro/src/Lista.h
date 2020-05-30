@@ -2,10 +2,9 @@
 //#define MAX_ELEM 10
 #include"Interaccion.h"
 #include"EnemigoLv1.h"
-#include"ListaPlataformas.h"
+//#include"ListaPlataformas.h"
 
 template <class T,int n>
-
 class Lista {
 public:
 	Lista();
@@ -15,19 +14,18 @@ public:
 	void Eliminar(T* d);
 	void Eliminar(int index);
 	void Mueve(float t);
-	void Dibuja();
+	virtual void Dibuja();
 	T* colision(Pared p);
 	T* colision(Enemigo1 e);
 	T* colision(Hombre& h);
-	T* colision(ListaPlataformas& p);
+	//virtual T* colision(ListaPlataformas& p);
 	int num() { return numero; }
-	bool Crear(float t);
 	T* operator[](int i);
+	//bool Crear(float t);
 private:
 	static const int MAX_ELEM = n;
 	T* lista[MAX_ELEM];
 	int numero;
-	float random = 0;	
 };
 
 
@@ -130,7 +128,7 @@ T* Lista<T, n>::colision(Hombre& h) {
 	}
 	return 0; //no hay colisión 
 }
-
+/*
 template <class T, int n>
 inline
 T* Lista<T, n>::colision(ListaPlataformas& p) {
@@ -142,7 +140,7 @@ T* Lista<T, n>::colision(ListaPlataformas& p) {
 		}
 	}
 	return 0; //no hay colisión 
-}
+}*/
 
 template <class T, int n>
 inline
@@ -168,7 +166,7 @@ void Lista<T, n>::Eliminar(T* d) {
 		}
 	}
 }
-
+/*
 template <class T, int n>
 inline
 bool Lista<T, n>::Crear(float t) {
@@ -181,7 +179,7 @@ bool Lista<T, n>::Crear(float t) {
 	else {
 		return false;
 	}
-}
+}*/
 
 
 template <class T, int n>

@@ -85,7 +85,7 @@ void Mundo::Mueve(){
 		x_ojo = 7;
 	}
 
-	for (int i = 0; i < Bolas.num(); i++) {
+	for (int i = 0; i < Bolas.getNumero(); i++) {
 		EnemigoBolas* auxx = Bolas.colision(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, *auxx)) {
