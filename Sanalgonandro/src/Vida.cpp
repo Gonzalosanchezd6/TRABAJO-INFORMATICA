@@ -1,4 +1,5 @@
 #include"Vida.h"
+#include "ETSIDI.h"
 #include "glut.h"
 
 Vida::Vida(){
@@ -19,7 +20,7 @@ Vida::~Vida(){
 }
 
 void Vida::Dibuja() {
-	glTranslatef(posicion.x, posicion.y, 0);
+	/*glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(255.0f, 0.0f, 0.0f);
 	glutSolidSphere(0.7, 20, 20);
 	glTranslatef(1.3, 0, 0);
@@ -31,7 +32,20 @@ void Vida::Dibuja() {
 	glVertex3f(-0.675f, -2.2f, 0);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glTranslatef(-posicion.x-1.3,- posicion.y, 0);
+	glTranslatef(-posicion.x-1.3,- posicion.y, 0);*/
+
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/corazon.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3ub(255, 255, 255);
+	glTexCoord2d(0, 1); glVertex3f(posicion.x-1.5, posicion.y- 1.5, 0);
+	glTexCoord2d(1, 1); glVertex3f(posicion.x+ 1.5, posicion.y- 1.5, 0);
+	glTexCoord2d(1, 0); glVertex3f(posicion.x+ 1.5, posicion.y+ 1.5, 0);
+	glTexCoord2d(0, 0); glVertex3f(posicion.x- 1.5, posicion.y+ 1.5, 0);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D); //imagen corazon
 }
 
 void Vida::SetPos(float ix, float iy) {

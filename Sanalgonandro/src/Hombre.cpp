@@ -1,5 +1,6 @@
 #include "Hombre.h"
 #include "Interaccion.h"
+#include "ETSIDI.h"
 #include "glut.h"
 
 Hombre::Hombre() {
@@ -35,26 +36,8 @@ void Hombre::Dibuja() {
 	glutSolidSphere(altura, 20, 20);
 	glPopMatrix();
 	vidas.Dibuja();
-	/*///vidas
-	glTranslatef(-30, 45, 0);
-	int i;
-	for (i = 0; i < vidas; i++) {
-		
-		glColor3f(255.0f, 0.0f, 0.0f);
-		glutSolidSphere(0.7, 20, 20);
-		glTranslatef(1.3, 0, 0);
-		glutSolidSphere(0.7, 20, 20);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_TRIANGLES);
-		glVertex3f(-2.1f, -0.2f, 0);
-		glVertex3f(0.75f, -0.2f, 0.0f);
-		glVertex3f(-0.675f, -2.2f, 0);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glTranslatef(3, 0, 0);
-	}
-
-	glTranslatef(30-(3+1.3)*(float)i, -45, 0);*/
+	
+	
 }
 
 void Hombre::Mueve(float t) {

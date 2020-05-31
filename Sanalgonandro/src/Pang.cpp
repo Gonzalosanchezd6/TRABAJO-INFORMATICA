@@ -79,6 +79,7 @@ void OnTimer(int value) {
 	//mundo.Mueve();
 	//mundo.RotarOjo();
 
+
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);
 	glutPostRedisplay();

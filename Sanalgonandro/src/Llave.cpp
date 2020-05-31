@@ -1,5 +1,7 @@
 #include "Llave.h"
+#include "ETSIDI.h"
 #include "glut.h"
+ 
 
 Llave::Llave() {
 	rad_int = 0.0f;
@@ -21,11 +23,24 @@ void Llave::SetPos(float x, float y) {
 }
 
 void Llave::Dibuja() {
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(255, 255, 0.0f);
 	glutSolidTorus(rad_int, rad_ext, 20, 20);
-	glPopMatrix();
+	glPopMatrix();*/ //DIBUJO BASE DE LA LLAVE
+
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/llave.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex3f(28, 15, 0);
+	glTexCoord2d(1, 1); glVertex3f(32, 15, 0);
+	glTexCoord2d(1, 0); glVertex3f(32, 19, 0);
+	glTexCoord2d(0, 0); glVertex3f(28, 19, 0);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);

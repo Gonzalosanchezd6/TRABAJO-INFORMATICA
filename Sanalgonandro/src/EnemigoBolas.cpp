@@ -1,5 +1,5 @@
 #include "EnemigoBolas.h"
-
+#include "ETSIDI.h"
 #include "glut.h"
 
 EnemigoBolas::EnemigoBolas() {
@@ -31,6 +31,19 @@ void EnemigoBolas::Dibuja() {
 	glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
 
+
+	/*glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/bolasfuego.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3ub(255, 255, 255);
+	glTexCoord2d(0, 1); glVertex3f(posicion.x-2, posicion.y-2, 0);
+	glTexCoord2d(1, 1); glVertex3f(posicion.x+2, posicion.y-2, 0);
+	glTexCoord2d(1, 0); glVertex3f(posicion.x+2, posicion.y+2, 0);
+	glTexCoord2d(0, 0); glVertex3f(posicion.x-2, posicion.y+2, 0);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);*/
 }
 void EnemigoBolas::Mueve(float t) {
 	Animado::Mueve(t);
