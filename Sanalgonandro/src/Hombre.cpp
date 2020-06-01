@@ -7,6 +7,7 @@ Hombre::Hombre() {
 	altura = 0.8f;
 	aceleracion.y = -9.8;
 	llaves = 0;
+	monedas = 0;
 	for (int i = 0; i < 3; i++) {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.Agregar(aux);
@@ -106,17 +107,24 @@ void Hombre::Premios(objetos ob) {
 	case LLAVE:
 		llaves += 1;
 		break;
+	case MONEDA:
+		monedas += 1;
+		break;
 	default:
 		break;
 	}
 }
 
 int Hombre::NumPremios(objetos ob) {
-	int num;
+	//int num;
 	switch (ob) {
 	case LLAVE:
-		num = llaves;
-		return num;
+		//num = llaves;
+		return llaves;
+		break;
+	case MONEDA:
+		//num = llaves;
+		return monedas;
 		break;
 	default:
 		break;

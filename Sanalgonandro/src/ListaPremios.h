@@ -1,24 +1,25 @@
 #pragma once
-#define MAX_LLAVES 3
-#include "Llave.h"
+#define MAX_PREMIOS 100
+//#include "Llave.h"
 //#include "Hombre.h"
 #include"Lista.h"
+#include "Premios.h"
 
-class ListaPremios:public Lista<Llave, MAX_LLAVES> {
+class ListaPremios :public Lista<Premio, MAX_PREMIOS> {
 private:
-	Llave* lista[MAX_LLAVES];
-	int num_llave;
+	Premio* lista[MAX_PREMIOS];
+	int num_premio;
 
 public:
 	ListaPremios();
 	virtual ~ListaPremios();
 
-	bool agregar(Llave* l);
+	bool agregar(Premio* l);
 	void destruirContenido();
 	void Eliminar(int index);
-	void Eliminar(Llave* l);
+	void Eliminar(Premio* l);
 	//void Mueve(float t);
 	void Dibuja();
 
-	Llave* colision(Hombre& h);
+	Premio* colision(Hombre& h);
 };

@@ -99,9 +99,11 @@
     <ClCompile Include="src\ListaPremios.cpp" />
     <ClCompile Include="src\ListaVidas.cpp" />
     <ClCompile Include="src\Llave.cpp" />
+    <ClCompile Include="src\Monedas.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
+    <ClCompile Include="src\Premios.cpp" />
     <ClCompile Include="src\Puerta.cpp" />
     <ClCompile Include="src\TextoInic.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -124,8 +126,10 @@
     <ClInclude Include="src\Lista.h" />
     <ClInclude Include="src\ListaVidas.h" />
     <ClInclude Include="src\Llave.h" />
+    <ClInclude Include="src\Monedas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
+    <ClInclude Include="src\Premios.h" />
     <ClInclude Include="src\Puerta.h" />
     <ClInclude Include="src\TextoInic.h" />
     <ClInclude Include="src\Vector2D.h" />

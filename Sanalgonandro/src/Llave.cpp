@@ -3,11 +3,11 @@
 #include "glut.h"
  
 
-Llave::Llave() {
-	rad_int = 0.0f;
-	rad_ext = 0.0f;
-	llave = new ETSIDI::Sprite("imagenes/llave.png", 0, 0, 3, 3);
-}
+//Llave::Llave() {
+//	rad_int = 0.0f;
+//	rad_ext = 0.0f;
+//	llave = new ETSIDI::Sprite("imagenes/llave.png", 0, 0, 3, 3);
+//}
 
 Llave::~Llave() {
 
@@ -18,11 +18,11 @@ void Llave::SetLlave(float r1, float r2) {
 	rad_ext = r2;
 }
 
-void Llave::SetPos(float x, float y) {
-	posicion.x = x;
-	posicion.y = y;
-	llave->setPos(posicion.x, posicion.y);
-}
+//void Llave::SetPos(float x, float y) {
+//	posicion.x = x;
+//	posicion.y = y;
+//	llave->setPos(posicion.x, posicion.y);
+//}
 
 void Llave::Dibuja() {
 	/*glPushMatrix();
@@ -49,7 +49,7 @@ void Llave::Dibuja() {
 	llave->setPos(posicion.x, posicion.y);
 	llave->draw();
 
-	if (posicion.x > 0) {
+	/*if (posicion.x > 0) {
 
 		glVertex3d(posicion.x + 0.125, posicion.y - rad_ext, 0);
 		glVertex3d(posicion.x - 0.125, posicion.y - rad_ext, 0);
@@ -64,12 +64,12 @@ void Llave::Dibuja() {
 		glVertex3d(posicion.x - 0.125, posicion.y - rad_ext - 1.5, 0);
 	}
 	glEnd();
-	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);*/
 }
 
-Vector2D Llave::GetPos() {
-	return posicion;
-}
+//Vector2D Llave::GetPos() {
+//	return posicion;
+//}
 
 bool operator==(const Llave& l1, const Llave& l2) {
 	if (l1.rad_ext == l2.rad_ext && l1.rad_int == l2.rad_int && l1.posicion == l2.posicion) {

@@ -1,7 +1,8 @@
 #pragma once
 #include "Hombre.h"
 #include "EnemigoLv1.h"
-#include "Llave.h"
+//#include "Llave.h"
+#include "Premios.h"
 #include "EnemigoBolas.h"
 #include "Puerta.h"
 #include"Vida.h"
@@ -16,7 +17,7 @@ public:
 	static void rebote(Hombre &h, Pared p);
 	static bool colision(Pared p, Hombre h);
 	static bool Choque(Hombre h, Enemigo1 e);
-	static bool Choque(Hombre h, Llave l);
+	static bool Choque(Hombre h, Premio *l);
 	static bool Choque(Hombre h, EnemigoBolas b);
 
 

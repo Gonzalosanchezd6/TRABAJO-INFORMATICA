@@ -43,8 +43,8 @@ bool Interaccion::Choque(Hombre h, Enemigo1 e) {
 	}
 }
 
-bool Interaccion::Choque(Hombre h, Llave l) {
-	Vector2D pos_l = l.GetPos();
+bool Interaccion::Choque(Hombre h, Premio *l) {
+	Vector2D pos_l = l->GetPos();
 	Vector2D pos_h = h.GetPos();
 	//pos_h.y += h.altura / 2.0f;
 	float distancia = (pos_l - pos_h).modulo() - (h.altura + 1.5);

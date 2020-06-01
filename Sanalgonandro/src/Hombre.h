@@ -20,6 +20,7 @@ private:
 	//Vector2D velocidad;
 	//Vector2D aceleracion;
 	int llaves;
+	int monedas;
 	//ListaVidas vidas;
 	
 	

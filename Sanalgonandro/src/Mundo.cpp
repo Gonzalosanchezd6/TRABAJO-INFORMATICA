@@ -122,13 +122,16 @@ void Mundo::Mueve(){
 		hombre.SetAc(0, -9.8);
 	}
 
-	Llave* prem_aux = premios.colision(hombre);
+	Premio* prem_aux = premios.colision(hombre);
 	if (prem_aux != 0) {
-		premios.Eliminar(prem_aux);
-		hombre.Premios(Hombre::LLAVE);
-		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
-			puerta.SetColor(0, 0, 255);
+		if (prem_aux->GetTipo() == Premio::LLAVE) {
+			hombre.Premios(Hombre::LLAVE);
 		}
+		else if (prem_aux->GetTipo() == Premio::MONEDA) {
+			hombre.Premios(Hombre::MONEDA);
+		}
+		premios.Eliminar(prem_aux);
+		
 	}
 
 
@@ -136,13 +139,17 @@ void Mundo::Mueve(){
 	//CONDICIONES PARA PASARSE CADA NIVEL
 	if (nivel == 1) {
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
-			if (hombre.Choque(hombre, puerta)) {
-				FinLevel = true;
+			if (hombre.NumPremios(Hombre::MONEDA) == 1) {
+				puerta.SetColor(0, 0, 255);
+				if (hombre.Choque(hombre, puerta)) {
+					FinLevel = true;
+				}
 			}
 		}
 	}
 	if (nivel == 2) {
 		if (hombre.NumPremios(Hombre::LLAVE) == 2) {
+			puerta.SetColor(0, 0, 255);
 			if (hombre.Choque(hombre, puerta)) {
 				FinLevel = true;
 			}
@@ -261,6 +268,11 @@ bool Mundo::cargarNivel() {
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(30, 17);
 		premios.agregar(llave);
+
+		Monedas* moneda = new Monedas();
+		moneda->SetRadio(0.5);
+		moneda->SetPos(25, 6);
+		premios.agregar(moneda);
 
 		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
 		inferior1->SetColor(0, 200, 0);

@@ -13,6 +13,8 @@
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
 #include"ListaEnemigos.h"
+#include "Premios.h"
+#include "Monedas.h"
 
 
 
