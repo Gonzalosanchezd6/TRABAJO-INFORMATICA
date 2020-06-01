@@ -13,6 +13,7 @@ Vida::Vida(float x, float y, float vx, float vy, float ax, float ay) {
 	SetVel(vx, vy);
 	aceleracion.x = ax;
 	aceleracion.y = ay;
+	vida = new ETSIDI::Sprite("imagenes/corazon.png", x, y, 3, 3);
 }
 
 Vida::~Vida(){
@@ -34,7 +35,7 @@ void Vida::Dibuja() {
 	glEnable(GL_LIGHTING);
 	glTranslatef(-posicion.x-1.3,- posicion.y, 0);*/
 
-	glEnable(GL_TEXTURE_2D);
+	/*glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/corazon.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
@@ -45,12 +46,16 @@ void Vida::Dibuja() {
 	glTexCoord2d(0, 0); glVertex3f(posicion.x- 1.5, posicion.y+ 1.5, 0);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D); //imagen corazon
+	glDisable(GL_TEXTURE_2D); //imagen corazon*/
+
+	vida->setPos(posicion.x, posicion.y);
+	vida->draw();
 }
 
 void Vida::SetPos(float ix, float iy) {
 	posicion.x = ix;
 	posicion.y = iy;
+
 }
 
 void Vida::Mueve(float t) {

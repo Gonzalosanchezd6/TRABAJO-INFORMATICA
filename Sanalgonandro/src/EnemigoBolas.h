@@ -1,6 +1,6 @@
 #pragma once
 #include "Animado.h"
-
+#include "ETSIDI.h"
 class EnemigoBolas:public Animado {
 
 private:
@@ -10,6 +10,9 @@ private:
 	//Vector2D posicion;
 	//Vector2D velocidad;
 	//Vector2D aceleracion;
+
+	ETSIDI::Sprite* fuego;
+
 
 public:
 	EnemigoBolas();

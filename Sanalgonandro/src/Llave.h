@@ -1,12 +1,12 @@
 #pragma once
 #include "Vector2D.h"
-
+#include "ETSIDI.h"
 class Llave {
 private:
 	float rad_int;
 	float rad_ext;
 	Vector2D posicion;
-	
+	ETSIDI::Sprite* llave;
 public:
 	Llave();
 	virtual ~Llave();

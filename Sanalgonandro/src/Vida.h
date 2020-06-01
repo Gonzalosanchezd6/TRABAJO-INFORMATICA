@@ -1,6 +1,6 @@
 #pragma once
 #include"Vector2D.h"
-
+#include "ETSIDI.h"
 class Vida{
 	friend class Interaccion;
 	unsigned char rojo;
@@ -10,6 +10,7 @@ class Vida{
 	Vector2D velocidad;
 	Vector2D aceleracion;
 
+	ETSIDI::Sprite* vida;
 
 public:
 

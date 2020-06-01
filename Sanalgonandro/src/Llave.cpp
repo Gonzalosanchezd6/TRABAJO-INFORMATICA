@@ -6,6 +6,7 @@
 Llave::Llave() {
 	rad_int = 0.0f;
 	rad_ext = 0.0f;
+	llave = new ETSIDI::Sprite("imagenes/llave.png", 0, 0, 3, 3);
 }
 
 Llave::~Llave() {
@@ -20,6 +21,7 @@ void Llave::SetLlave(float r1, float r2) {
 void Llave::SetPos(float x, float y) {
 	posicion.x = x;
 	posicion.y = y;
+	llave->setPos(posicion.x, posicion.y);
 }
 
 void Llave::Dibuja() {
@@ -29,7 +31,7 @@ void Llave::Dibuja() {
 	glutSolidTorus(rad_int, rad_ext, 20, 20);
 	glPopMatrix();*/ //DIBUJO BASE DE LA LLAVE
 
-	glEnable(GL_TEXTURE_2D);
+	/*glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/llave.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
@@ -43,7 +45,10 @@ void Llave::Dibuja() {
 	glDisable(GL_TEXTURE_2D);
 
 	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
+	glBegin(GL_POLYGON);*/
+	llave->setPos(posicion.x, posicion.y);
+	llave->draw();
+
 	if (posicion.x > 0) {
 
 		glVertex3d(posicion.x + 0.125, posicion.y - rad_ext, 0);
