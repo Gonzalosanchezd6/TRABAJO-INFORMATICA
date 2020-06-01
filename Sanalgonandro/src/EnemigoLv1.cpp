@@ -11,6 +11,7 @@ Enemigo1::Enemigo1(float x, float y,float vx, float vy) {
 	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
+	enemigo = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
 }
 
 Enemigo1::~Enemigo1() {
@@ -19,11 +20,14 @@ Enemigo1::~Enemigo1() {
 
 void Enemigo1::Dibuja() {
 	
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(0.0f, 0.0f, 115);
 	glutSolidCube(tamaño);
-	glPopMatrix();
+	glPopMatrix();*/
+
+	enemigo->setPos(posicion.x, posicion.y);
+	enemigo->draw();
 
 }
 
@@ -38,7 +42,7 @@ void Enemigo1::Mueve(float t) {
 		SetVel(-15.0, 0);
 	}*/
 
-	
+	enemigo->loop();
 }
 
 

@@ -32,6 +32,21 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/arboles.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex3f(-50,-10, -5);
+	glTexCoord2d(1, 1); glVertex3f(100, -10, -5);
+	glTexCoord2d(1, 0); glVertex3f(100, 50, -5);
+	glTexCoord2d(0, 0); glVertex3f(-50, 50, -5);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
+
 	hombre.Dibuja();
 	plataformas.Dibuja();
 	enemigos.Dibuja();
@@ -256,7 +271,7 @@ bool Mundo::cargarNivel() {
 
 
 	if (nivel == 1) {
-		hombre.SetPos(-10, 7);
+		hombre.SetPos(-10,7);
 
 		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
 		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);

@@ -1,11 +1,13 @@
 #pragma once
 #include"Animado.h"
 #include "Vector2D.h"
+#include "ETSIDI.h"
 
 class Enemigo1:public Animado {
 private:
 	friend class Interaccion;
 	float tamaño;
+	ETSIDI::Sprite* enemigo;
 
 public:
 	Enemigo1();

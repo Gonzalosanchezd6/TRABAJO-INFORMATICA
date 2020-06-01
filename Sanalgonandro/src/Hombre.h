@@ -6,6 +6,7 @@
 
 #include "Llave.h"
 #include "Puerta.h"
+#include "ETSIDI.h"
 //#include"ListaVidas.h"
 #include"Animado.h"
 #define MAX_VIDAS 5
@@ -23,7 +24,7 @@ private:
 	int monedas;
 	//ListaVidas vidas;
 	
-	
+	ETSIDI::Sprite* hombre;
 
 public:
 	enum objetos { LLAVE = 1, MONEDA };

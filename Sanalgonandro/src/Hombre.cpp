@@ -12,6 +12,7 @@ Hombre::Hombre() {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.Agregar(aux);
 	}
+	hombre = new ETSIDI::Sprite("imagenes/mario.png", 0, 0, 6, 6);
 }
 
 Hombre::~Hombre() {
@@ -31,13 +32,14 @@ void Hombre::SetPos(float ix, float iy) {
 }
 */
 void Hombre::Dibuja() {
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glutSolidSphere(altura, 20, 20);
-	glPopMatrix();
+	glPopMatrix();*/
 	vidas.Dibuja();
-	
+	hombre->setPos(posicion.x, posicion.y);
+	hombre->draw();
 	
 }
 
@@ -46,6 +48,7 @@ void Hombre::Mueve(float t) {
 	velocidad = velocidad + aceleracion * t;*/
 	Animado::Mueve(t);
 	//vidas.Mueve(t);
+	hombre->loop();
 }
 /*
 void Hombre::SetVel(float vx, float vy)
