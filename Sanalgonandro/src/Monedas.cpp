@@ -15,9 +15,11 @@ void Monedas::SetRadio(float r) {
 
 void Monedas::Dibuja() {
 	
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(248, 255, 0.0f);
 	glutSolidSphere(radio, 20, 20);
-	glPopMatrix();
+	glPopMatrix();*/
+	moneda->setPos(posicion.x, posicion.y);
+	moneda->draw();
 }
