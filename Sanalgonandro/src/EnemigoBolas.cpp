@@ -25,15 +25,15 @@ EnemigoBolas::EnemigoBolas(float rad, float x, float y, float vx, float vy) {
 
 void EnemigoBolas::Dibuja() {
 	
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glColor3f(100, 100, 100);
 	glutSolidSphere(radio, 20, 20);
-	glPopMatrix();
+	glPopMatrix();*/
 
 
-	/*glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/bolasfuego.png").id);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/oie_transparent.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3ub(255, 255, 255);
@@ -43,7 +43,7 @@ void EnemigoBolas::Dibuja() {
 	glTexCoord2d(0, 0); glVertex3f(posicion.x-2, posicion.y+2, 0);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);*/
+	glDisable(GL_TEXTURE_2D);
 }
 void EnemigoBolas::Mueve(float t) {
 	Animado::Mueve(t);
