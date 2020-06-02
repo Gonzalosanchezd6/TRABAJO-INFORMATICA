@@ -34,14 +34,17 @@ void Coordinador::Dibuja() {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setTextColor(1, 1, 0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("SUPER BOLA BROS", -10, 17);
+		ETSIDI::setTextColor(0, 1, 0);
+		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 24);
+		ETSIDI::printxy("GALAXY TROUBLE", -7, 16);
+		ETSIDI::setTextColor(1, 0, 1);
+		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 12);
+		
+		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -7, 7);
+		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -7, 6);
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-		ETSIDI::printxy("Creadores: Sanalgonandro", -10, 16.4);
-		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -5, 7);
-		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -5, 6);
+		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 12);
+		ETSIDI::printxy("Creadores: Sanalgonandro", -7, 1);
 	}
 	else if (estado == JUEGO) {
 		mundo.Dibuja();
@@ -51,25 +54,25 @@ void Coordinador::Dibuja() {
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
 		ETSIDI::setTextColor(1, 0, 0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
+		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
+		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -7, 10);
+		ETSIDI::printxy("Pulsa -C- para continuar", -7, 5);
 	}
 	else if (estado == FIN) {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
+		ETSIDI::setFont("fuentesRevamped-X3q1a.ttf", 16);
+		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -7, 10);
+		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
 	}
 	else if (estado == HISTORIA) {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("--Inserte texto aqui jeje xd--", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar",-5, 9);
+		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
+		ETSIDI::printxy("--Inserte texto aqui jeje xd--", -7, 10);
+		ETSIDI::printxy("Pulsa -C- para continuar",-7, 9);
 	}
 }
 
