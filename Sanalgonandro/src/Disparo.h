@@ -2,7 +2,7 @@
 #include "Animado.h"
 
 class Disparo: public Animado {
-private:
+protected:
 	float radio;
 	int disparo;
 	Vector2D origendisp;
@@ -12,7 +12,7 @@ public:
 	Disparo();
 	Disparo(int d, Vector2D Orig);
 	virtual ~Disparo();
-	void Dibuja();
+	virtual void Dibuja();
 	void Mueve(float t);
 	void SetOrig(float ix, float iy);
 	Vector2D GetOrig() { return origendisp; }

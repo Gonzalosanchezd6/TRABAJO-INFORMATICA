@@ -16,7 +16,7 @@
 #include "Premios.h"
 #include "Monedas.h"
 #include "Reja.h"
-
+#include "DisparoSuper.h"
 
 
 class Mundo
@@ -27,6 +27,9 @@ private: //se puede poner como private sin problema
 	float z_ojo;
 	int salto = 0;
 	int dispder = 1;
+
+
+
 	bool muerte;
 	bool FinLevel;
 	int nivel;
@@ -40,6 +43,7 @@ private: //se puede poner como private sin problema
 	ListaDisparos disparos;
 	ListaEnemigos enemigos;
 
+	DisparoSuper disparosuper;
 
 	
 	

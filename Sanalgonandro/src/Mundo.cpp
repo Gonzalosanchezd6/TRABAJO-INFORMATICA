@@ -206,6 +206,13 @@ void Mundo::Tecla(unsigned char key) {
 		disparos.agregar(d);
 		break;
 	}
+	case 'z': {
+		Vector2D pos = hombre.GetPos();
+		DisparoSuper* disup = new DisparoSuper(dispder, pos);
+		disparos.agregar(disup);
+		break;
+	}
+	
 	}
 }
 
@@ -243,6 +250,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 		dispder = 1;
 
 		break;
+
 	case GLUT_KEY_UP:
 
 		if (salto == 1) {

@@ -12,7 +12,7 @@ Hombre::Hombre() {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.Agregar(aux);
 	}
-	hombre = new ETSIDI::Sprite("imagenes/mario.png", 0, 0, 6, 6);
+	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 4);
 }
 
 Hombre::~Hombre() {
