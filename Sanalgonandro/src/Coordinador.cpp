@@ -47,19 +47,26 @@ void Coordinador::Dibuja() {
 		mundo.Dibuja();
 	}
 	else if (estado == GAMEOVER) {
-		mundo.Dibuja();
+		gluLookAt(0, 7.5, 30,
+			0.0, 7.5, 0.0,
+			0.0, 1.0, 0.0);
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -5, 10);//NO SE VE *************!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -5, 10);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
 	}
 	else if (estado == FIN) {
-		mundo.Dibuja();
+		gluLookAt(0, 7.5, 30,
+			0.0, 7.5, 0.0,
+			0.0, 1.0, 0.0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -5, 10);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
 	}
 	else if (estado == HISTORIA) {
+		gluLookAt(0, 7.5, 30,
+			0.0, 7.5, 0.0,
+			0.0, 1.0, 0.0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("--Inserte texto aqui jeje xd--", -5, 10);
 		ETSIDI::printxy("Pulsa -C- para continuar",-5, 9);
@@ -70,7 +77,7 @@ void Coordinador::Tecla(unsigned char key) {
 	if (estado == INICIO) {
 		if (key == 'e') {
 			mundo.Inicializa();
-			estado = JUEGO;
+			estado = HISTORIA;
 		}
 		if (key == 's') {
 			exit(0);

@@ -85,6 +85,8 @@ void Mundo::Mueve(){
 			hombre.restarVida();
 			ETSIDI::play("sonidos/PacManDies.mp3");
 			x_ojo = 7;
+			nivel--;
+			cargarNivel();
 		}
 	
 		Disparo* var = disparos.colision(*auxi);
@@ -99,6 +101,8 @@ void Mundo::Mueve(){
 		hombre.restarVida();
 		ETSIDI::play("sonidos/PacManDies.mp3");
 		x_ojo = 7;
+		nivel--;
+		cargarNivel();
 	}
 
 	for (int i = 0; i < Bolas.getNumero(); i++) {
@@ -108,6 +112,8 @@ void Mundo::Mueve(){
 				hombre.restarVida();
 				ETSIDI::play("sonidos/PacManDies.mp3");
 				x_ojo = 7;
+				nivel--;
+				cargarNivel();
 			}
 			Bolas.Eliminar(auxx);
 		}	
@@ -158,15 +164,17 @@ void Mundo::Mueve(){
 				puerta.SetColor(0, 0, 255);
 				if (hombre.Choque(hombre, puerta)) {
 					FinLevel = true;
+					hombre.reset();
 				}
 			}
 		}
 	}
 	if (nivel == 2) {
-		if (hombre.NumPremios(Hombre::LLAVE) == 2) {
+		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
 			puerta.SetColor(0, 0, 255);
 			if (hombre.Choque(hombre, puerta)) {
 				FinLevel = true;
+				hombre.reset();
 			}
 		}
 	}
@@ -207,6 +215,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 			if (x_ojo >= 7 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo -= 0.3;
+
 			}
 		}
 		else {
@@ -268,6 +277,7 @@ bool Mundo::cargarNivel() {
 	z_ojo = 70;
 	//hay que destruir cosas y eso
 	enemigos.destruirContenido();
+	premios.destruirContenido();
 
 
 	if (nivel == 1) {

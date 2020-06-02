@@ -55,4 +55,5 @@ public:
 	void Premios(objetos ob);
 	int NumPremios(objetos ob);
 	bool Choque(Hombre h, Puerta p);
+	void reset();
 };

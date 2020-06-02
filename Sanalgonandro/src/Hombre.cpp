@@ -119,14 +119,11 @@ void Hombre::Premios(objetos ob) {
 }
 
 int Hombre::NumPremios(objetos ob) {
-	//int num;
 	switch (ob) {
 	case LLAVE:
-		//num = llaves;
 		return llaves;
 		break;
 	case MONEDA:
-		//num = llaves;
 		return monedas;
 		break;
 	default:
@@ -158,10 +155,16 @@ void Hombre::restarVida() {
 	if (vidas.nVidas() > 0) {
 		vidas.Eliminar(vidas.nVidas()-1);
 		reinicia();
+		reset();
 	}
 
 }
 
 int Hombre::GetVidas() {
 	return vidas.nVidas();
+}
+
+void Hombre::reset() {
+	llaves = 0;
+	monedas = 0;
 }
