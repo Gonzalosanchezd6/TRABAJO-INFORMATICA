@@ -15,6 +15,7 @@ Animado::~Animado(){
 void Animado::SetPos(float ix, float iy) {
 	posicion.x = ix;
 	posicion.y = iy;
+
 }
 
 

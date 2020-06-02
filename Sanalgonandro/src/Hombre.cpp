@@ -25,12 +25,12 @@ void Hombre::SetAltura(float r) {
 
 
 
-
-void Hombre::SetPos(float ix, float iy) {
-	posicion.x = ix;
-	posicion.y = iy;
-}
 */
+/*void Hombre::SetPos(float ix, float iy) {
+	Animado::SetPos(ix, iy);
+	vidas.setpos(ix, 40);
+}*/
+
 void Hombre::Dibuja() {
 	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
@@ -143,6 +143,11 @@ void Hombre::reinicia() {
 	SetPos(-10, 7);
 	SetAc(0, -8);
 	SetVel(0, 0);
+
+	for (int i = 0; i < vidas.nVidas(); i++){
+		//vidas.setpos(-20 + i * 3, 40);
+	}
+	
 }
 
 void Hombre::aumentarVida() {

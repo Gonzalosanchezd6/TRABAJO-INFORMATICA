@@ -22,5 +22,6 @@ public:
 	void Mueve(float t);
 	void SetVel(float vx, float vy);
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
+	Vector2D GetPos() { return posicion; }
 };
 

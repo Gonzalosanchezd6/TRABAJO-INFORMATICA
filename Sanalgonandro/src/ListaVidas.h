@@ -21,6 +21,7 @@ public:
 	void Eliminar(int index);
 	void Eliminar(Vida* v);
 	int nVidas() { return numero; }
+	void setpos(int i);
 
 };
 

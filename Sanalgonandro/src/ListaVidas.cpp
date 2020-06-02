@@ -74,7 +74,31 @@ void ListaVidas::Eliminar(Vida* v){
 	for (int i = 0; i < numero; i++) {
 		if (lista[i] == v) {
 			Eliminar(i);
-			return;
+		}
+	}
+}
+
+void ListaVidas::setpos(int i) {
+
+	/*if (lista[0]->GetPos().x <= 57 && (x) >= 4 && (x) <= 56) {
+		for (int i = 0; i < numero; i++) {
+			lista[i]->SetPos((lista[i]->GetPos().x) + 0.3, y);
+		}
+	}
+	if (lista[0]->GetPos().x >= 7 && (x) >= 4 && (x) <= 56) {
+		for (int i = 0; i < numero; i++) {
+			lista[i]->SetPos((lista[i]->GetPos().x) - 0.3, y);
+		}
+	}*/
+
+	if (i == 0) { //esto es sumar
+		for (int i = 0; i < numero; i++) {
+			lista[i]->SetPos((lista[i]->GetPos().x) + 0.3, 40);
+		}
+	}
+	if (i==1) { //esto es restar
+		for (int i = 0; i < numero; i++) {
+			lista[i]->SetPos((lista[i]->GetPos().x) - 0.3, 40);
 		}
 	}
 }

@@ -33,7 +33,7 @@ void Mundo::Dibuja()
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
-	glEnable(GL_TEXTURE_2D);
+	/*glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/arboles.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
@@ -44,7 +44,7 @@ void Mundo::Dibuja()
 	glTexCoord2d(0, 0); glVertex3f(-50, 50, -5);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_TEXTURE_2D);*/ //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 	hombre.Dibuja();
@@ -161,7 +161,7 @@ void Mundo::Mueve(){
 	if (nivel == 1) {
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
 			if (hombre.NumPremios(Hombre::MONEDA) == 1) {
-				puerta.SetColor(0, 0, 255);
+				puerta.DibujaPuertaAbierta();
 				if (hombre.Choque(hombre, puerta)) {
 					FinLevel = true;
 					hombre.reset();
@@ -215,7 +215,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 			if (x_ojo >= 7 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo -= 0.3;
-
+				hombre.setposvidas(1);
 			}
 		}
 		else {
@@ -229,6 +229,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 			if (x_ojo <= 57 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo += 0.3;
+				hombre.setposvidas(0);
 			}
 		}
 		else {
@@ -311,7 +312,7 @@ bool Mundo::cargarNivel() {
 		inferior3->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior3);
 
-		Pared* pared1 = new Pared(-22, 1, -22, 22);
+		Pared* pared1 = new Pared(-22, 1, -22, 80);
 		pared1->SetColor(0, 150, 0);
 		plataformas.Agregar(pared1);
 
