@@ -173,3 +173,18 @@ void Hombre::reset() {
 	llaves = 0;
 	monedas = 0;
 }
+
+int Hombre::GetNumPrem(objetos o) {
+	switch (o)
+	{
+	case Hombre::LLAVE:
+		return llaves;
+		break;
+	case Hombre::MONEDA:
+		return monedas;
+		break;
+	default:
+		return 0;
+		break;
+	}
+}

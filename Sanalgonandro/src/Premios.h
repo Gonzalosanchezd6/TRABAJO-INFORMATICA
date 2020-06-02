@@ -8,12 +8,13 @@ class Premio {
 protected:
 	Vector2D posicion;
 public:
-	enum objetos { LLAVE = 0, MONEDA };
+	enum objetos { LLAVE = 0, MONEDA, REJA };
 protected:
 	objetos tipo;
+	bool libre; //si esta a true se puede coger, false no
 
 public:
-	Premio(objetos t) :tipo(t) {}
+	Premio(objetos t, bool lib = true) :tipo(t) {}
 	virtual ~Premio();
 	//void SetLlave(float r1, float r2);
 	void SetPos(float x, float y);
@@ -22,5 +23,6 @@ public:
 	objetos GetTipo() { return tipo; }
 
 	friend bool operator==(const Premio& l1, const Premio& l2);
-
+	bool Libre() { return libre; }
+	void SetLibertad(bool l) { libre = l; }
 };

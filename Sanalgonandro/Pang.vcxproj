@@ -105,6 +105,7 @@
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Premios.cpp" />
     <ClCompile Include="src\Puerta.cpp" />
+    <ClCompile Include="src\Reja.cpp" />
     <ClCompile Include="src\TextoInic.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
     <ClCompile Include="src\Vida.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Premios.h" />
     <ClInclude Include="src\Puerta.h" />
+    <ClInclude Include="src\Reja.h" />
     <ClInclude Include="src\TextoInic.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />

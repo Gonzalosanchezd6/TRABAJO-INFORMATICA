@@ -6,6 +6,8 @@ ListaPremios::ListaPremios() {
 	for (int i = 0; i < MAX_PREMIOS; i++) {
 		lista[i] = 0;
 	}
+	num_llaves = 0;
+	num_monedas = 0;
 }
 
 ListaPremios::~ListaPremios() {
@@ -50,7 +52,12 @@ void ListaPremios::Eliminar(Premio* l) {
 	for (int i = 0; i < num_premio; i++) {
 		if (lista[i] == l) {
 			Eliminar(i);
-			return;
+			if (lista[i]->GetTipo() == Premio::LLAVE) {
+				num_llaves++;
+			}
+			else if (lista[i]->GetTipo() == Premio::MONEDA) {
+				num_monedas++;
+			}
 		}
 	}
 }
@@ -63,9 +70,34 @@ void ListaPremios::Dibuja() {
 
 Premio* ListaPremios::colision(Hombre& h) {
 	for (int i = 0; i < num_premio; i++) {
-		if (Interaccion::Choque(h, (lista[i]))) {
+		if (!lista[i]->Libre()) {
+
+		}
+		else if (Interaccion::Choque(h, (lista[i]))) {
 			return lista[i];
 		}
 	}
 	return 0;
+}
+
+void ListaPremios::reset(int n_llave, int n_moneda) {
+	num_llaves -= n_llave;
+	num_monedas -= n_moneda;
+}
+
+Premio* ListaPremios::buscar(Premio::objetos o) {
+	for (int i = 0; i < num_premio; i++) {
+		if (lista[i]->GetTipo() == o) {
+			return lista[i];
+		}
+	}
+	return 0;
+}
+
+void ListaPremios::SetLibertad(Premio* p, bool lib) {
+	for (int i = 0; i < num_premio; i++) {
+		if (lista[i] == p) {
+			lista[i]->SetLibertad(lib);
+		}
+	}
 }

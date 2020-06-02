@@ -15,6 +15,7 @@
 #include"ListaEnemigos.h"
 #include "Premios.h"
 #include "Monedas.h"
+#include "Reja.h"
 
 
 
@@ -56,6 +57,7 @@ public:
 	void DibujarTexto(const char* texto, int longitud, int x, int y);
 	bool GetMuerte() { return muerte; }
 	bool GetFin() { return FinLevel; }
+	int GetNivel() { return nivel; }
 
 	bool cargarNivel();
 	void reset();

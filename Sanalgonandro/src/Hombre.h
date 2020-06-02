@@ -57,4 +57,5 @@ public:
 	bool Choque(Hombre h, Puerta p);
 	void reset();
 	void setposvidas(int i) { vidas.setpos(i); }
+	int GetNumPrem(objetos o);
 };

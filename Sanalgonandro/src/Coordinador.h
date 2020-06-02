@@ -4,7 +4,7 @@
 class Coordinador {
 protected:
 	Mundo mundo;
-	enum Estado { INICIO, JUEGO, GAMEOVER, FIN, HISTORIA};
+	enum Estado { INICIO, JUEGO, GAMEOVER, FIN, HISTORIA, INSTRUCCIONES, PAUSA};
 	Estado estado;
 public:
 	Coordinador();

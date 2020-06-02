@@ -87,6 +87,7 @@ void Mundo::Mueve(){
 			x_ojo = 7;
 			nivel--;
 			cargarNivel();
+			premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 		}
 	
 		Disparo* var = disparos.colision(*auxi);
@@ -159,6 +160,10 @@ void Mundo::Mueve(){
 	/////////////////////////
 	//CONDICIONES PARA PASARSE CADA NIVEL
 	if (nivel == 1) {
+		if (hombre.NumPremios(Hombre::MONEDA) >= 1) {
+			premios.Eliminar(premios.buscar(Premio::REJA));
+			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
+		}
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
 			if (hombre.NumPremios(Hombre::MONEDA) == 1) {
 				puerta.DibujaPuertaAbierta();
@@ -293,7 +298,13 @@ bool Mundo::cargarNivel() {
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(30, 17);
+		llave->SetLibertad(false);
 		premios.agregar(llave);
+
+		Reja* reja = new Reja();
+		reja->SetPos(30, 17);
+		reja->SetRadio(0.5);
+		premios.agregar(reja);
 
 		Monedas* moneda = new Monedas();
 		moneda->SetRadio(0.5);
