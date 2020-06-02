@@ -4,7 +4,7 @@
 #include "glut.h"
 
 Hombre::Hombre() {
-	altura = 0.8f;
+	altura = 1.5f;
 	aceleracion.y = -9.8;
 	llaves = 0;
 	monedas = 0;
@@ -12,7 +12,7 @@ Hombre::Hombre() {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.Agregar(aux);
 	}
-	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 4);
+	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 3);
 }
 
 Hombre::~Hombre() {
@@ -22,9 +22,6 @@ Hombre::~Hombre() {
 void Hombre::SetAltura(float r) {
 	altura = r;
 }
-
-
-
 */
 /*void Hombre::SetPos(float ix, float iy) {
 	Animado::SetPos(ix, iy);

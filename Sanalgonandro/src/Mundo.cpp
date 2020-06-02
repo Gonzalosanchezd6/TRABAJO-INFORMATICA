@@ -33,8 +33,8 @@ void Mundo::Dibuja()
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
-	/*glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/arboles.png").id);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/marte.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -44,7 +44,7 @@ void Mundo::Dibuja()
 	glTexCoord2d(0, 0); glVertex3f(-50, 50, -5);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);*/ //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	glDisable(GL_TEXTURE_2D); //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 	hombre.Dibuja();
@@ -362,7 +362,7 @@ bool Mundo::cargarNivel() {
 		plataformas.Agregar(plat7);
 
 		puerta.SetColor(130, 27, 5);
-		puerta.SetPos(28.5, 6, 31.5, 0);
+		puerta.SetPos(28.5, 10, 31.5, 0);
 	}
 	if (nivel == 2) {
 		hombre.SetPos(-10, 7);

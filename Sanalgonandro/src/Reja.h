@@ -9,7 +9,7 @@ private:
 public:
 	Reja(objetos o = REJA) :Premio(o), radio(0) { 
 		Premio::SetLibertad(false);
-		/*reja = new ETSIDI::Sprite("imagenes/moneda.png", 0, 0, 3, 3);*/
+		reja = new ETSIDI::Sprite("imagenes/rejas.png", 0, 0, 6, 6);
 	}
 	virtual ~Reja();
 	void SetRadio(float r);

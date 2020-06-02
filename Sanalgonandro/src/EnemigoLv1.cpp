@@ -2,11 +2,12 @@
 #include "glut.h"
 
 Enemigo1::Enemigo1() {
-	tamaño = 1.5;
+	//tamaño = 3.0f;
+
 }
 
 Enemigo1::Enemigo1(float x, float y,float vx, float vy) {
-	tamaño = 1.5;
+	tamaño = 6.0;
 	velocidad.x = vx;
 	velocidad.y = vy;
 	posicion.x = x;

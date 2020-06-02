@@ -55,4 +55,5 @@ void Puerta::SetPos(float lim1x, float lim1y, float lim2x, float lim2y) {
 void Puerta::DibujaPuertaAbierta() {
 	puerta = new ETSIDI::Sprite("imagenes/puertaabierta.png", 2, 2, 8, 8);
 	Puerta::Dibuja();
+	
 }

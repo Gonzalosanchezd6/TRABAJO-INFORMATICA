@@ -16,5 +16,4 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	float GetTam();
-
 };
