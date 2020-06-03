@@ -1,20 +1,13 @@
 #include "ListaPremios.h"
 #include "Interaccion.h"
 
-ListaPremios::ListaPremios() {
-	num_premio = 0;
-	for (int i = 0; i < MAX_PREMIOS; i++) {
-		lista[i] = 0;
-	}
-	num_llaves = 0;
-	num_monedas = 0;
-}
+
 
 ListaPremios::~ListaPremios() {
 
 }
 
-bool ListaPremios::agregar(Premio* l) {
+/*bool ListaPremios::agregar(Premio* l) {
 	if (num_premio < MAX_PREMIOS) {
 		for (int i = 0; i < num_premio; i++) {
 			if (lista[i] == l) {
@@ -78,7 +71,7 @@ Premio* ListaPremios::colision(Hombre& h) {
 		}
 	}
 	return 0;
-}
+}*/
 
 void ListaPremios::reset(int n_llave, int n_moneda) {
 	num_llaves -= n_llave;
@@ -86,18 +79,18 @@ void ListaPremios::reset(int n_llave, int n_moneda) {
 }
 
 Premio* ListaPremios::buscar(Premio::objetos o) {
-	for (int i = 0; i < num_premio; i++) {
-		if (lista[i]->GetTipo() == o) {
-			return lista[i];
+	for (int i = 0; i < num(); i++) {
+		if (operator[](i)->GetTipo() == o) {
+			return operator[](i);
 		}
 	}
 	return 0;
 }
 
 void ListaPremios::SetLibertad(Premio* p, bool lib) {
-	for (int i = 0; i < num_premio; i++) {
-		if (lista[i] == p) {
-			lista[i]->SetLibertad(lib);
+	for (int i = 0; i < num(); i++) {
+		if (operator[](i) == p) {
+			operator[](i)->SetLibertad(lib);
 		}
 	}
 }

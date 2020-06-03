@@ -1,16 +1,11 @@
 #pragma once
-#include "Vector2D.h"
+#include "Animado.h"
 
-class Bonus{
+class Bonus: public Animado{
 private:
 	float lado;
-	Vector2D posicion;
-	Vector2D velocidad;
-	Vector2D aceleracion;
 public:
 	Bonus();
 	virtual ~Bonus();
 	void Dibuja();
-	void Mueve(float t);
-	void SetPos(float ix, float iy);
 };

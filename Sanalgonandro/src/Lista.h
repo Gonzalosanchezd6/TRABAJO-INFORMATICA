@@ -1,5 +1,4 @@
 #pragma once
-//#define MAX_ELEM 10
 #include"Interaccion.h"
 #include"EnemigoLv1.h"
 //#include"ListaPlataformas.h"
@@ -41,7 +40,7 @@ Lista<T,n>::Lista() {
 template <class T, int n>
 inline
 Lista<T, n>::~Lista() {
-
+	destruirContenido();
 }
 
 template <class T, int n>
@@ -81,17 +80,9 @@ void  Lista<T, n>::Mueve(float t) {
 template <class T, int n>
 inline
 void Lista<T, n>::Dibuja() {
-	/*for (int i = 0; i < numero; i++) {
-		lista[i]->Dibuja();
-		Vector2D pos = lista[i]->GetPos();//si se pasa de largo se elimina
-		if (pos.x > (lista[i]->GetOrig().x + 15.0f) || pos.x < (lista[i]->GetOrig().x - 15.0f)) {  
-			Eliminar(i);
-		}
-	}*/
 	for (int i = 0; i < numero; i++) {
 		lista[i]->Dibuja();
 	}
-
 }
 
 template <class T, int n>
@@ -122,7 +113,7 @@ template <class T, int n>
 inline
 T* Lista<T, n>::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Choque(h, *lista[i])) {
+		if (Interaccion::Choque(h, lista[i])) {
 			return lista[i];
 		}
 	}

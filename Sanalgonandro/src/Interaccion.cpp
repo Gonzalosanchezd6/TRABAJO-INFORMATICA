@@ -30,11 +30,10 @@ bool Interaccion::colision(Pared p, Hombre h) {
 	return false;
 }
 
-bool Interaccion::Choque(Hombre h, Enemigo1 e) {
-	Vector2D dif = h.posicion - e.posicion;
+bool Interaccion::Choque(Hombre h, Enemigo1 *e) {
+	Vector2D dif = h.posicion - e->posicion;
 	float d = dif.modulo();
-	float dentro = d - (h.altura + e.tamaño/2);
-
+	float dentro = d - (h.altura + e->tamaño/2);
 	if (dentro < 0.0f) {
 		return true;
 	}
@@ -54,10 +53,10 @@ bool Interaccion::Choque(Hombre h, Premio *l) {
 	return false;
 }
 
-bool Interaccion::Choque(Hombre h, EnemigoBolas b) {
-	Vector2D dif = h.posicion - b.posicion;
+bool Interaccion::Choque(Hombre h, EnemigoBolas *b) {
+	Vector2D dif = h.posicion - b->posicion;
 	float d = dif.modulo();
-	float dentro = d - (h.altura + b.radio / 2);
+	float dentro = d - (h.altura + b->radio / 2);
 
 	if (dentro < 0.0f) {
 		return true;

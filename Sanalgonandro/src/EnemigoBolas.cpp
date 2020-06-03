@@ -2,12 +2,12 @@
 #include "ETSIDI.h"
 #include "glut.h"
 
-EnemigoBolas::EnemigoBolas() {
+/*EnemigoBolas::EnemigoBolas() {
 	//radio = 0.3f;
 	//aceleracion.y = -50.0f;
 	//velocidad.y = -50.0f;
 	
-}
+}*/
 
 EnemigoBolas::~EnemigoBolas() {
 

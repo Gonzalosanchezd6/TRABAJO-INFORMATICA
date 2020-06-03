@@ -111,7 +111,7 @@ void ListaBolas::Eliminar(EnemigoBolas* e) {
 
 EnemigoBolas* ListaBolas::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Choque(h, *lista[i])) {
+		if (Interaccion::Choque(h, lista[i])) {
 			return lista[i];
 		}
 	}

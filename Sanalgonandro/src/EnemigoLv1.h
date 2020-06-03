@@ -10,7 +10,7 @@ private:
 	ETSIDI::Sprite* enemigo;
 
 public:
-	Enemigo1();
+	//Enemigo1();
 	Enemigo1(float x, float y, float vx=-15.0f, float vy=0.0f);
 	virtual ~Enemigo1();
 	void Dibuja();

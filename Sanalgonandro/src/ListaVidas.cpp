@@ -1,19 +1,10 @@
 #include"ListaVidas.h"
-#include "Interaccion.h"
-#include"glut.h"
-ListaVidas::ListaVidas(){
-	numero = 0;
-	for (int i = 0; i < MAX_VIDAS; i++) {
-		lista[i] = 0;
-	}
-}
 
 ListaVidas::~ListaVidas(){
-
 }
 
 
-bool ListaVidas::Agregar(Vida* v) {
+bool ListaVidas::agregar(Vida* v) {
 	for (int i = 0; i < numero; i++) {//comprobamos si ya se ha añadido o no, porque si ya se ha añadido dará fallo el delete
 		if (lista[i] == v) {
 			return false;
@@ -79,25 +70,13 @@ void ListaVidas::Eliminar(Vida* v){
 }
 
 void ListaVidas::setpos(int i) {
-
-	/*if (lista[0]->GetPos().x <= 57 && (x) >= 4 && (x) <= 56) {
-		for (int i = 0; i < numero; i++) {
-			lista[i]->SetPos((lista[i]->GetPos().x) + 0.3, y);
-		}
-	}
-	if (lista[0]->GetPos().x >= 7 && (x) >= 4 && (x) <= 56) {
-		for (int i = 0; i < numero; i++) {
-			lista[i]->SetPos((lista[i]->GetPos().x) - 0.3, y);
-		}
-	}*/
-
 	if (i == 0) { //esto es sumar
-		for (int i = 0; i < numero; i++) {
+		for (int i = 0; i < num(); i++) {
 			lista[i]->SetPos((lista[i]->GetPos().x) + 0.3, 40);
 		}
 	}
 	if (i==1) { //esto es restar
-		for (int i = 0; i < numero; i++) {
+		for (int i = 0; i < num(); i++) {
 			lista[i]->SetPos((lista[i]->GetPos().x) - 0.3, 40);
 		}
 	}
