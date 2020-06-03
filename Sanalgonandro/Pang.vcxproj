@@ -104,6 +104,7 @@
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
+    <ClCompile Include="src\PlataformaMovil.cpp" />
     <ClCompile Include="src\Premios.cpp" />
     <ClCompile Include="src\Puerta.cpp" />
     <ClCompile Include="src\Reja.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="src\Monedas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
+    <ClInclude Include="src\PlataformaMovil.h" />
     <ClInclude Include="src\Premios.h" />
     <ClInclude Include="src\Puerta.h" />
     <ClInclude Include="src\Reja.h" />

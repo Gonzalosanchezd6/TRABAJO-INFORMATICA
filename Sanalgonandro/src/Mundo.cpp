@@ -83,6 +83,7 @@ void Mundo::Mueve(){
 	hombre.Mueve(0.025f);
 	enemigos.Mueve(0.0025f);
 	disparos.Mueve(0.0025f);
+	plataformas.Mueve(0.0025f);
 	Bolas.Mueve(0.025f);
 	vidas.Mueve(0.025f);
 	enemigos.colision(plataformas);
@@ -331,6 +332,10 @@ bool Mundo::cargarNivel() {
 		moneda->SetRadio(0.5);
 		moneda->SetPos(25, 6);
 		premios.agregar(moneda);
+
+		PlatMovil* mov = new PlatMovil(0.0, 15.0, 6.0, 15.0);
+		mov->SetColor(0, 200, 0);
+		plataformas.Agregar(mov);
 
 		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
 		inferior1->SetColor(0, 200, 0);

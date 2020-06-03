@@ -1,8 +1,22 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-  TextoInic.cpp
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(38,24): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(41,56): error C2664: 'void ETSIDI::print(const char *,const char *,int)': el argumento 1 no puede convertirse de 'const std::string' a 'const char *'
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(41,16): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\lib\ETSIDI.h(76,18): message : vea la declaración de 'ETSIDI::print'
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(42,27): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\pedri\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(37,17): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (tmp\Debug\) contains files shared from another project (Pang.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Mundo.cpp
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(4,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11): message : vea la definición anterior de 'MAX_VIDAS'
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(14): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,10>::Lista' en su lugar
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,10>::Lista(void)"
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Disparo,10>::Lista(void)" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Disparo,10>" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Enemigo1,10>::Lista(void)" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Enemigo1,10>" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,20>::Lista' en su lugar
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Vida,20>::Lista(void)"
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(10): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Vida,20>::Lista(void)" que se está compilando
+C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Vida,20>" que se está compilando
+  Pang.vcxproj -> C:\Users\Usuario\Desktop\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe

@@ -26,6 +26,8 @@ void Pared::Dibuja() {
 	glEnable(GL_LIGHTING);
 }
 
+void Pared::Mueve(float t) {}
+
 void Pared::SetColor(unsigned char r, unsigned char v, unsigned char a) {
 	rojo = r;
 	verde = v;

@@ -9,6 +9,7 @@
 #include "Llave.h"
 #include "ListaPremios.h"
 #include "Puerta.h"
+#include "PlataformaMovil.h"
 #include "EnemigoBolas.h"
 #include"Vida.h"
 #include "ListaBolas.h"

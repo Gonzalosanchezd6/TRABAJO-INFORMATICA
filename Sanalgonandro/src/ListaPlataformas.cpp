@@ -35,6 +35,12 @@ void ListaPlataformas::Dibuja() {
 	}
 }
 
+void ListaPlataformas::Mueve(float t) {
+	for (int i = 0; i < numero; i++) {
+		lista[i]->Mueve(t);
+	}
+}
+
 Pared* ListaPlataformas::colision(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::colision(*(lista[i]), h)) {
