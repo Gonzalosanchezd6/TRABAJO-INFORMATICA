@@ -1,28 +1,28 @@
-#include "EnemigoLv1.h"
+#include "Enemigo2vidas.h"
 #include "glut.h"
 
-Enemigo1::Enemigo1() {
+Enemigo2vidas::Enemigo2vidas() {
 	//tamaño = 3.0f;
 
 }
 
-Enemigo1::Enemigo1(float x, float y, float vx, float vy) {
+Enemigo2vidas::Enemigo2vidas(float x, float y, float vx, float vy) : Enemigo1(x, y, vx, vy) {
 	tamaño = 6.0;
 	velocidad.x = vx;
 	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
 
-	vidas = 1;
+	vidas = 2;
 
-	enemigo = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
+	enemigo2vidas = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
 }
 
-Enemigo1::~Enemigo1() {
+Enemigo2vidas::~Enemigo2vidas() {
 
 }
 
-void Enemigo1::Dibuja() {
+void Enemigo2vidas::Dibuja() {
 
 	/*glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
@@ -30,12 +30,12 @@ void Enemigo1::Dibuja() {
 	glutSolidCube(tamaño);
 	glPopMatrix();*/
 
-	enemigo->setPos(posicion.x, posicion.y);
-	enemigo->draw();
+	enemigo2vidas->setPos(posicion.x, posicion.y);
+	enemigo2vidas->draw();
 
 }
 
-void Enemigo1::Mueve(float t) {
+void Enemigo2vidas::Mueve(float t) {
 	/*posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;*/
 	Animado::Mueve(t);
@@ -46,24 +46,5 @@ void Enemigo1::Mueve(float t) {
 		SetVel(-15.0, 0);
 	}*/
 
-	enemigo->loop();
+	enemigo2vidas->loop();
 }
-
-
-
-float Enemigo1::GetTam() {
-	return tamaño;
-}
-
-void Enemigo1::restarVida() {
-
-	vidas--;
-
-}
-
-int Enemigo1::GetVidas() {
-	return vidas;
-}
-
-
-

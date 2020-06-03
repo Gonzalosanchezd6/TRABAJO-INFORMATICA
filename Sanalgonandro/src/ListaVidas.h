@@ -12,5 +12,6 @@ public:
 	void setpos(int i);
 	void Eliminar(int n);
 	void posIni() { for (int i = 0; i < num(); i++) operator[](i)->SetPos((-20 + i * 3), 40); }
+	
 };
 

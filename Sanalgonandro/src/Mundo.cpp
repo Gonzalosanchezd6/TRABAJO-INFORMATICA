@@ -107,8 +107,12 @@ void Mundo::Mueve(){
 		Disparo* var = disparos.colision(*auxi);
 		if (var != 0) {
 			disparos.Eliminar(var);
-			enemigos.Eliminar(auxi);
-			ETSIDI::play("sonidos/Bala.mp3");
+			enemigos.restarVida(auxi);
+			if (enemigos.GetVidas(auxi) == 0) {
+				enemigos.Eliminar(auxi);
+				ETSIDI::play("sonidos/Bala.mp3");
+			}
+
 		}
 	}
 
@@ -303,6 +307,7 @@ bool Mundo::cargarNivel() {
 	x_ojo = 7;
 	y_ojo = 21;
 	z_ojo = 70;
+	vidas.posIni();
 	//hay que destruir cosas y eso
 	enemigos.destruirContenido();
 	premios.destruirContenido();
@@ -314,10 +319,17 @@ bool Mundo::cargarNivel() {
 	if (nivel == 1) {
 		hombre.SetPos(-10,7);
 
-		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
+		/*Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
 		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
 		enemigos.agregar(enemigo1);
+		enemigos.agregar(enemigo2);*/
+
+		Enemigo2vidas* enemigo1 = new Enemigo2vidas(-6.0f, 10.75f, -15.0f);
+		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
+		EnemigoFinal* enemigo3 = new EnemigoFinal(20.01f, 13.76f, -15.0f);
+		enemigos.agregar(enemigo1);
 		enemigos.agregar(enemigo2);
+		enemigos.agregar(enemigo3);
 
 
 		Llave* llave = new Llave();
@@ -352,7 +364,7 @@ bool Mundo::cargarNivel() {
 		inferior3->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior3);
 
-		Pared* pared1 = new Pared(-22, 1, -22, 80);
+		Pared* pared1 = new Pared(-22, 1, -22, 22);
 		pared1->SetColor(0, 150, 0);
 		plataformas.Agregar(pared1);
 

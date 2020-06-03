@@ -2,7 +2,7 @@
 #include"Interaccion.h"
 
 
-ListaEnemigos::~ListaEnemigos(){
+ListaEnemigos::~ListaEnemigos() {
 }
 
 

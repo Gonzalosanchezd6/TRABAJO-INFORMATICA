@@ -32,3 +32,4 @@ void ListaVidas::Eliminar(int n) {
 		Lista::Eliminar(i);
 	}
 }
+

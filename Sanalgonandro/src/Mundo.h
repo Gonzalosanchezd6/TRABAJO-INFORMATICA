@@ -20,6 +20,8 @@
 #include "Reja.h"
 #include "DisparoSuper.h"
 #include"ListaVidas.h"
+#include "Enemigo2vidas.h"
+#include "EnemigoFinal.h"
 
 
 class Mundo
