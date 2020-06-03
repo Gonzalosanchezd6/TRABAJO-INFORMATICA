@@ -13,15 +13,15 @@ void Pistola::SetPis(float r) {
 }
 
 void Pistola::Dibuja() {
-	glColor3f(0.0f, 1.0f, 1.0f);
+	/*glColor3f(0.0f, 1.0f, 1.0f);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	glutSolidSphere(radio, 20, 20);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_LINES);
-	glPopMatrix();
-	/*llave->setPos(posicion.x, posicion.y);
-	llave->draw();*/
+	glPopMatrix();*/
+	pistola->setPos(posicion.x, posicion.y);
+	pistola->draw();
 }
 
 //bool operator==(const Llave& l1, const Llave& l2) {

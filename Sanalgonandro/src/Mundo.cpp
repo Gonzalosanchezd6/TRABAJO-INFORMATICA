@@ -362,7 +362,7 @@ bool Mundo::cargarNivel() {
 
 		Pistola* pis = new Pistola();
 		pis->SetPis(0.5);
-		pis->SetPos(26, 6);
+		pis->SetPos(20, 6);
 		premios.agregar(pis);
 
 		PlatMovil* mov = new PlatMovil(0.0, 15.0, 6.0, 15.0);

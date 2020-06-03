@@ -8,7 +8,7 @@ private:
 	float radio;
 	ETSIDI::Sprite* pistola;
 public:
-	Pistola(objetos o = PISTOLA) :Premio(o), radio(0) { /*pistola = new ETSIDI::Sprite("imagenes/llave.png", 0, 0, 3, 3);*/ }
+	Pistola(objetos o = PISTOLA) :Premio(o), radio(0) { pistola = new ETSIDI::Sprite("imagenes/pistola.png", 0, 0, 4.5, 3); }
 	virtual ~Pistola();
 	void SetPis(float r);
 	void Dibuja();
