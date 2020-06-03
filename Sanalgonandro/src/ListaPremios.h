@@ -19,7 +19,7 @@ public:
 	//void Eliminar(Premio* l);
 	//void Mueve(float t);
 	//void Dibuja();
-	//Premio* colision(Hombre& h);
+	Premio* colision(Hombre& h);
 	void reset(int n_llave, int n_moneda);
 	Premio* buscar(Premio::objetos o);
 	void SetLibertad(Premio* p, bool lib);

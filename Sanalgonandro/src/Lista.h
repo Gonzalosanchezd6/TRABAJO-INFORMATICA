@@ -21,7 +21,7 @@ public:
 	int num() { return numero; }
 	T* operator[](int i);
 	//bool Crear(float t);
-private:
+protected:
 	static const int MAX_ELEM = n;
 	T* lista[MAX_ELEM];
 	int numero;

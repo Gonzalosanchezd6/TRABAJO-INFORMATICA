@@ -60,9 +60,9 @@ void ListaPremios::Dibuja() {
 		lista[i]->Dibuja();
 	}
 }
-
+*/
 Premio* ListaPremios::colision(Hombre& h) {
-	for (int i = 0; i < num_premio; i++) {
+	for (int i = 0; i < numero; i++) {
 		if (!lista[i]->Libre()) {
 
 		}
@@ -71,7 +71,7 @@ Premio* ListaPremios::colision(Hombre& h) {
 		}
 	}
 	return 0;
-}*/
+}
 
 void ListaPremios::reset(int n_llave, int n_moneda) {
 	num_llaves -= n_llave;
