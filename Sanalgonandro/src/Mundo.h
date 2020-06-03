@@ -22,6 +22,7 @@
 #include"ListaVidas.h"
 #include "Enemigo2vidas.h"
 #include "EnemigoFinal.h"
+#include "PremioVida.h"
 
 
 class Mundo

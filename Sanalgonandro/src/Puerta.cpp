@@ -33,3 +33,8 @@ void Puerta::DibujaPuertaAbierta() {
 	puerta = new ETSIDI::Sprite("imagenes/puertaabierta.png", 2, 2, 8, 8);
 	Puerta::Dibuja();
 }
+
+void Puerta::PuertaCerrada() {
+	puerta = new ETSIDI::Sprite("imagenes/puertacerrada.png", 2, 2, 8, 8);
+}
+

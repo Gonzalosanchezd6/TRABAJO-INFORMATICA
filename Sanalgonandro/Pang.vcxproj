@@ -108,6 +108,7 @@
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\PlataformaMovil.cpp" />
     <ClCompile Include="src\Premios.cpp" />
+    <ClCompile Include="src\PremioVida.cpp" />
     <ClCompile Include="src\Puerta.cpp" />
     <ClCompile Include="src\Reja.cpp" />
     <ClCompile Include="src\TextoInic.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\PlataformaMovil.h" />
     <ClInclude Include="src\Premios.h" />
+    <ClInclude Include="src\PremioVida.h" />
     <ClInclude Include="src\Puerta.h" />
     <ClInclude Include="src\Reja.h" />
     <ClInclude Include="src\TextoInic.h" />

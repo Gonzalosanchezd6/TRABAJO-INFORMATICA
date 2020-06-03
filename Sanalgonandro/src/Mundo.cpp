@@ -170,6 +170,11 @@ void Mundo::Mueve(){
 		else if (prem_aux->GetTipo() == Premio::MONEDA) {
 			hombre.Premios(Hombre::MONEDA);
 		}
+		else if (prem_aux->GetTipo() == Premio::VIDA) {
+			hombre.aumentarVida();
+			Vida* vid = new Vida(vidas.posVida1().x + (hombre.GetVidas() - 1) * 3, 40);
+			vidas.agregar(vid);
+		}
 		premios.Eliminar(prem_aux);
 		
 	}
@@ -183,12 +188,10 @@ void Mundo::Mueve(){
 			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
 		}
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
-			if (hombre.NumPremios(Hombre::MONEDA) == 1) {
-				puerta.DibujaPuertaAbierta();
-				if (hombre.Choque(hombre, puerta)) {
-					FinLevel = true;
-					hombre.reset();
-				}
+			puerta.DibujaPuertaAbierta();
+			if (hombre.Choque(hombre, puerta)) {
+				FinLevel = true;
+				hombre.reset();
 			}
 		}
 	}
@@ -396,6 +399,11 @@ bool Mundo::cargarNivel() {
 
 		puerta.SetColor(130, 27, 5);
 		puerta.SetPos(28.5, 10, 31.5, 0);
+		puerta.PuertaCerrada();
+
+		PremioVida* vid = new PremioVida();
+		vid->SetPos(28, 10);
+		premios.agregar(vid);
 
 		for (int i = 0; i < hombre.GetVidas(); i++) {
 			Vida* aux = new Vida(-20+i*3,40);
@@ -454,6 +462,7 @@ bool Mundo::cargarNivel() {
 
 		puerta.SetColor(0, 27, 5);
 		puerta.SetPos(28.5, 6, 31.5, 0);
+		puerta.PuertaCerrada();
 	}
 	if (nivel <= 2) {
 		return true;
@@ -463,10 +472,16 @@ bool Mundo::cargarNivel() {
 
 void Mundo::reset() {
 	nivel = 1;
-	int v = 3 - hombre.GetVidas();//para que solo puedas tener max 3 vidas, ya que lo llamamos tb cuando terminas todos los levels
-	for (int i = 0; i < v; i++) {
+	while (hombre.GetVidas()) {
+		hombre.restarVida();
+	}
+	vidas.destruirContenido();
+	for (int i = 0; i < 3; i++) {
+		Vida* aux = new Vida(-20 + i * 3, 40);
+		vidas.agregar(aux);
 		hombre.aumentarVida();
 	}
+	
 	muerte = false;
 	nivel = 0;
 }
