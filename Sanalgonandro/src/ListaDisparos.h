@@ -9,4 +9,5 @@ public:
 	ListaDisparos() :Lista(){}
 	virtual ~ListaDisparos();
 	void Dibuja();
+	bool GetEsp(Disparo* d) { return d->GetEsp(); }
 };

@@ -23,6 +23,7 @@
 #include "Enemigo2vidas.h"
 #include "EnemigoFinal.h"
 #include "PremioVida.h"
+#include "Pistola.h"
 
 
 class Mundo

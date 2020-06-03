@@ -9,6 +9,7 @@ Hombre::Hombre() {
 	llaves = 0;
 	monedas = 0;
 	vidas = 3;
+	disparoEspecial = 0;
 	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 3);
 }
 

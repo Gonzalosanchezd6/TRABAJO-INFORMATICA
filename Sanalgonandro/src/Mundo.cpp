@@ -106,12 +106,15 @@ void Mundo::Mueve(){
 	
 		Disparo* var = disparos.colision(*auxi);
 		if (var != 0) {
-			disparos.Eliminar(var);
+			if (disparos.GetEsp(var)) {
+				enemigos.restarVida(auxi);
+			}
 			enemigos.restarVida(auxi);
-			if (enemigos.GetVidas(auxi) == 0) {
+			if (enemigos.GetVidas(auxi) <= 0) {
 				enemigos.Eliminar(auxi);
 				ETSIDI::play("sonidos/Bala.mp3");
 			}
+			disparos.Eliminar(var);
 
 		}
 	}
@@ -175,6 +178,9 @@ void Mundo::Mueve(){
 			Vida* vid = new Vida(vidas.posVida1().x + (hombre.GetVidas() - 1) * 3, 40);
 			vidas.agregar(vid);
 		}
+		else if (prem_aux->GetTipo() == Premio::PISTOLA) {
+			hombre.DisparoEsp();
+		}
 		premios.Eliminar(prem_aux);
 		
 	}
@@ -228,9 +234,12 @@ void Mundo::Tecla(unsigned char key) {
 		break;
 	}
 	case 'z': {
-		Vector2D pos = hombre.GetPos();
-		DisparoSuper* disup = new DisparoSuper(dispder, pos);
-		disparos.agregar(disup);
+		if (hombre.GetDispEsp()) {
+			Vector2D pos = hombre.GetPos();
+			DisparoSuper* disup = new DisparoSuper(dispder, pos);
+			disparos.agregar(disup);
+			hombre.RestarDisp();
+		}
 		break;
 	}
 	
@@ -350,6 +359,11 @@ bool Mundo::cargarNivel() {
 		moneda->SetRadio(0.5);
 		moneda->SetPos(25, 6);
 		premios.agregar(moneda);
+
+		Pistola* pis = new Pistola();
+		pis->SetPis(0.5);
+		pis->SetPos(26, 6);
+		premios.agregar(pis);
 
 		PlatMovil* mov = new PlatMovil(0.0, 15.0, 6.0, 15.0);
 		mov->SetColor(0, 200, 0);

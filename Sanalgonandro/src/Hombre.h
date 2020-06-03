@@ -17,6 +17,7 @@ private:
 	float altura;
 	int llaves;
 	int monedas;
+	int disparoEspecial;
 	ETSIDI::Sprite* hombre;
 	
 public:
@@ -39,4 +40,7 @@ public:
 	void reset();
 	//void setposvidas(int i) { vidas.setpos(i); }
 	int GetNumPrem(objetos o);
+	void DisparoEsp() { disparoEspecial += 10; }
+	int GetDispEsp() { return disparoEspecial; }
+	void RestarDisp() { disparoEspecial--; }
 };

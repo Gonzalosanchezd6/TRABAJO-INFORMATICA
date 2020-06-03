@@ -8,7 +8,7 @@ class Premio {
 protected:
 	Vector2D posicion;
 public:
-	enum objetos { LLAVE = 0, MONEDA, REJA, VIDA };
+	enum objetos { LLAVE = 0, MONEDA, REJA, VIDA, PISTOLA };
 protected:
 	objetos tipo;
 	bool libre; //si esta a true se puede coger, false no

@@ -6,6 +6,7 @@ Disparo::Disparo() {
 	velocidad.x = 200.0f;
 	posicion = origen;
 	origendisp = origen;
+	especial = false;
 }
 
 Disparo::Disparo(int d, Vector2D Orig) {
@@ -15,6 +16,7 @@ Disparo::Disparo(int d, Vector2D Orig) {
 	velocidad.x = 200.0f;
 	posicion = origen;
 	disparo = d;
+	especial = false;
 }
 
 

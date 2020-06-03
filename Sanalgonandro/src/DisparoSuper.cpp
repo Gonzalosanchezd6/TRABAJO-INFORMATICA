@@ -6,6 +6,7 @@ DisparoSuper::DisparoSuper() {
 	velocidad.x = 300.0f;
 	posicion = origen;
 	origendisp = origen;
+	especial = true;
 }
 
 
@@ -17,6 +18,7 @@ DisparoSuper::DisparoSuper(int d, Vector2D Orig) {
 	velocidad.x = 300.0f;
 	posicion = origen;
 	disparo = d;
+	especial = true;
 }
 
 DisparoSuper::~DisparoSuper() {

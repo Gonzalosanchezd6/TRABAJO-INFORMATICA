@@ -7,6 +7,7 @@ protected:
 	int disparo;
 	Vector2D origendisp;
 	Vector2D origen;
+	bool especial;
 	
 public:
 	Disparo();
@@ -17,5 +18,5 @@ public:
 	void SetOrig(float ix, float iy);
 	Vector2D GetOrig() { return origendisp; }
 	float GetRadio() { return radio; }
-	
+	bool GetEsp() { return especial; }
 };
