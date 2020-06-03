@@ -227,7 +227,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 			if (x_ojo >= 7 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo -= 0.3;
-				hombre.setposvidas(1);
+				//hombre.setposvidas(1);
 			}
 		}
 		else {
@@ -241,7 +241,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 			if (x_ojo <= 57 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo += 0.3;
-				hombre.setposvidas(0);
+				//hombre.setposvidas(0);
 			}
 		}
 		else {

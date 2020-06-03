@@ -1,11 +1,10 @@
 ////////// clase base para personaje y enemigos///////////
 #pragma once
-#include"ListaVidas.h"
 #include"Vector2D.h"
 
 class Animado{
 protected:
-	ListaVidas vidas;
+	int vidas;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;

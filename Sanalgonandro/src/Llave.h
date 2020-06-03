@@ -7,16 +7,11 @@ class Llave: public Premio {
 private:
 	float rad_int;
 	float rad_ext;
-	//Vector2D posicion;
 	ETSIDI::Sprite* llave;
 public:
 	Llave(objetos o = LLAVE) :Premio(o), rad_ext(0), rad_int(0) { llave = new ETSIDI::Sprite("imagenes/llave.png", 0, 0, 3, 3); }
 	virtual ~Llave();
 	void SetLlave(float r1, float r2);
-	//void SetPos(float x, float y);
 	void Dibuja();
-	//Vector2D GetPos();
-
 	friend bool operator==(const Llave& l1, const Llave& l2);
-
 };

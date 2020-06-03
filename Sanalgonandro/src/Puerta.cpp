@@ -12,29 +12,6 @@ Puerta::~Puerta() {
 }
 
 void Puerta::Dibuja() {
-	/*glDisable(GL_LIGHTING);
-	glColor3ub(rojo, verde, azul);
-	glBegin(GL_POLYGON);
-		glVertex3d(limite1.x, limite1.y, 0);
-		glVertex3d(limite2.x, limite1.y, 0);
-		glVertex3d(limite2.x, limite2.y, 0);
-		glVertex3d(limite1.x, limite2.y, 0);
-	glEnd();
-	glEnable(GL_LIGHTING);*/
-
-	/*glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Puerta.png").id);
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 1); glVertex3d(limite1.x, limite1.y, 0);
-	glTexCoord2d(1, 1); glVertex3d(limite2.x, limite1.y, 0);
-	glTexCoord2d(1, 0); glVertex3d(limite2.x, limite2.y, 0);
-	glTexCoord2d(0, 0); glVertex3d(limite1.x, limite2.y, 0);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);*/ //imagen puerta
-
 	puerta->setPos((limite1.x + limite2.x)/2, (limite1.y + limite2.y) / 2);
 	puerta->draw();
 }
@@ -55,5 +32,4 @@ void Puerta::SetPos(float lim1x, float lim1y, float lim2x, float lim2y) {
 void Puerta::DibujaPuertaAbierta() {
 	puerta = new ETSIDI::Sprite("imagenes/puertaabierta.png", 2, 2, 8, 8);
 	Puerta::Dibuja();
-	
 }

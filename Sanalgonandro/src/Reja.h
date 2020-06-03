@@ -13,10 +13,6 @@ public:
 	}
 	virtual ~Reja();
 	void SetRadio(float r);
-	//void SetPos(float x, float y);
 	void Dibuja();
-	//Vector2D GetPos();
-
-	//friend bool operator==(const Monedas& l1, const Monedas& l2);
 
 };

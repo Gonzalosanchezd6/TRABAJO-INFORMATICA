@@ -3,7 +3,6 @@
 #include "Vector2D.h"
 #include <glut.h>
 
-
 class TextoInic {
 public:
 	TextoInic(float x1, float y1, float x2, float y2);
@@ -15,6 +14,5 @@ private:
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-
 };
 

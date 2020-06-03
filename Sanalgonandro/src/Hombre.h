@@ -19,7 +19,7 @@ private:
 	int llaves;
 	int monedas;
 	ETSIDI::Sprite* hombre;
-
+	
 public:
 	enum objetos { LLAVE = 1, MONEDA };
 	Hombre();
@@ -38,6 +38,6 @@ public:
 	int NumPremios(objetos ob);
 	bool Choque(Hombre h, Puerta p);
 	void reset();
-	void setposvidas(int i) { vidas.setpos(i); }
+	//void setposvidas(int i) { vidas.setpos(i); }
 	int GetNumPrem(objetos o);
 };

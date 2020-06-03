@@ -8,10 +8,11 @@ Hombre::Hombre() {
 	aceleracion.y = -9.8;
 	llaves = 0;
 	monedas = 0;
-	for (int i = 0; i < 3; i++) {
+	vidas = 3;
+	/*for (int i = 0; i < 3; i++) {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.agregar(aux);
-	}
+	}*/
 	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 3);
 }
 
@@ -21,7 +22,7 @@ Hombre::~Hombre() {
 
 
 void Hombre::Dibuja() {
-	vidas.Dibuja();
+	//vidas.Dibuja();
 	hombre->setPos(posicion.x, posicion.y);
 	hombre->draw();
 }
@@ -111,21 +112,29 @@ void Hombre::reinicia() {
 	SetAc(0, -8);
 	SetVel(0, 0);
 
-	for (int i = 0; i < vidas.num(); i++){
+	//for (int i = 0; i < vidas.num(); i++){
 		//vidas.setpos(-20 + i * 3, 40);
-	}
+	//}
 	
 }
 
 void Hombre::aumentarVida() {
-		Vida* aux = new Vida(-20 + vidas.num() * 3, 40);
-		vidas.agregar(aux);
+	vidas++;
+		//Vida* aux = new Vida(-20 + vidas.num() * 3, 40);
+		//vidas.agregar(aux);
 }
 
 void Hombre::restarVida() {
-	
-	if (vidas.num() > 0) {
+
+	/*if (vidas.num() > 0) {
 		vidas.Eliminar(vidas.num()-1);
+		reinicia();
+		reset();
+	}*/
+
+	if (vidas > 0) {
+		//vidas.Eliminar(vidas.num() - 1);
+		vidas--;
 		reinicia();
 		reset();
 	}
@@ -133,7 +142,8 @@ void Hombre::restarVida() {
 }
 
 int Hombre::GetVidas() {
-	return vidas.num();
+	//return vidas.num();
+	return vidas;
 }
 
 void Hombre::reset() {
