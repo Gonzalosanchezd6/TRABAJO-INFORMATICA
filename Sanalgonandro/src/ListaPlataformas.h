@@ -1,5 +1,4 @@
 #pragma once
-
 #define MAX_PLATAFORMAS 200
 
 #include "Pared.h"
@@ -13,6 +12,7 @@ public:
 	virtual ~ListaPlataformas();
 	bool Agregar(Pared* p);
 	void Dibuja();
+	virtual void destruirContenido();
 	void Mueve(float t);
 	Pared* colision(Hombre& h);
 	static bool colision(ListaPlataformas l, Enemigo1 e);

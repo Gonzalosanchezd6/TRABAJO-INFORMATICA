@@ -11,6 +11,12 @@ ListaPlataformas::ListaPlataformas() {
 ListaPlataformas::~ListaPlataformas() {
 
 }
+void ListaPlataformas::destruirContenido() {
+	for (int i = 0; i < numero; i++) {
+		delete lista[i];
+		numero = 0;
+	}
+}
 
 bool ListaPlataformas::Agregar(Pared* p) {
 

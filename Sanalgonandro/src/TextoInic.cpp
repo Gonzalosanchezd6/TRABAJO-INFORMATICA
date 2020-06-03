@@ -26,18 +26,17 @@ void TextoInic::Dibuja() {
 			glRasterPos2f(x1, y);
 			glutBitmapCharacter(font, *c);
 			x1 = x1 + glutBitmapWidth(font, *c) + spacing;
-		}
-		*/
+		}*/
+		
 }
-TextoInic::~TextoInic() {
+TextoInic::~TextoInic(){
 
 }
-/*
+
 void TextoInic::TextoImprimir(std::string name, float x, float y, float red, float green, float blue, float size) {
 	char* nombre = strcpy(new char[name.length() + 1], name.c_str());
 	glTranslatef(x, y, 0.2);
-	const std::string pene = name;
 	ETSIDI::setTextColor(red, green, blue);
-	ETSIDI::print(pene, "fuentes/Revamped-X3q1a.ttf", size);
+	ETSIDI::print(nombre, "fuentes/Revamped-X3q1a.ttf", size);
 	glTranslatef(-x, -y, -0.2);
-}*/
+}

@@ -89,7 +89,7 @@ void Mundo::Mueve(){
 	enemigos.colision(plataformas);
 
 	if (Bolas.Crear(0.025f) == true) {
-		double i = -20 + (rand() % 47);
+		double i = -20 + (rand() % 86);
 		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
 	}
 
@@ -241,7 +241,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) - 0.3, hombre.GetPos().y);
 			if (x_ojo >= 7 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo -= 0.3;
-				//hombre.setposvidas(1);
+				vidas.setpos(1);
 			}
 		}
 		else {
@@ -255,7 +255,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			hombre.SetPos((hombre.GetPos().x) + 0.3, hombre.GetPos().y);
 			if (x_ojo <= 57 && (hombre.GetPos().x) >= 4 && (hombre.GetPos().x) <= 56) {
 				x_ojo += 0.3;
-				//hombre.setposvidas(0);
+				vidas.setpos(0);
 			}
 		}
 		else {
@@ -306,6 +306,9 @@ bool Mundo::cargarNivel() {
 	//hay que destruir cosas y eso
 	enemigos.destruirContenido();
 	premios.destruirContenido();
+	plataformas.destruirContenido();
+	disparos.destruirContenido();
+	Bolas.destruirContenido();
 
 
 	if (nivel == 1) {
