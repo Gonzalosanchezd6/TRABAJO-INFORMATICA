@@ -2,12 +2,11 @@
 #include "ETSIDI.h"
 #include "glut.h"
 
-/*EnemigoBolas::EnemigoBolas() {
-	//radio = 0.3f;
-	//aceleracion.y = -50.0f;
-	//velocidad.y = -50.0f;
-	
-}*/
+EnemigoBolas::EnemigoBolas() {
+	radio = 0.3f;
+	SetPos(0.0f, 0.0f); 
+	fuego = new ETSIDI::Sprite("imagenes/oie_transparent.png", 0.0f, 0.0f, 2, 2);
+}
 
 EnemigoBolas::~EnemigoBolas() {
 

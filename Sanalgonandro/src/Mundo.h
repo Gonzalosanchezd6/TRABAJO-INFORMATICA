@@ -10,6 +10,7 @@
 #include "ListaPremios.h"
 #include "Puerta.h"
 #include "EnemigoBolas.h"
+#include"Vida.h"
 #include "ListaBolas.h"
 #include"ListaDisparos.h"
 #include"ListaEnemigos.h"
@@ -17,6 +18,7 @@
 #include "Monedas.h"
 #include "Reja.h"
 #include "DisparoSuper.h"
+#include"ListaVidas.h"
 
 
 class Mundo
@@ -42,8 +44,8 @@ private: //se puede poner como private sin problema
 	ListaBolas Bolas;
 	ListaDisparos disparos;
 	ListaEnemigos enemigos;
-
 	DisparoSuper disparosuper;
+	ListaVidas vidas;
 
 	
 	

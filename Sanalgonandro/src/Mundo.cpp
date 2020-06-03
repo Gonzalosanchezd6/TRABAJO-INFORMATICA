@@ -46,7 +46,7 @@ void Mundo::Dibuja()
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D); //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
+	vidas.Dibuja();
 	hombre.Dibuja();
 	plataformas.Dibuja();
 	enemigos.Dibuja();
@@ -65,12 +65,12 @@ void Mundo::Mueve(){
 		muerte = true;
 	}
 
-
+	vidas.Eliminar(hombre.GetVidas());
 	hombre.Mueve(0.025f);
 	enemigos.Mueve(0.0025f);
 	disparos.Mueve(0.0025f);
 	Bolas.Mueve(0.025f);
-
+	vidas.Mueve(0.025f);
 	enemigos.colision(plataformas);
 
 	if (Bolas.Crear(0.025f) == true) {
@@ -81,7 +81,6 @@ void Mundo::Mueve(){
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, auxi)) {
-			
 			hombre.restarVida();
 			ETSIDI::play("sonidos/PacManDies.mp3");
 			x_ojo = 7;
@@ -106,7 +105,8 @@ void Mundo::Mueve(){
 		cargarNivel();
 	}
 
-	for (int i = 0; i < Bolas.getNumero(); i++) {
+
+	for (int i = 0; i < Bolas.num(); i++) {
 		EnemigoBolas* auxx = Bolas.colision(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, auxx)) {
@@ -117,9 +117,8 @@ void Mundo::Mueve(){
 				cargarNivel();
 			}
 			Bolas.Eliminar(auxx);
-		}	
+		}
 	}
-
 
 
 	EnemigoBolas* auxiliar = Bolas.colision(plataformas);
@@ -363,6 +362,11 @@ bool Mundo::cargarNivel() {
 
 		puerta.SetColor(130, 27, 5);
 		puerta.SetPos(28.5, 10, 31.5, 0);
+
+		for (int i = 0; i < hombre.GetVidas(); i++) {
+			Vida* aux = new Vida(-20+i*3,40);
+			vidas.agregar(aux);
+		}
 	}
 	if (nivel == 2) {
 		hombre.SetPos(-10, 7);

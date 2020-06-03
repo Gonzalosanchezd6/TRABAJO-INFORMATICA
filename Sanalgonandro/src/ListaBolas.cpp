@@ -1,17 +1,17 @@
 #include "ListaBolas.h"
-#include "EnemigoBolas.h"
+//#include "EnemigoBolas.h"
 #include "Interaccion.h"
-#include <cstdlib>
+//#include <cstdlib>
 
 
-/*
+
 ListaBolas::~ListaBolas() {
 }
 
 
 
 
-
+/*
 EnemigoBolas* ListaBolas::colision(ListaPlataformas& p) {
 	for (int i = 0; i < Lista::num(); i++) {
 		for (int j = 0; j < p.getNum(); j++) {
@@ -21,8 +21,8 @@ EnemigoBolas* ListaBolas::colision(ListaPlataformas& p) {
 		}
 	}
 	return 0; //no hay colisión 
-}
-*/
+}*/
+
 /*void ListaBolas::Crear(float t) {
 	random += t;
 	
@@ -54,8 +54,6 @@ ListaBolas::ListaBolas() {
 		lista[i] = 0;
 }
 
-ListaBolas::~ListaBolas() {
-}
 
 bool ListaBolas::agregar(EnemigoBolas* e) {
 	if (numero < MAX_BOLAS) {
@@ -162,3 +160,18 @@ bool ListaBolas::Crear(float t) {
 		return false;
 	}
 }
+
+/*
+ListaBolas::~ListaBolas() {
+}
+*/
+/*EnemigoBolas* ListaBolas::colision(ListaPlataformas& p) {
+	for (int i = 0; i < num(); i++) {
+		for (int j = 0; j < p.getNum(); j++) {
+			if (Interaccion::colision(*p[j], *operator[](i))) {
+				return operator[](i);
+			}
+		}
+	}
+	return 0; //no hay colisión 
+}*/

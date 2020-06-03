@@ -9,10 +9,6 @@ Hombre::Hombre() {
 	llaves = 0;
 	monedas = 0;
 	vidas = 3;
-	/*for (int i = 0; i < Animado::vidas; i++) {
-		Vida* aux = new Vida(-20+i*3,40);
-		vidas.agregar(aux);
-	}*/
 	hombre = new ETSIDI::Sprite("imagenes/AstroBoy.png", 0, 0, 3, 3);
 }
 

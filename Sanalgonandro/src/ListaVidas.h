@@ -10,5 +10,6 @@ public:
 	ListaVidas():Lista(){}
 	~ListaVidas();
 	void setpos(int i);
+	void Eliminar(int n);
 };
 

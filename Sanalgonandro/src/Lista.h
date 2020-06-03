@@ -30,7 +30,7 @@ private:
 
 template <class T, int n>
 inline
-Lista<T,n>::Lista() {
+Lista<T,n>::Lista<T, n>() {
 	numero = 0;
 	for (int i = 0; i < MAX_ELEM; i++) {//poner los punteros a null
 		lista[i] = 0;

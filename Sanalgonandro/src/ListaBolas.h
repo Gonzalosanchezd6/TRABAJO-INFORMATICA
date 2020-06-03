@@ -1,19 +1,20 @@
 #pragma once
 #include "EnemigoBolas.h"
-#include "Interaccion.h"
-#include"Lista.h"
-
+//#include "Interaccion.h"
+#include"ListaPlataformas.h"
+//#include"Lista.h"
 #define MAX_BOLAS 100
 
-/*
-class ListaBolas:public Lista<EnemigoBolas, 10> {
+
+/*class ListaBolas:public Lista<EnemigoBolas, MAX_BOLAS> {
 private:
 	float random ;
 public:
-	ListaBolas():random(0) {}
+	ListaBolas(float f=0.0f):Lista(),random(f) {}
 	virtual ~ListaBolas();
-	EnemigoBolas* colision(ListaPlataformas& p);
+	//EnemigoBolas* colision(ListaPlataformas& p);
 	bool Crear(float t);
+	//EnemigoBolas* colision(Hombre& h) { return Lista::colision(h); }
 //	void destruirContenido() { Lista::destruirContenido(); }
 	
 };*/
@@ -28,18 +29,16 @@ private:
 public:
 	ListaBolas();
 	virtual ~ListaBolas();
-
 	bool agregar(EnemigoBolas* e);
 	void Dibuja();
 	void Mueve(float t);
 	void destruirContenido();
 	void Eliminar(int index);
 	void Eliminar(EnemigoBolas* e);
-	int getNumero() { return numero; }
+	int num() { return numero; }
 	EnemigoBolas* colision(Hombre& h);
 	EnemigoBolas* operator [](int i);
 	EnemigoBolas* colision(ListaPlataformas& p);
-
 	bool Crear(float t);
 
 };

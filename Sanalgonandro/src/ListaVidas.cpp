@@ -25,3 +25,10 @@ void ListaVidas::setpos(int i) {
 		}
 	}
 }
+
+
+void ListaVidas::Eliminar(int n) {
+	for (int i = n; i < num();i++) {
+		Lista::Eliminar(i);
+	}
+}
