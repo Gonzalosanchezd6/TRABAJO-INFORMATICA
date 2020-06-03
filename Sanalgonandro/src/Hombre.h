@@ -1,5 +1,5 @@
 #pragma once
-//#include "Vector2D.h"
+
 #include "EnemigoLv1.h"
 #include "EnemigoBolas.h"
 //////////////////no se pq no se agrega
@@ -7,11 +7,10 @@
 #include "Llave.h"
 #include "Puerta.h"
 #include "ETSIDI.h"
-//#include"ListaVidas.h"
 #include"Animado.h"
 #define MAX_VIDAS 5
 
-class Hombre:public Animado{
+class Hombre:public Animado {
 private:
 	friend class Interaccion;
 	friend class ListaPlataformas;

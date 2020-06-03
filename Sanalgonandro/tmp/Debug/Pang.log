@@ -1,8 +1,18 @@
 ﻿D:\Programas\Visual_19\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Coordinador.cpp
   Hombre.cpp
   Interaccion.cpp
+  ListaBolas.cpp
+  ListaDisparos.cpp
+  ListaEnemigos.cpp
+  ListaPlataformas.cpp
+  ListaPremios.cpp
+  ListaVidas.cpp
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(4,1): warning C4005: 'MAX_VIDAS': redefinición de macro
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\Hombre.h(11): message : vea la definición anterior de 'MAX_VIDAS'
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(19,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(24,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   Mundo.cpp
   Pang.cpp
-  Vida.cpp
   Generando código...
   Pang.vcxproj -> D:\Angel uni\Tercero\2º Cuatri\Trabajo infor 2.0\trabajo\TRABAJO-INFORMATICA\Sanalgonandro\bin\Trabajo_infor.exe

@@ -9,7 +9,7 @@ Hombre::Hombre() {
 	llaves = 0;
 	monedas = 0;
 	vidas = 3;
-	/*for (int i = 0; i < 3; i++) {
+	/*for (int i = 0; i < Animado::vidas; i++) {
 		Vida* aux = new Vida(-20+i*3,40);
 		vidas.agregar(aux);
 	}*/
@@ -112,16 +112,16 @@ void Hombre::reinicia() {
 	SetAc(0, -8);
 	SetVel(0, 0);
 
-	//for (int i = 0; i < vidas.num(); i++){
-		//vidas.setpos(-20 + i * 3, 40);
+	//for (int i = 0; i < ListaVidas::num(); i++){
+	//	vidas.setpos((-20 + i * 3), 40);
 	//}
 	
 }
 
 void Hombre::aumentarVida() {
-	vidas++;
 		//Vida* aux = new Vida(-20 + vidas.num() * 3, 40);
 		//vidas.agregar(aux);
+	vidas++;
 }
 
 void Hombre::restarVida() {
@@ -131,9 +131,7 @@ void Hombre::restarVida() {
 		reinicia();
 		reset();
 	}*/
-
 	if (vidas > 0) {
-		//vidas.Eliminar(vidas.num() - 1);
 		vidas--;
 		reinicia();
 		reset();
