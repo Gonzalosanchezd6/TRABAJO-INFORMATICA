@@ -32,19 +32,33 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-
+	
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/marte.png").id);
+	if (GetNivel() == 1) {
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Moon.png").id);
+	}
+	else if (GetNivel() == 2) {
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/marte.png").id);
+	}
+	else if (GetNivel() == 3) {
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Jupiter.png").id);
+	}
+	else if (GetNivel() == 4) {
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Saturn.jpg").id);
+	}
+		
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 1); glVertex3f(-50,-10, -5);
+	glTexCoord2d(0, 1); glVertex3f(-50, -10, -5);
 	glTexCoord2d(1, 1); glVertex3f(100, -10, -5);
 	glTexCoord2d(1, 0); glVertex3f(100, 50, -5);
 	glTexCoord2d(0, 0); glVertex3f(-50, 50, -5);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D); //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	glDisable(GL_TEXTURE_2D);
+	
+	 //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	vidas.Dibuja();
 	hombre.Dibuja();

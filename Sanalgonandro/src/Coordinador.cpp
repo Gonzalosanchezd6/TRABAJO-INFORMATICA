@@ -34,6 +34,9 @@ void Coordinador::Dibuja() {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
+		
+
+
 		ETSIDI::setTextColor(0, 1, 0);
 		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 24);
 		ETSIDI::printxy("GALAXY TROUBLE", -7, 16);
@@ -48,7 +51,10 @@ void Coordinador::Dibuja() {
 		ETSIDI::printxy("Creadores: Sanalgonandro", -7, 1);
 	}
 	else if (estado == JUEGO) {
-		mundo.Dibuja();
+
+			mundo.Dibuja();
+
+		
 	}
 	else if (estado == GAMEOVER) {
 		gluLookAt(0, 7.5, 30,
@@ -81,6 +87,7 @@ void Coordinador::Dibuja() {
 			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
 			ETSIDI::printxy("--nivel 1 -> nivel 2--", -7, 10);
 			ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+			
 		}
 		else if (mundo.GetNivel() == 3) {
 			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
