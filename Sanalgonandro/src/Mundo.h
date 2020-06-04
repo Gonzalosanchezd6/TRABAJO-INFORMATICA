@@ -34,12 +34,11 @@ private: //se puede poner como private sin problema
 	float z_ojo;
 	int salto = 0;
 	int dispder = 1;
-
-
-
+	float CrearBola = 0;
 	bool muerte;
 	bool FinLevel;
 	int nivel;
+	Vector2D PosEne;
 	Disparo *disparo;
 	Hombre hombre;
 	Bonus bonus;

@@ -15,7 +15,7 @@ Enemigo2vidas::Enemigo2vidas(float x, float y, float vx, float vy) : Enemigo1(x,
 
 	vidas = 2;
 
-	enemigo2vidas = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
+	enemigo2vidas = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 3, 3);
 }
 
 Enemigo2vidas::~Enemigo2vidas() {

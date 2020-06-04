@@ -15,7 +15,6 @@ EnemigoFinal::EnemigoFinal(float x, float y, float vx, float vy) : Enemigo1(x, y
 
 	vidas = 5;
 
-
 	enemigofinal = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
 }
 

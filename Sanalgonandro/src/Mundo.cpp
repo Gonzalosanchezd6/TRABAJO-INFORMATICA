@@ -83,12 +83,12 @@ void Mundo::Mueve(){
 	hombre.Mueve(0.025f);
 	enemigos.Mueve(0.0025f);
 	disparos.Mueve(0.0025f);
-	plataformas.Mueve(0.0025f);
+	plataformas.Mueve(0.001f);
 	Bolas.Mueve(0.025f);
 	vidas.Mueve(0.025f);
 	enemigos.colision(plataformas);
 
-	if (Bolas.Crear(0.025f) == true) {
+	if (Bolas.Crear(CrearBola) == true) {
 		double i = -20 + (rand() % 86);
 		Bolas.agregar(new EnemigoBolas(0.5f, i, 37));
 	}
@@ -106,12 +106,26 @@ void Mundo::Mueve(){
 	
 		Disparo* var = disparos.colision(*auxi);
 		if (var != 0) {
+			PosEne = auxi->GetPos();
 			if (disparos.GetEsp(var)) {
 				enemigos.restarVida(auxi);
 			}
 			enemigos.restarVida(auxi);
 			if (enemigos.GetVidas(auxi) <= 0) {
 				enemigos.Eliminar(auxi);
+				double i = (rand() % 100);
+				if (i <= 20) {
+					PremioVida* vid = new PremioVida();
+					vid->SetPos(PosEne.x, PosEne.y + 1);
+					premios.agregar(vid);
+				}
+				else if (i <= 40) {
+					Pistola* pis = new Pistola();
+					pis->SetPis(0.5);
+					pis->SetPos(PosEne.x, PosEne.y + 1);
+					premios.agregar(pis);
+				}
+				//random value 20% corazon, 20% pistola, 60% nada
 				ETSIDI::play("sonidos/Bala.mp3");
 			}
 			disparos.Eliminar(var);
@@ -184,13 +198,11 @@ void Mundo::Mueve(){
 		premios.Eliminar(prem_aux);
 		
 	}
-
-
 	/////////////////////////
 	//CONDICIONES PARA PASARSE CADA NIVEL
 	if (nivel == 1) {
-		if (hombre.NumPremios(Hombre::MONEDA) >= 1) {
-			premios.Eliminar(premios.buscar(Premio::REJA));
+		if (hombre.NumPremios(Hombre::MONEDA) >= 0) {
+			//premios.Eliminar(premios.buscar(Premio::REJA));
 			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
 		}
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
@@ -202,16 +214,31 @@ void Mundo::Mueve(){
 		}
 	}
 	if (nivel == 2) {
+		if (hombre.NumPremios(Hombre::MONEDA) >= 5) {
+			premios.Eliminar(premios.buscar(Premio::REJA));
+			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
+		}
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
-			puerta.SetColor(0, 0, 255);
+			puerta.DibujaPuertaAbierta();
 			if (hombre.Choque(hombre, puerta)) {
 				FinLevel = true;
 				hombre.reset();
 			}
 		}
 	}
-	
-
+	if (nivel == 3) {
+		if (hombre.NumPremios(Hombre::MONEDA) >= 4) {
+			premios.Eliminar(premios.buscar(Premio::REJA));
+			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
+		}
+		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
+			puerta.DibujaPuertaAbierta();
+			if (hombre.Choque(hombre, puerta)) {
+				FinLevel = true;
+				hombre.reset();
+			}
+		}
+	}
 }
 
 void Mundo::Inicializa() {
@@ -330,44 +357,18 @@ bool Mundo::cargarNivel() {
 
 	if (nivel == 1) {
 		hombre.SetPos(-10,7);
+		CrearBola = 0;
 
-		/*Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
+		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
 		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
-		enemigos.agregar(enemigo1);
-		enemigos.agregar(enemigo2);*/
-
-		Enemigo2vidas* enemigo1 = new Enemigo2vidas(-6.0f, 10.75f, -15.0f);
-		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
-		EnemigoFinal* enemigo3 = new EnemigoFinal(20.01f, 13.76f, -15.0f);
 		enemigos.agregar(enemigo1);
 		enemigos.agregar(enemigo2);
-		enemigos.agregar(enemigo3);
-
 
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(30, 17);
 		llave->SetLibertad(false);
 		premios.agregar(llave);
-
-		Reja* reja = new Reja();
-		reja->SetPos(30, 17);
-		reja->SetRadio(0.5);
-		premios.agregar(reja);
-
-		Monedas* moneda = new Monedas();
-		moneda->SetRadio(0.5);
-		moneda->SetPos(25, 6);
-		premios.agregar(moneda);
-
-		Pistola* pis = new Pistola();
-		pis->SetPis(0.5);
-		pis->SetPos(20, 6);
-		premios.agregar(pis);
-
-		PlatMovil* mov = new PlatMovil(0.0, 15.0, 6.0, 15.0);
-		mov->SetColor(0, 200, 0);
-		plataformas.Agregar(mov);
 
 		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
 		inferior1->SetColor(0, 200, 0);
@@ -411,13 +412,8 @@ bool Mundo::cargarNivel() {
 		plat7->SetColor(100, 0, 0);
 		plataformas.Agregar(plat7);
 
-		puerta.SetColor(130, 27, 5);
 		puerta.SetPos(28.5, 10, 31.5, 0);
 		puerta.PuertaCerrada();
-
-		PremioVida* vid = new PremioVida();
-		vid->SetPos(28, 10);
-		premios.agregar(vid);
 
 		for (int i = 0; i < hombre.GetVidas(); i++) {
 			Vida* aux = new Vida(-20+i*3,40);
@@ -426,23 +422,25 @@ bool Mundo::cargarNivel() {
 	}
 	if (nivel == 2) {
 		hombre.SetPos(-10, 7);
+		CrearBola = 0.025f;
 
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
-		llave->SetPos(30, 17);
+		llave->SetPos(80, 5);
 		premios.agregar(llave);
 
-		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
+		Reja* reja = new Reja();
+		reja->SetPos(80, 5);
+		reja->SetRadio(0.5);
+		premios.agregar(reja);
+
+		Pared* inferior1 = new Pared(-22, 1.01, 10, 1.01);
 		inferior1->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior1);
 
-		Pared* inferior2 = new Pared(15, 1, 45, 1);
+		Pared* inferior2 = new Pared(54, 1.01, 86, 1.01);
 		inferior2->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior2);
-
-		Pared* inferior3 = new Pared(56, 1.01, 86, 1.01);
-		inferior3->SetColor(0, 200, 0);
-		plataformas.Agregar(inferior3);
 
 		Pared* pared1 = new Pared(-22, 1, -22, 22);
 		pared1->SetColor(0, 150, 0);
@@ -452,33 +450,188 @@ bool Mundo::cargarNivel() {
 		pared2->SetColor(0, 150, 0);
 		plataformas.Agregar(pared2);
 
-		Pared* plat1 = new Pared(3, 6, 16, 6);
+		Pared* plat1 = new Pared(-1, 6, 8, 6);
 		plat1->SetColor(100, 0, 0);
 		plataformas.Agregar(plat1);
-		Pared* plat2 = new Pared(-10, 10, -1, 10);
+		Pared* plat2 = new Pared(-4, 10.5, 5, 10.5);
 		plat2->SetColor(100, 0, 0);
 		plataformas.Agregar(plat2);
-		Pared* plat3 = new Pared(3, 14, 16, 14);
+		Pared* plat3 = new Pared(-1, 15, 8, 15);
 		plat3->SetColor(100, 0, 0);
 		plataformas.Agregar(plat3);
-		Pared* plat4 = new Pared(23, 12.5, 37, 12.5);
+		Pared* plat4 = new Pared(-4, 19.5, 5, 19.5);
 		plat4->SetColor(100, 0, 0);
 		plataformas.Agregar(plat4);
-		Pared* plat5 = new Pared(44, 14, 57, 14);
+		Pared* plat5 = new Pared(58, 6, 67, 6);
 		plat5->SetColor(100, 0, 0);
 		plataformas.Agregar(plat5);
-		Pared* plat6 = new Pared(44, 6, 57, 6);
+		Pared* plat6 = new Pared(55, 10.5, 64, 10.5);
 		plat6->SetColor(100, 0, 0);
 		plataformas.Agregar(plat6);
-		Pared* plat7 = new Pared(61, 10.01, 70, 10.01);
+		Pared* plat7 = new Pared(58, 15, 67, 15);
 		plat7->SetColor(100, 0, 0);
 		plataformas.Agregar(plat7);
+		Pared* plat8 = new Pared(55, 19.5, 64, 19.5);
+		plat8->SetColor(100, 0, 0);
+		plataformas.Agregar(plat8);
+		Pared* plat9 = new Pared(12, 23, 23, 23);
+		plat9->SetColor(100, 0, 0);
+		plataformas.Agregar(plat9);
+		Pared* plat10 = new Pared(25.5, 18, 32.5, 18);
+		plat10->SetColor(100, 0, 0);
+		plataformas.Agregar(plat10);
+		Pared* plat11 = new Pared(37, 23, 48, 23);
+		plat11->SetColor(100, 0, 0);
+		plataformas.Agregar(plat11);
 
-		puerta.SetColor(0, 27, 5);
-		puerta.SetPos(28.5, 6, 31.5, 0);
+		Monedas* moneda1 = new Monedas();
+		moneda1->SetRadio(0.5);
+		moneda1->SetPos(-17, 16);
+		premios.agregar(moneda1);
+
+		Monedas* moneda2 = new Monedas();
+		moneda2->SetRadio(0.5);
+		moneda2->SetPos(3, 2.5);
+		premios.agregar(moneda2);
+
+		Monedas* moneda3 = new Monedas();
+		moneda3->SetRadio(0.5);
+		moneda3->SetPos(29, 20);
+		premios.agregar(moneda3);
+
+		Monedas* moneda4 = new Monedas();
+		moneda4->SetRadio(0.5);
+		moneda4->SetPos(81, 16);
+		premios.agregar(moneda4);
+
+		Monedas* moneda5 = new Monedas();
+		moneda5->SetRadio(0.5);
+		moneda5->SetPos(59.5, 12.5);
+		premios.agregar(moneda5);
+
+		Enemigo1* enemigo1 = new Enemigo1(0.5f, 11, -15.0f);
+		Enemigo1* enemigo2 = new Enemigo1(16.5f, 24, 15.0f);
+		Enemigo1* enemigo3 = new Enemigo1(62.5f, 16, -15.0f);
+		Enemigo1* enemigo4 = new Enemigo1(62.4f, 7, 15.0f);
+		enemigos.agregar(enemigo1);
+		enemigos.agregar(enemigo2);
+		enemigos.agregar(enemigo3);
+		enemigos.agregar(enemigo4);
+
+		puerta.SetPos(-18, 10, -14.5, 0);
 		puerta.PuertaCerrada();
+
+		for (int i = 0; i < hombre.GetVidas(); i++) {
+			Vida* aux = new Vida(-20 + i * 3, 40);
+			vidas.agregar(aux);
+		}
 	}
-	if (nivel <= 2) {
+
+	if (nivel == 3) {
+		hombre.SetPos(-10, 3);
+		CrearBola = 0.05f;
+
+		Llave* llave = new Llave();
+		llave->SetLlave(0.25, 0.5);
+		llave->SetPos(2, 7);
+		premios.agregar(llave);
+
+		Reja* reja = new Reja();
+		reja->SetPos(2, 7);
+		reja->SetRadio(0.5);
+		premios.agregar(reja);
+
+		Pared* inferior1 = new Pared(-22, 1.01, 10, 1.01);
+		inferior1->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior1);
+
+		Pared* inferior2 = new Pared(49, 1.01, 86, 1.01);
+		inferior2->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior2);
+
+		Pared* pared1 = new Pared(-22, 1, -22, 22);
+		pared1->SetColor(0, 150, 0);
+		plataformas.Agregar(pared1);
+
+		Pared* pared2 = new Pared(86, 1, 86, 22);
+		pared2->SetColor(0, 150, 0);
+		plataformas.Agregar(pared2);
+
+		Pared* plat1 = new Pared(-17, 6, -8, 6);
+		plat1->SetColor(100, 0, 0);
+		plataformas.Agregar(plat1);
+		Pared* plat2 = new Pared(-14, 10.5, -5, 10.5);
+		plat2->SetColor(100, 0, 0);
+		plataformas.Agregar(plat2);
+		Pared* plat3 = new Pared(-17, 15, -8, 15);
+		plat3->SetColor(100, 0, 0);
+		plataformas.Agregar(plat3);
+		Pared* plat4 = new Pared(-14, 19.5, -5, 19.5);
+		plat4->SetColor(100, 0, 0);
+		plataformas.Agregar(plat4);
+		Pared* plat5 = new Pared(25, 19.5, 34, 19.5);
+		plat5->SetColor(100, 0, 0);
+		plataformas.Agregar(plat5);
+		Pared* plat6 = new Pared(65, 19.5, 74, 19.5);
+		plat6->SetColor(100, 0, 0);
+		plataformas.Agregar(plat6);
+
+		PlatMovil* mov1 = new PlatMovil(5, 19.5, 14, 19.5);
+		mov1->SetColor(100, 0, 0);
+		plataformas.Agregar(mov1);
+		PlatMovil* mov2 = new PlatMovil(45, 19.5, 54, 19.5);
+		mov2->SetColor(100, 0, 0);
+		plataformas.Agregar(mov2);
+		PlatMovil* mov3 = new PlatMovil(25, 3, 34, 3);
+		mov3->SetColor(100, 0, 0);
+		plataformas.Agregar(mov3);
+
+		Monedas* moneda1 = new Monedas();
+		moneda1->SetRadio(0.5);
+		moneda1->SetPos(29, 10);
+		premios.agregar(moneda1);
+
+		Monedas* moneda2 = new Monedas();
+		moneda2->SetRadio(0.5);
+		moneda2->SetPos(29, 24);
+		premios.agregar(moneda2);
+
+		Monedas* moneda3 = new Monedas();
+		moneda3->SetRadio(0.5);
+		moneda3->SetPos(-18, 17);
+		premios.agregar(moneda3);
+
+		Monedas* moneda4 = new Monedas();
+		moneda4->SetRadio(0.5);
+		moneda4->SetPos(81, 16);
+		premios.agregar(moneda4);
+
+		Enemigo1* enemigo1 = new Enemigo1(-9.5f, 11, -15.0f);
+		enemigos.agregar(enemigo1);
+		Enemigo2vidas* enemigo2 = new Enemigo2vidas(29.5f, 20, 15.0f);
+		enemigos.agregar(enemigo2);
+		Enemigo2vidas* enemigo3 = new Enemigo2vidas(29.5f, 3.5f, -15.0f);
+		enemigos.agregar(enemigo3);
+		Enemigo2vidas* enemigo4 = new Enemigo2vidas(65, 1.51f, 15.0f);
+		enemigos.agregar(enemigo4);
+
+		puerta.SetPos(80, 10, 83, 0);
+		puerta.PuertaCerrada();
+
+		for (int i = 0; i < hombre.GetVidas(); i++) {
+			Vida* aux = new Vida(-20 + i * 3, 40);
+			vidas.agregar(aux);
+		}
+	}
+
+	if (nivel == 4) {
+		hombre.SetPos(-10, 7);
+		CrearBola = 0.025f;
+
+		/////// Añadir level 4 ////////////////
+	}
+
+	if (nivel <= 4) {
 		return true;
 	}
 	return false;
