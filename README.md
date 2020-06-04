@@ -3,7 +3,7 @@ Trabajo informatica 2019/2020
 
 
 Juego Plataformas
-Grupo: Sanalgonandro
+Grupo: SANALGONANDRO
 Nombre del juego: Galaxy Trouble.
 
 
