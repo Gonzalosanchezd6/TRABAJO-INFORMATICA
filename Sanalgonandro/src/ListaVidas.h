@@ -1,7 +1,7 @@
 #pragma once
 #include"Vida.h"
 #include"Lista.h"
-#define MAX_VIDAS 20
+#define MAX_VIDAS 5
 
 
 class ListaVidas: public Lista<Vida,MAX_VIDAS>{

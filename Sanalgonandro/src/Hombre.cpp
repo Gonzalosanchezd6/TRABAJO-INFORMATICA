@@ -76,7 +76,9 @@ void Hombre::Premios(objetos ob) {
 		llaves += 1;
 		break;
 	case MONEDA:
-		monedas += 1;
+		if (monedas < 5) {
+			monedas += 1;
+		}
 		break;
 	default:
 		break;
