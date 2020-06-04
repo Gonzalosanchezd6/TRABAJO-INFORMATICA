@@ -10,7 +10,7 @@ using namespace std;
 Mundo::Mundo() {
 	FinLevel = false;
 	muerte = false;
-	nivel = 0;
+	nivel = 2;
 }
 
 Mundo::~Mundo() {
@@ -357,8 +357,8 @@ bool Mundo::cargarNivel() {
 		hombre.SetPos(-10,7);
 		CrearBola = 0;
 
-		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 10.75f, -15.0f);
-		Enemigo1* enemigo2 = new Enemigo1(64.0f, 10.76f, 15.05);
+		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 12.0f, -15.0f);
+		Enemigo1* enemigo2 = new Enemigo1(64.0f, 12.01f, 15.05);
 		enemigos.agregar(enemigo1);
 		enemigos.agregar(enemigo2);
 
@@ -448,25 +448,25 @@ bool Mundo::cargarNivel() {
 		pared2->SetColor(0, 150, 0);
 		plataformas.Agregar(pared2);
 
-		Pared* plat1 = new Pared(-1, 6, 8, 6);
+		Pared* plat1 = new Pared(-1, 6.01f, 8, 6.01f);
 		plat1->SetColor(100, 0, 0);
 		plataformas.Agregar(plat1);
-		Pared* plat2 = new Pared(-4, 10.5, 5, 10.5);
+		Pared* plat2 = new Pared(-4, 10.25, 5, 10.25);
 		plat2->SetColor(100, 0, 0);
 		plataformas.Agregar(plat2);
-		Pared* plat3 = new Pared(-1, 15, 8, 15);
+		Pared* plat3 = new Pared(-1, 15.1f, 8, 15.1f);
 		plat3->SetColor(100, 0, 0);
 		plataformas.Agregar(plat3);
-		Pared* plat4 = new Pared(-4, 19.5, 5, 19.5);
+		Pared* plat4 = new Pared(-4, 19.51, 5, 19.51);
 		plat4->SetColor(100, 0, 0);
 		plataformas.Agregar(plat4);
-		Pared* plat5 = new Pared(58, 6, 67, 6);
+		Pared* plat5 = new Pared(58, 6.0f, 67, 6.0f);
 		plat5->SetColor(100, 0, 0);
 		plataformas.Agregar(plat5);
 		Pared* plat6 = new Pared(55, 10.5, 64, 10.5);
 		plat6->SetColor(100, 0, 0);
 		plataformas.Agregar(plat6);
-		Pared* plat7 = new Pared(58, 15, 67, 15);
+		Pared* plat7 = new Pared(58.5, 15.0f, 67.5, 15.0f);
 		plat7->SetColor(100, 0, 0);
 		plataformas.Agregar(plat7);
 		Pared* plat8 = new Pared(55, 19.5, 64, 19.5);
@@ -478,7 +478,7 @@ bool Mundo::cargarNivel() {
 		Pared* plat10 = new Pared(25.5, 18, 32.5, 18);
 		plat10->SetColor(100, 0, 0);
 		plataformas.Agregar(plat10);
-		Pared* plat11 = new Pared(37, 23, 48, 23);
+		Pared* plat11 = new Pared(37, 23.01, 48, 23.01);
 		plat11->SetColor(100, 0, 0);
 		plataformas.Agregar(plat11);
 
@@ -507,14 +507,14 @@ bool Mundo::cargarNivel() {
 		moneda5->SetPos(59.5, 12.5);
 		premios.agregar(moneda5);
 
-		Enemigo1* enemigo1 = new Enemigo1(0.5f, 11, -15.0f);
-		Enemigo1* enemigo2 = new Enemigo1(16.5f, 24, 15.0f);
-		Enemigo1* enemigo3 = new Enemigo1(62.5f, 16, -15.0f);
-		Enemigo1* enemigo4 = new Enemigo1(62.4f, 7, 15.0f);
+		Enemigo1* enemigo4 = new Enemigo1(62.4f, 8.0f, 15.0f);
+		Enemigo1* enemigo1 = new Enemigo1(0.5f, 12.25, -15.0f);
+		Enemigo1* enemigo2 = new Enemigo1(16.5f, 25, 15.0f);
+		Enemigo1* enemigo3 = new Enemigo1(62.5f, 17.0f, -15.0f);
+		enemigos.agregar(enemigo4);
 		enemigos.agregar(enemigo1);
 		enemigos.agregar(enemigo2);
 		enemigos.agregar(enemigo3);
-		enemigos.agregar(enemigo4);
 
 		puerta.SetPos(-18, 10, -14.5, 0);
 		puerta.PuertaCerrada();
@@ -540,13 +540,17 @@ bool Mundo::cargarNivel() {
 		reja->SetRadio(0.5);
 		premios.agregar(reja);
 
-		Pared* inferior1 = new Pared(-22, 1.01, 10, 1.01);
+		Pared* inferior1 = new Pared(-22, 1.11, 80, 1.11);
 		inferior1->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior1);
 
-		Pared* inferior2 = new Pared(49, 1.01, 86, 1.01);
+		Pared* inferior2 = new Pared(49, 1.01, 85, 1.01);
 		inferior2->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior2);
+
+		Pared* inferior3 = new Pared(84, 1.11, 86, 1.11);
+		inferior3->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior3);
 
 		Pared* pared1 = new Pared(-22, 1, -22, 22);
 		pared1->SetColor(0, 150, 0);
@@ -568,7 +572,7 @@ bool Mundo::cargarNivel() {
 		Pared* plat4 = new Pared(-14, 19.5, -5, 19.5);
 		plat4->SetColor(100, 0, 0);
 		plataformas.Agregar(plat4);
-		Pared* plat5 = new Pared(25, 19.5, 34, 19.5);
+		Pared* plat5 = new Pared(24.5, 19.6, 34.5, 19.6);
 		plat5->SetColor(100, 0, 0);
 		plataformas.Agregar(plat5);
 		Pared* plat6 = new Pared(65, 19.5, 74, 19.5);
@@ -605,13 +609,11 @@ bool Mundo::cargarNivel() {
 		moneda4->SetPos(81, 16);
 		premios.agregar(moneda4);
 
-		Enemigo1* enemigo1 = new Enemigo1(-9.5f, 11, -15.0f);
+		Enemigo1* enemigo1 = new Enemigo1(-9.5f, 12.5, -15.0f);
 		enemigos.agregar(enemigo1);
-		Enemigo2vidas* enemigo2 = new Enemigo2vidas(29.5f, 20, 15.0f);
+		Enemigo2vidas* enemigo2 = new Enemigo2vidas(29.5f, 21.6f, 15.0f);
 		enemigos.agregar(enemigo2);
-		Enemigo2vidas* enemigo3 = new Enemigo2vidas(29.5f, 3.5f, -15.0f);
-		enemigos.agregar(enemigo3);
-		Enemigo2vidas* enemigo4 = new Enemigo2vidas(65, 1.51f, 15.0f);
+		Enemigo2vidas* enemigo4 = new Enemigo2vidas(65, 3.01f, 15.0f);
 		enemigos.agregar(enemigo4);
 
 		puerta.SetPos(80, 10, 83, 0);
