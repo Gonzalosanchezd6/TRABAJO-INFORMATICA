@@ -1,9 +1,13 @@
 # TRABAJO-INFORMATICA
-trabajo informatica EE309 19/20 
-buenas ejjeje/n
-Monti estuvo aqui
+Trabajo informatica 2019/2020
 
-maldita gordeyuyu
-Okele
-gonzalo es calvo
- funciona????????????????????
+Juego Plataformas
+Grupo: Sanalgonandro
+Nombre del juego: Galaxy Trouble.
+
+Angel Emilio Molina Molina. 54100
+Álvaro Monteagudo Pérez. 54107 
+Gonzalo Sánchez Delgado. 54201
+Pedro José Servián García. 54219
+Sandra Ures Ciriaco 54253
+
