@@ -33,7 +33,7 @@ bool Interaccion::colision(Pared p, Hombre h) {
 bool Interaccion::Choque(Hombre h, Enemigo1 *e) {
 	Vector2D dif = h.posicion - e->posicion;
 	float d = dif.modulo();
-	float dentro = d - (h.altura + e->tamaño/2);
+	float dentro = d - (h.altura/2 + e->tamaño/2);
 	if (dentro < 0.0f) {
 		return true;
 	}
@@ -95,7 +95,7 @@ bool Interaccion::colision(Disparo d, Enemigo1 e) {
 
 	Vector2D dif = d.GetPos() - e.posicion;
 	float dis = dif.modulo();
-	float dentro = dis - (e.tamaño / 2);
+	float dentro = dis - (e.tamaño );
 	if (dentro < 0.1f) {
 		return true;
 	}

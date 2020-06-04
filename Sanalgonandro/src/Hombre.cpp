@@ -4,7 +4,7 @@
 #include "glut.h"
 
 Hombre::Hombre() {
-	altura = 1.5f;
+	altura = 1.75;
 	aceleracion.y = -9.8;
 	llaves = 0;
 	monedas = 0;

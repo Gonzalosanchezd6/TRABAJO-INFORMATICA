@@ -640,7 +640,7 @@ bool Mundo::cargarNivel() {
 	}
 
 	if (nivel == 4) {
-		hombre.SetPos(-16, 7);
+		hombre.SetPos(-19, 7);
 		CrearBola = 0.015f;
 
 		Pared* inferior1 = new Pared(-22, 1.11, -10, 1.11);

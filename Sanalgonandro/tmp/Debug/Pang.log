@@ -6,7 +6,7 @@ C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(14,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(15): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(16): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
