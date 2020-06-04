@@ -70,8 +70,8 @@ void Mundo::Dibuja()
 	Bolas.Dibuja();
 	std::string texto;
 	//texto.size = 20;
-	texto = "SUPER BOLA BROS";
-	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);
+	/*texto = "GALAXY TROUBLE";
+	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);*/
 }
 
 void Mundo::Mueve(){

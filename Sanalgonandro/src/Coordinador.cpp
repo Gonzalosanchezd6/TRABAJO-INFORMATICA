@@ -35,20 +35,18 @@ void Coordinador::Dibuja() {
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
 		
-
-
-		ETSIDI::setTextColor(0, 1, 0);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 24);
-		ETSIDI::printxy("GALAXY TROUBLE", -7, 16);
-		ETSIDI::setTextColor(1, 0, 1);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 12);
-		
-		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -7, 7);
-		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -7, 6);
-		ETSIDI::printxy("PULSE LA TECLA -I- PARA VER INSTRUCCIONES", -7, 5);
-		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 12);
-		ETSIDI::printxy("Creadores: Sanalgonandro", -7, 1);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/PANTALLAINICIAL.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+		glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+		glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+		glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == JUEGO) {
 
@@ -79,9 +77,18 @@ void Coordinador::Dibuja() {
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
 		if (mundo.GetNivel() == 1) {
-			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-			ETSIDI::printxy("--Historia inicial--", -7, 10);
-			ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/HISTORIA-MUNDO1.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+			glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+			glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+			glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
 		}
 		else if (mundo.GetNivel() == 2) {
 			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
@@ -105,12 +112,18 @@ void Coordinador::Dibuja() {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setTextColor(0, 1, 0);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 24);
-		ETSIDI::printxy("INSTRUCCIONES", -7, 16);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-		ETSIDI::printxy("--Inserte texto aqui jeje xd--", -7, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/INSTRUCCIONES.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+		glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+		glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+		glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == PAUSA) {
 		gluLookAt(0, 7.5, 30,
