@@ -1,7 +1,6 @@
 #pragma once
 #include"Interaccion.h"
 #include"EnemigoLv1.h"
-//#include"ListaPlataformas.h"
 
 template <class T,int n>
 class Lista {
@@ -17,10 +16,8 @@ public:
 	T* colision(Pared p);
 	T* colision(Enemigo1 e);
 	T* colision(Hombre& h);
-	//virtual T* colision(ListaPlataformas& p);
 	int num() { return numero; }
 	T* operator[](int i);
-	//bool Crear(float t);
 protected:
 	static const int MAX_ELEM = n;
 	T* lista[MAX_ELEM];

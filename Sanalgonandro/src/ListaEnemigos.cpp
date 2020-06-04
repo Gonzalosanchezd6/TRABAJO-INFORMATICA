@@ -15,17 +15,7 @@ void ListaEnemigos::Dibuja() {
 		}
 	}
 }
-/*
-Enemigo1* ListaEnemigos::Choque(Hombre h) {
-	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Choque( h, *lista[i])) {
-			lista[i]->SetVel(0.0f, 0.0f);
-			return lista[i];
-		}
-	}
-	return 0;
-}
-*/
+
 Enemigo1* ListaEnemigos::colision(ListaPlataformas l) {
 	for (int i = 0; i < Lista::num(); i++) {
 		if (ListaPlataformas::colision(l, *(operator[](i)))) {

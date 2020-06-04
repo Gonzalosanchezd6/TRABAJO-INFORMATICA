@@ -2,8 +2,6 @@
 
 #include "EnemigoLv1.h"
 #include "EnemigoBolas.h"
-//////////////////no se pq no se agrega
-
 #include "Llave.h"
 #include "Puerta.h"
 #include "ETSIDI.h"
@@ -38,7 +36,6 @@ public:
 	int NumPremios(objetos ob);
 	bool Choque(Hombre h, Puerta p);
 	void reset();
-	//void setposvidas(int i) { vidas.setpos(i); }
 	int GetNumPrem(objetos o);
 	void DisparoEsp() { disparoEspecial += 10; }
 	int GetDispEsp() { return disparoEspecial; }

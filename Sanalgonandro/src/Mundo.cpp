@@ -15,6 +15,10 @@ Mundo::Mundo() {
 }
 
 Mundo::~Mundo() {
+	enemigos.destruirContenido();
+	premios.destruirContenido();
+	plataformas.destruirContenido();
+	disparos.destruirContenido();
 	Bolas.destruirContenido();
 }
 
@@ -59,8 +63,7 @@ void Mundo::Dibuja()
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 
-	//no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+	
 	vidas.Dibuja();
 	hombre.Dibuja();
 	plataformas.Dibuja();
@@ -112,14 +115,6 @@ void Mundo::Dibuja()
 	DibujarTexto(textoklk1.data(), textoklk1.size(), (moned1.x * 40 / 650) + 600, 675);//x_ojo
 	glEnable(GL_LIGHTING);
 
-
-
-
-
-
-	//texto.size = 20;
-	/*texto = "GALAXY TROUBLE";
-	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);*/
 }
 
 void Mundo::Mueve() {
@@ -412,7 +407,7 @@ bool Mundo::cargarNivel() {
 	y_ojo = 21;
 	z_ojo = 70;
 	vidas.posIni();
-	//hay que destruir cosas y eso
+	
 	enemigos.destruirContenido();
 	premios.destruirContenido();
 	plataformas.destruirContenido();

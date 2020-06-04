@@ -7,7 +7,6 @@
 class Enemigo2vidas :public Enemigo1 {
 private:
 	friend class Interaccion;
-	//float tamaño;
 	ETSIDI::Sprite* enemigo2vidas;
 
 public:

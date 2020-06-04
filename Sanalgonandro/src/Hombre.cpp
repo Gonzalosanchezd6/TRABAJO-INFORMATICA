@@ -19,7 +19,6 @@ Hombre::~Hombre() {
 
 
 void Hombre::Dibuja() {
-	//vidas.Dibuja();
 	hombre->setPos(posicion.x, posicion.y);
 	hombre->draw();
 }
@@ -110,26 +109,13 @@ void Hombre::reinicia() {
 	SetPos(-10, 7);
 	SetAc(0, -8);
 	SetVel(0, 0);
-
-	//for (int i = 0; i < ListaVidas::num(); i++){
-	//	vidas.setpos((-20 + i * 3), 40);
-	//}
-	
 }
 
 void Hombre::aumentarVida() {
-		//Vida* aux = new Vida(-20 + vidas.num() * 3, 40);
-		//vidas.agregar(aux);
 	vidas++;
 }
 
 void Hombre::restarVida() {
-
-	/*if (vidas.num() > 0) {
-		vidas.Eliminar(vidas.num()-1);
-		reinicia();
-		reset();
-	}*/
 	if (vidas > 0) {
 		vidas--;
 		reinicia();
@@ -140,7 +126,6 @@ void Hombre::restarVida() {
 }
 
 int Hombre::GetVidas() {
-	//return vidas.num();
 	return vidas;
 }
 

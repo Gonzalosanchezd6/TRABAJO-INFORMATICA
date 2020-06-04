@@ -47,8 +47,6 @@ void Disparo::Dibuja() {
 void Disparo::Mueve(float t) {
 	
 	if (disparo == 1) {
-		//posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-		//velocidad = velocidad + aceleracion * t;
 		Animado::Mueve(t);
 		if (posicion.x >= origen.x + 3.5) {
 			origen = origen + velocidad * t + aceleracion * (0.5f * t * t);

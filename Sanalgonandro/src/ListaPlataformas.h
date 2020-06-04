@@ -16,7 +16,6 @@ public:
 	void Mueve(float t);
 	Pared* colision(Hombre& h);
 	static bool colision(ListaPlataformas l, Enemigo1 e);
-	//Pared* colision(Enemigo1& e);
 	int getNum() { return numero; }
 	Pared* operator [](int i);
 private:

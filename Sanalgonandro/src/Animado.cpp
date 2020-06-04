@@ -4,8 +4,6 @@ Animado::Animado(){
 	posicion.x = posicion.y = vidas = velocidad.x = velocidad.y = 0;
 }
 Animado::Animado( float x , float y , int nvida, float vx , float vy ){
-	///TO DO 
-	// constructor tipico
 	SetPos(x,y);
 	SetVel(vx, vy);
 	vidas = nvida;
@@ -25,7 +23,6 @@ void Animado::SetPos(float ix, float iy) {
 void Animado::Mueve(float t) {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-	//vidas.Mueve(t);
 }
 
 void Animado::SetVel(float vx, float vy)

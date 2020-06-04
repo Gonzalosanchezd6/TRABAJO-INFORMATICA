@@ -20,13 +20,6 @@ void TextoInic::Dibuja() {
 	glVertex3d(limite1.x, limite2.y, 0);
 	glEnd();
 	glEnable(GL_LIGHTING);
-	/*void renderSpacedBitmapString(float x, float y, int spacing, void* font, char* string) {
-		char* c; int x1 = x;
-		for (c = string; *c != '\0'; c++) {
-			glRasterPos2f(x1, y);
-			glutBitmapCharacter(font, *c);
-			x1 = x1 + glutBitmapWidth(font, *c) + spacing;
-		}*/
 		
 }
 TextoInic::~TextoInic(){

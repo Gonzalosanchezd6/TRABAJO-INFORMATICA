@@ -7,7 +7,6 @@ class Puerta: public Pared{
 	ETSIDI::Sprite* puerta;
 public:
 	Puerta(float x1 = 0.0f, float y1 = 0.0f, float x2 = 0.0f, float y2 = 0.0f);
-
 	virtual ~Puerta();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);

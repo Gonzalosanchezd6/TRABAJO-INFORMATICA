@@ -2,7 +2,6 @@
 #include "glut.h"
 
 EnemigoFinal::EnemigoFinal() {
-	//tamaño = 3.0f;
 
 }
 
@@ -25,28 +24,13 @@ EnemigoFinal::~EnemigoFinal() {
 
 void EnemigoFinal::Dibuja() {
 
-	/*glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 0);
-	glColor3f(0.0f, 0.0f, 115);
-	glutSolidCube(tamaño);
-	glPopMatrix();*/
-
 	enemigofinal->setPos(posicion.x, posicion.y);
 	enemigofinal->draw();
 
 }
 
 void EnemigoFinal::Mueve(float t) {
-	/*posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;*/
 	Animado::Mueve(t);
-	/*if (posicion.x <= 7.75) {
-		SetVel(15.0, 0);
-	}
-	if (posicion.x >= 14.25) {
-		SetVel(-15.0, 0);
-	}*/
-
 	enemigofinal->loop();
 }
 

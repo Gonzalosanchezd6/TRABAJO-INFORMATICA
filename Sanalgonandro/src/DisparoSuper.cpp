@@ -26,29 +26,6 @@ DisparoSuper::~DisparoSuper() {
 }
 void DisparoSuper::Dibuja() {
 
-	/*glColor3f(255, 255, 0);
-	glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 0);
-	glutSolidSphere(radio, 20, 20);
-	glTranslatef(-posicion.x, -posicion.y, 0);
-	glPopMatrix();
-	glDisable(GL_LIGHTING);
-
-	glColor3ub(255, 0, 0);
-	glBegin(GL_POLYGON);
-	glVertex3d(posicion.x - 0.3, 0, 0);
-	glVertex3d(posicion.x - 0.3, posicion.y, 0);
-	glVertex3d(posicion.x - 0.025, posicion.y, 0);
-	glVertex3d(posicion.x - 0.025, 0, 0);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	glColor3ub(0, 255, 0);
-	glBegin(GL_POLYGON);
-	glVertex3d(posicion.x + 0.025, 0, 0);
-	glVertex3d(posicion.x + 0.025, posicion.y, 0);
-	glVertex3d(posicion.x + 0.3, posicion.y, 0);
-	glVertex3d(posicion.x + 0.3, 0, 0);
-	glEnd();*/
 	glColor3ub(255, 0, 0);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);

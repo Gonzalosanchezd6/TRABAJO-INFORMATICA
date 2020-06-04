@@ -4,22 +4,22 @@ C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Animado.cpp(4,34): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
   Bonus.cpp
   Coordinador.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(14,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(16): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(14): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(6): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Disparo,1>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Disparo,1>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Enemigo1,10>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Enemigo1,10>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(10): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Vida,5>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Vida,5>" que se está compilando
   Disparo.cpp
@@ -32,87 +32,87 @@ C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro
   Interaccion.cpp
   ListaBolas.cpp
   ListaDisparos.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Disparo,1>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Disparo,1>" que se está compilando
   ListaEnemigos.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Enemigo1,10>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Enemigo1,10>" que se está compilando
   ListaPlataformas.cpp
   ListaPremios.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(16): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(14): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(6): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
   ListaVidas.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(14,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(19,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(24,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(9,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.cpp(14,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(10): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Vida,5>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Vida,5>" que se está compilando
   Llave.cpp
   Monedas.cpp
   Mundo.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(14,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(16): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(14): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(6): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Disparo,1>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Disparo,1>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Enemigo1,10>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Enemigo1,10>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(10): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Vida,5>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Vida,5>" que se está compilando
   Generando código...
   Compilando...
   Pang.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<T,n>::Lista' en su lugar
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(14,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(16): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(8): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Premio,100>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Premio,100>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(14): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Premio,100>::Lista(void)" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaPremios.h(6): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Premio,100>" que se está compilando
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Disparo,1>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Disparo,1>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Disparo,1>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaDisparos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Disparo,1>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Enemigo1,10>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Enemigo1,10>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(9): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Enemigo1,10>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaEnemigos.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Enemigo1,10>" que se está compilando
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(33): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30,1): warning C4812: estilo de declaración obsoleto: utilice 'Lista<Vida,5>::Lista' en su lugar
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\Lista.h(30): message : al compilar la función del miembro clase plantilla "Lista<Vida,5>::Lista(void)"
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(10): message : Vea la referencia a la creación de una instancia de la función plantilla "Lista<Vida,5>::Lista(void)" que se está compilando
 C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\ListaVidas.h(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Vida,5>" que se está compilando
   Pared.cpp
   Pistola.cpp
   PlataformaMovil.cpp
-  Premios.cpp
   PremioVida.cpp
+  Premios.cpp
   Puerta.cpp
   Reja.cpp
   TextoInic.cpp
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(38,24): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(40,54): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(41,27): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(37,17): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(31,24): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(33,54): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(34,27): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Usuario\source\repos\Gonzalosanchezd6\TRABAJO-INFORMATICA\Sanalgonandro\src\TextoInic.cpp(30,17): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Vector2D.cpp
   Vida.cpp
   Generando código...

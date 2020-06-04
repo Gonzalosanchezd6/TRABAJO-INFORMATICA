@@ -96,7 +96,7 @@ void Coordinador::Dibuja() {
 		std::string textoklk2;
 		//LLAVE
 		
-		sstr2 << mundo.getNum(Mundo::LLAVE);//////////////////////////////////////////////////////
+		sstr2 << mundo.getNum(Mundo::LLAVE);
 		textoklk2 = sstr2.str();
 		glDisable(GL_LIGHTING);
 		glColor3ub(81, 209, 246);
@@ -105,7 +105,7 @@ void Coordinador::Dibuja() {
 
 		std::stringstream sstr3;
 		std::string textoklk3;
-		sstr3 << mundo.getNum(Mundo::MONEDA);//////////////////////////////////////////////////////
+		sstr3 << mundo.getNum(Mundo::MONEDA);
 		textoklk3 = sstr3.str();
 		glDisable(GL_LIGHTING);
 		glColor3ub(81, 209, 246);
@@ -115,7 +115,7 @@ void Coordinador::Dibuja() {
 
 		std::stringstream sstr4;
 		std::string textoklk4;
-		sstr4 << mundo.getNum(Mundo::VIDA);//////////////////////////////////////////////////////
+		sstr4 << mundo.getNum(Mundo::VIDA);
 		textoklk4 = sstr4.str();
 		glDisable(GL_LIGHTING);
 		glColor3ub(81, 209, 246);
@@ -124,17 +124,12 @@ void Coordinador::Dibuja() {
 
 		std::stringstream sstr5;
 		std::string textoklk5;
-		sstr5 << mundo.getNum(Mundo::PISTOLA);//////////////////////////////////////////////////////
+		sstr5 << mundo.getNum(Mundo::PISTOLA);
 		textoklk5 = sstr5.str();
 		glDisable(GL_LIGHTING);
 		glColor3ub(81, 209, 246);
 		mundo.DibujarTexto(textoklk5.data(), textoklk5.size(), 520, 320);//x_ojo
 		glEnable(GL_LIGHTING);
-
-		/*ETSIDI::setFont("fuentesRevamped-X3q1a.ttf", 16);
-		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -7, 10);
-		//hay que imprimir las puntuaciones, los objetos recogidos estan en listaPremios
-		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);*/
 	}
 	else if (estado == HISTORIA) {
 		gluLookAt(0, 7.5, 30,

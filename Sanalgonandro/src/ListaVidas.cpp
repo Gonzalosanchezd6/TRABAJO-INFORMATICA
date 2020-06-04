@@ -3,16 +3,6 @@
 ListaVidas::~ListaVidas(){
 }
 
-/*
-Vida* ListaVidas::Colision(Hombre& h) {
-	for (int i = 0; i < numero; i++) {
-		if (Interaccion::colision(*(lista[i]), h)) {
-			return lista[i];
-		}
-	}
-	return 0;
-}*/
-
 void ListaVidas::setpos(int i) {
 	if (i == 0) { //esto es sumar
 		for (int i = 0; i < num(); i++) {

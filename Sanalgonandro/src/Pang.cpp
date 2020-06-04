@@ -1,11 +1,9 @@
 #include "Coordinador.h"
-//#include "Mundo.h"
 #include "ETSIDI.h"
 #include <iostream>
 #include "glut.h" //debe ir siempre como ultimo include
 
 Coordinador coordinador;
-//Mundo mundo;
 
 using namespace ETSIDI; //esto en teoria es para las imagenes, musica, texto,etc
 using ETSIDI::getTexture;//esto en teoria es para las imagenes, musica, texto,etc
@@ -41,8 +39,7 @@ int main(int argc,char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 	glutSpecialFunc(onSpecialKeyboardDown); //gestion de los cursores
 
-	
-	//mundo.Inicializa();
+
 	
 		
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -60,7 +57,6 @@ void OnDraw(void) {
 	glLoadIdentity();
 	
 	coordinador.Dibuja();
-	//mundo.Dibuja();
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
@@ -68,7 +64,6 @@ void OnDraw(void) {
 void OnKeyboardDown(unsigned char key, int x_t, int y_t) {
 	//poner aqui el código de teclado
 	coordinador.Tecla(key);
-	//mundo.Tecla(key);
 
 	glutPostRedisplay();
 }
@@ -76,8 +71,6 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t) {
 void OnTimer(int value) {
 //poner aqui el código de animacion
 	coordinador.Mueve();
-	//mundo.Mueve();
-	//mundo.RotarOjo();
 
 
 	//no borrar estas lineas
@@ -87,5 +80,4 @@ void OnTimer(int value) {
 
 void onSpecialKeyboardDown(int key, int x, int y) {
 	coordinador.teclaEspecial(key);
-	//mundo.teclaEspecial(key);
 }

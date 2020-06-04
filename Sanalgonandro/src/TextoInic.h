@@ -1,11 +1,7 @@
 #pragma once
 
-
 #include "Vector2D.h"
 #include <string>
-//#include <glut.h>
-
-
 
 class TextoInic {
 public:
@@ -19,7 +15,5 @@ private:
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-
-	
 };
 
