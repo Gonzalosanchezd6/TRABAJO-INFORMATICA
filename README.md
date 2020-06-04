@@ -1,9 +1,10 @@
 # TRABAJO-INFORMATICA
-trabajo informatica EE309 19/20 
-buenas ejjeje/n
-Monti estuvo aqui
-
-maldita gordeyuyu
-Okele
-gonzalo es calvo
- funciona????????????????????
+Trabajo de la asignatura informática industrial curso 19/20
+Temática del juego: plataformas
+Grupo Sanalgonandro
+Integrantes:
+Angel Emilio Molina Molina 54100
+Álvaro Monteagudo Pérez 54107 
+Gonzalo Sánchez Delgado 54201
+Pedro José Servián García 54219
+Sandra Ures Ciriaco 54243
