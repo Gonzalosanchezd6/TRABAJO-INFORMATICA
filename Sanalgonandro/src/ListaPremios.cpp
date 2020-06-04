@@ -123,3 +123,10 @@ int ListaPremios::GetNumPrem(Premio::objetos o) {
 	}
 	return 0;
 }
+void ListaPremios::reiniciar(){
+	num_llaves = 0;
+	num_monedas = 0;
+	num_vidas = 0;
+	num_disp_espec = 0;
+
+}

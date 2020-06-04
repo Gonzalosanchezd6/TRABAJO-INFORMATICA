@@ -424,6 +424,8 @@ bool Mundo::cargarNivel() {
 		hombre.SetPos(-10, 7);
 		CrearBola = 0;
 
+		premios.reiniciar();
+
 		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 12.0f, -15.0f);
 		Enemigo1* enemigo2 = new Enemigo1(64.0f, 12.01f, 15.05);
 		enemigos.agregar(enemigo1);

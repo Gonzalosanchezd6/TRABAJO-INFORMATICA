@@ -26,4 +26,6 @@ public:
 	Premio* buscar(Premio::objetos o);
 	void SetLibertad(Premio* p, bool lib);
 	int GetNumPrem(Premio::objetos o);
+
+	void reiniciar();
 };
