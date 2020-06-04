@@ -13,7 +13,7 @@ private:
 	int num_vidas;
 
 public:
-	ListaPremios():Lista(), num_llaves(0), num_monedas(0), num_disp_espec(0) {}
+	ListaPremios():Lista(), num_llaves(0), num_monedas(0), num_disp_espec(0), num_vidas(0) {}
 	virtual ~ListaPremios();
 	//bool agregar(Premio* l);
 	//void destruirContenido();
