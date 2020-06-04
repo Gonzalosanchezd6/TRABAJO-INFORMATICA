@@ -18,7 +18,7 @@ public:
 	virtual ~Premio();
 	//void SetLlave(float r1, float r2);
 	void SetPos(float x, float y);
-	virtual void Dibuja() {}
+	virtual void Dibuja() = 0;
 	Vector2D GetPos() { return posicion; }
 	objetos GetTipo() { return tipo; }
 

@@ -1,16 +1,17 @@
 #include "Mundo.h"
 #include <math.h>
-#include <iostream>
+
 #include <cstdlib>
 #include "glut.h"
 #include "ETSIDI.h"
-
+#include <iostream>
+#include <sstream>
 using namespace std;
 
 Mundo::Mundo() {
 	FinLevel = false;
 	muerte = false;
-	nivel = 3;
+	nivel = 0;
 }
 
 Mundo::~Mundo() {
@@ -68,7 +69,54 @@ void Mundo::Dibuja()
 	puerta.Dibuja();
 	disparos.Dibuja();
 	Bolas.Dibuja();
-	std::string texto;
+	
+
+	stringstream sstr;
+	string textoklk;
+	Vector2D moned = vidas.posVida1();
+	textoklk = "Monedas: ";
+	sstr << textoklk << hombre.GetNumPrem(Hombre::MONEDA) << "/";
+	if (nivel == 1) {
+		sstr << "0";
+		textoklk = sstr.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(255, 255, 0);
+		DibujarTexto(textoklk.data(), textoklk.size(), (moned.x * 40 / 650) + 600, 650);//x_ojo
+		glEnable(GL_LIGHTING);
+	}
+	else if (nivel == 2) {
+		sstr << "5";
+		textoklk = sstr.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(255, 255, 0);
+		DibujarTexto(textoklk.data(), textoklk.size(), (moned.x * 40 / 650) + 600, 650);//x_ojo
+		glEnable(GL_LIGHTING);
+	}
+	else if (nivel == 3) {
+		sstr << "4";
+		textoklk = sstr.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(255, 255, 0);
+		DibujarTexto(textoklk.data(), textoklk.size(), (moned.x * 40 / 650) + 600, 650);//x_ojo
+		glEnable(GL_LIGHTING);
+	}
+
+	stringstream sstr1;
+	string textoklk1;
+	Vector2D moned1 = vidas.posVida1();
+	textoklk1 = "Disparo Especial: ";
+	sstr1 << textoklk1 << hombre.GetDispEsp();
+	textoklk1 = sstr1.str();
+	glDisable(GL_LIGHTING);
+	glColor3ub(0, 255, 0);
+	DibujarTexto(textoklk1.data(), textoklk1.size(), (moned1.x * 40 / 650) + 600, 675);//x_ojo
+	glEnable(GL_LIGHTING);
+
+
+
+
+
+
 	//texto.size = 20;
 	/*texto = "GALAXY TROUBLE";
 	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);*/
@@ -341,7 +389,7 @@ void Mundo::DibujarTexto(const char* texto, int longitud, int x, int y) {
 	double* matla = new double[16];
 	glGetDoublev(GL_PROJECTION_MATRIX, matla);
 	glLoadIdentity();
-	glOrtho(0, 800, 0, 600, -5, 5);
+	glOrtho(0, 1000, 0, 750, -5, 5); //0,800, 0, 600, -5, 5);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glPushMatrix();
@@ -715,4 +763,28 @@ void Mundo::reset() {
 
 	muerte = false;
 	nivel = 0;
+}
+
+int Mundo::getNum(objetos o)
+{
+	switch (o)
+	{
+	case Mundo::LLAVE:
+		return premios.GetNumPrem(Premio::LLAVE);
+		break;
+	case Mundo::MONEDA:
+		return premios.GetNumPrem(Premio::MONEDA);
+		break;
+	case Mundo::REJA:
+		break;
+	case Mundo::VIDA:
+		return premios.GetNumPrem(Premio::VIDA);
+		break;
+	case Mundo::PISTOLA:
+		return premios.GetNumPrem(Premio::PISTOLA);
+		break;
+	default:
+		break;
+	}
+	return 0;
 }

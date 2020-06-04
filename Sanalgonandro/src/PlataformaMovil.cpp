@@ -11,7 +11,7 @@ PlatMovil::PlatMovil(float x1, float y1, float x2, float y2) : Pared(x1, y1, x2,
 	velocidad.x = 50.0f;
 }
 
-void PlatMovil::dibuja() {
+void PlatMovil::Dibuja() {
 
 	glDisable(GL_LIGHTING);
 	glColor3ub(rojo, verde, azul);

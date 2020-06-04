@@ -1,5 +1,8 @@
 #include "Coordinador.h"
 #include "ETSIDI.h"
+#include <sstream>
+#include <iostream>
+
 
 Coordinador::Coordinador() {
 	estado = INICIO;
@@ -58,19 +61,80 @@ void Coordinador::Dibuja() {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setTextColor(1, 0, 0);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-		ETSIDI::printxy("GAMEOVER: Te has quedado sin vidas", -7, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -7, 5);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/GAMEOVER.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+		glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+		glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+		glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == FIN) {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setFont("fuentesRevamped-X3q1a.ttf", 16);
+		
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/FINALSCORE.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+		glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+		glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+		glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		
+		std::stringstream sstr2;
+		std::string textoklk2;
+		//LLAVE
+		
+		sstr2 << mundo.getNum(Mundo::LLAVE);//////////////////////////////////////////////////////
+		textoklk2 = sstr2.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(81, 209, 246);
+		mundo.DibujarTexto(textoklk2.data(), textoklk2.size(), 520, 370);//x_ojo
+		glEnable(GL_LIGHTING);
+
+		std::stringstream sstr3;
+		std::string textoklk3;
+		sstr3 << mundo.getNum(Mundo::MONEDA);//////////////////////////////////////////////////////
+		textoklk3 = sstr3.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(81, 209, 246);
+		mundo.DibujarTexto(textoklk3.data(), textoklk3.size(), 520, 480);//x_ojo
+		glEnable(GL_LIGHTING);
+
+
+		std::stringstream sstr4;
+		std::string textoklk4;
+		sstr4 << mundo.getNum(Mundo::VIDA);//////////////////////////////////////////////////////
+		textoklk4 = sstr4.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(81, 209, 246);
+		mundo.DibujarTexto(textoklk4.data(), textoklk4.size(), 520, 425);//x_ojo
+		glEnable(GL_LIGHTING);
+
+		std::stringstream sstr5;
+		std::string textoklk5;
+		sstr5 << mundo.getNum(Mundo::PISTOLA);//////////////////////////////////////////////////////
+		textoklk5 = sstr5.str();
+		glDisable(GL_LIGHTING);
+		glColor3ub(81, 209, 246);
+		mundo.DibujarTexto(textoklk5.data(), textoklk5.size(), 520, 320);//x_ojo
+		glEnable(GL_LIGHTING);
+
+		/*ETSIDI::setFont("fuentesRevamped-X3q1a.ttf", 16);
 		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -7, 10);
 		//hay que imprimir las puntuaciones, los objetos recogidos estan en listaPremios
-		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);*/
 	}
 	else if (estado == HISTORIA) {
 		gluLookAt(0, 7.5, 30,
@@ -91,20 +155,47 @@ void Coordinador::Dibuja() {
 			glDisable(GL_TEXTURE_2D);
 		}
 		else if (mundo.GetNivel() == 2) {
-			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-			ETSIDI::printxy("--nivel 1 -> nivel 2--", -7, 10);
-			ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/NIVEL 2.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+			glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+			glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+			glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
 			
 		}
 		else if (mundo.GetNivel() == 3) {
-			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-			ETSIDI::printxy("--nivel 2 -> nivel 3--", -7, 10);
-			ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/NIVEL 3.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+			glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+			glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+			glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
 		}
 		else if (mundo.GetNivel() == 4) {
-			ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-			ETSIDI::printxy("--nivel 3 -> nivel 4--", -7, 10);
-			ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/NIVEL4.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+			glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+			glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+			glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
 		}
 		
 	}
@@ -129,12 +220,18 @@ void Coordinador::Dibuja() {
 		gluLookAt(0, 7.5, 30,
 			0.0, 7.5, 0.0,
 			0.0, 1.0, 0.0);
-		ETSIDI::setTextColor(0, 1, 0);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 24);
-		ETSIDI::printxy("PAUSA", -7, 16);
-		ETSIDI::setFont("fuentes/Revamped-X3q1a.ttf", 16);
-		ETSIDI::printxy("--Inserte texto aqui jeje xd (meteria las instrucciones aqui tb)--", -7, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -7, 9);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/MENUPAUSA.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3f(-80, -40, -118);
+		glTexCoord2d(1, 1); glVertex3f(80, -40, -118);
+		glTexCoord2d(1, 0); glVertex3f(80, 55, -118);
+		glTexCoord2d(0, 0); glVertex3f(-80, 55, -118);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 }
 

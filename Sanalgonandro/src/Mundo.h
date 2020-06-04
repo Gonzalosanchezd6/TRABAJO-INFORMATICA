@@ -39,7 +39,7 @@ private: //se puede poner como private sin problema
 	bool FinLevel;
 	int nivel;
 	Vector2D PosEne;
-	Disparo *disparo;
+
 	Hombre hombre;
 	Bonus bonus;
 	ListaPlataformas plataformas;
@@ -48,7 +48,7 @@ private: //se puede poner como private sin problema
 	ListaBolas Bolas;
 	ListaDisparos disparos;
 	ListaEnemigos enemigos;
-	DisparoSuper disparosuper;
+
 	ListaVidas vidas;
 
 	
@@ -71,4 +71,9 @@ public:
 
 	bool cargarNivel();
 	void reset();
+
+
+
+	enum objetos { LLAVE = 0, MONEDA, REJA, VIDA, PISTOLA };
+	int getNum(objetos o);
 };

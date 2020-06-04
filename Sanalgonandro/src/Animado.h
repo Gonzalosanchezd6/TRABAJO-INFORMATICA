@@ -16,6 +16,7 @@ public:
 	Animado( float x, float y , int nvida=1, float vx = 0.0f, float vy = 0.0f);
 	virtual ~Animado();
 	void SetPos(float ix, float iy);
+	virtual void Dibuja() = 0;
 	virtual void Mueve(float t);
 	void SetVel(float vx, float vy);
 	void SetAc(float ax, float ay);
