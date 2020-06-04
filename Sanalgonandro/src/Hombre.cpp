@@ -144,6 +144,7 @@ int Hombre::GetVidas() {
 void Hombre::reset() {
 	llaves = 0;
 	monedas = 0;
+	disparoEspecial = 0;
 }
 
 int Hombre::GetNumPrem(objetos o) {

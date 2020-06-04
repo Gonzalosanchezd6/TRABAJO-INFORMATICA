@@ -10,7 +10,7 @@ public:
 	virtual ~Lista();
 	bool agregar(T* d);
 	void destruirContenido();
-	void Eliminar(T* d);
+	virtual void Eliminar(T* d);
 	void Eliminar(int index);
 	void Mueve(float t);
 	virtual void Dibuja();
@@ -136,7 +136,7 @@ T* Lista<T, n>::colision(ListaPlataformas& p) {
 template <class T, int n>
 inline
 void Lista<T, n>::Eliminar(int index) {
-	Vector2D referencia;
+	//Vector2D referencia;
 	if ((index < 0) || (index >= numero)) {
 		return;
 	}

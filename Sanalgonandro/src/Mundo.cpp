@@ -96,12 +96,12 @@ void Mundo::Mueve(){
 	for (int i = 0; i < enemigos.num(); i++) {
 		Enemigo1 *auxi = enemigos[i];
 		if (hombre.Muerte(hombre, auxi)) {
+			premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 			hombre.restarVida();
 			ETSIDI::play("sonidos/PacManDies.mp3");
 			x_ojo = 7;
 			nivel--;
 			cargarNivel();
-			premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 		}
 	
 		Disparo* var = disparos.colision(*auxi);
@@ -134,6 +134,7 @@ void Mundo::Mueve(){
 	}
 
 	if (hombre.Muerte()) {
+		premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 		hombre.restarVida();
 		ETSIDI::play("sonidos/PacManDies.mp3");
 		x_ojo = 7;
@@ -146,6 +147,7 @@ void Mundo::Mueve(){
 		EnemigoBolas* auxx = Bolas.colision(hombre);
 		if (auxx != 0) { //si alguna esfera ha chocado 
 			if (hombre.Muerte(hombre, auxx)) {
+				premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 				hombre.restarVida();
 				ETSIDI::play("sonidos/PacManDies.mp3");
 				x_ojo = 7;
@@ -201,10 +203,6 @@ void Mundo::Mueve(){
 	/////////////////////////
 	//CONDICIONES PARA PASARSE CADA NIVEL
 	if (nivel == 1) {
-		if (hombre.NumPremios(Hombre::MONEDA) >= 0) {
-			//premios.Eliminar(premios.buscar(Premio::REJA));
-			premios.SetLibertad(premios.buscar(Premio::LLAVE), true);
-		}
 		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
 			puerta.DibujaPuertaAbierta();
 			if (hombre.Choque(hombre, puerta)) {
@@ -367,7 +365,6 @@ bool Mundo::cargarNivel() {
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(30, 17);
-		llave->SetLibertad(false);
 		premios.agregar(llave);
 
 		Pared* inferior1 = new Pared(-22, 1.01, 4, 1.01);
@@ -427,6 +424,7 @@ bool Mundo::cargarNivel() {
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(80, 5);
+		llave->SetLibertad(false);
 		premios.agregar(llave);
 
 		Reja* reja = new Reja();
@@ -534,6 +532,7 @@ bool Mundo::cargarNivel() {
 		Llave* llave = new Llave();
 		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(2, 7);
+		llave->SetLibertad(false);
 		premios.agregar(llave);
 
 		Reja* reja = new Reja();

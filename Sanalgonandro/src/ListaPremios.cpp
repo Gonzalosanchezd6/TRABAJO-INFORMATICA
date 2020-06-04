@@ -40,21 +40,21 @@ void ListaPremios::Eliminar(int index) {
 		lista[i] = lista[i + 1];
 	}
 }
-
+*/
 void ListaPremios::Eliminar(Premio* l) {
-	for (int i = 0; i < num_premio; i++) {
+	for (int i = 0; i < numero; i++) {
 		if (lista[i] == l) {
-			Eliminar(i);
 			if (lista[i]->GetTipo() == Premio::LLAVE) {
 				num_llaves++;
 			}
 			else if (lista[i]->GetTipo() == Premio::MONEDA) {
 				num_monedas++;
 			}
+			Lista::Eliminar(i);
 		}
 	}
 }
-
+/*
 void ListaPremios::Dibuja() {
 	for (int i = 0; i < num_premio; i++) {
 		lista[i]->Dibuja();
@@ -93,4 +93,26 @@ void ListaPremios::SetLibertad(Premio* p, bool lib) {
 			operator[](i)->SetLibertad(lib);
 		}
 	}
+}
+
+int ListaPremios::GetNumPrem(Premio::objetos o) {
+	switch (o)
+	{
+	case Premio::LLAVE:
+		return num_llaves;
+		break;
+	case Premio::MONEDA:
+		return num_monedas;
+		break;
+	case Premio::REJA:
+		break;
+	case Premio::VIDA:
+		break;
+	case Premio::PISTOLA:
+		return num_disp_espec;
+		break;
+	default:
+		break;
+	}
+	return 0;
 }
