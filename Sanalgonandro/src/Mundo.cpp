@@ -10,7 +10,7 @@ using namespace std;
 Mundo::Mundo() {
 	FinLevel = false;
 	muerte = false;
-	nivel = 2;
+	nivel = 0;
 }
 
 Mundo::~Mundo() {
@@ -19,11 +19,11 @@ Mundo::~Mundo() {
 
 void Mundo::RotarOjo()
 {
-	float dist=sqrt(x_ojo*x_ojo + z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
+	float dist = sqrt(x_ojo * x_ojo + z_ojo * z_ojo);
+	float ang = atan2(z_ojo, x_ojo);
+	ang += 0.05f;
+	x_ojo = dist * cos(ang);
+	z_ojo = dist * sin(ang);
 }
 
 void Mundo::Dibuja()
@@ -32,7 +32,7 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-	
+
 	glEnable(GL_TEXTURE_2D);
 	if (GetNivel() == 1) {
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Moon.png").id);
@@ -44,9 +44,9 @@ void Mundo::Dibuja()
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Jupiter.png").id);
 	}
 	else if (GetNivel() == 4) {
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Saturn.jpg").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Saturn.png").id);
 	}
-		
+
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -57,8 +57,8 @@ void Mundo::Dibuja()
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
-	
-	 //no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	//no borrar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	vidas.Dibuja();
 	hombre.Dibuja();
@@ -74,7 +74,7 @@ void Mundo::Dibuja()
 	DibujarTexto(texto.data(), texto.size(), x_ojo+320, 500);*/
 }
 
-void Mundo::Mueve(){
+void Mundo::Mueve() {
 	if (hombre.GetVidas() == 0) {
 		muerte = true;
 	}
@@ -94,7 +94,7 @@ void Mundo::Mueve(){
 	}
 
 	for (int i = 0; i < enemigos.num(); i++) {
-		Enemigo1 *auxi = enemigos[i];
+		Enemigo1* auxi = enemigos[i];
 		if (hombre.Muerte(hombre, auxi)) {
 			premios.reset(hombre.GetNumPrem(Hombre::LLAVE), hombre.GetNumPrem(Hombre::MONEDA));
 			hombre.restarVida();
@@ -103,7 +103,6 @@ void Mundo::Mueve(){
 			nivel--;
 			cargarNivel();
 		}
-	
 		Disparo* var = disparos.colision(*auxi);
 		if (var != 0) {
 			PosEne = auxi->GetPos();
@@ -112,24 +111,29 @@ void Mundo::Mueve(){
 			}
 			enemigos.restarVida(auxi);
 			if (enemigos.GetVidas(auxi) <= 0) {
-				enemigos.Eliminar(auxi);
 				double i = (rand() % 100);
-				if (i <= 20) {
-					PremioVida* vid = new PremioVida();
-					vid->SetPos(PosEne.x, PosEne.y + 1);
-					premios.agregar(vid);
+				if (auxi->GetTipo()) {
+					Llave* llave = new Llave();
+					llave->SetPos(PosEne.x, PosEne.y + 1);
+					premios.agregar(llave);
 				}
-				else if (i <= 40) {
-					Pistola* pis = new Pistola();
-					pis->SetPis(0.5);
-					pis->SetPos(PosEne.x, PosEne.y + 1);
-					premios.agregar(pis);
+				else {
+					if (i <= 20) {
+						PremioVida* vid = new PremioVida();
+						vid->SetPos(PosEne.x, PosEne.y + 1);
+						premios.agregar(vid);
+					}
+					else if (i <= 40) {
+						Pistola* pis = new Pistola();
+						pis->SetPos(PosEne.x, PosEne.y + 1);
+						premios.agregar(pis);
+					}
 				}
+				enemigos.Eliminar(auxi);
 				//random value 20% corazon, 20% pistola, 60% nada
 				ETSIDI::play("sonidos/Bala.mp3");
 			}
 			disparos.Eliminar(var);
-
 		}
 	}
 
@@ -166,12 +170,12 @@ void Mundo::Mueve(){
 
 
 	Pared* aux = plataformas.colision(hombre);
-	if ((aux != 0) && ((hombre.GetPos().y - (hombre.GetAltura()/2)) >= aux->GetPos().y)) {
+	if ((aux != 0) && ((hombre.GetPos().y - (hombre.GetAltura() / 2)) >= aux->GetPos().y)) {
 		salto = 1;
-		hombre.SetAc(0,0);
-		hombre.SetVel(0,0);
+		hombre.SetAc(0, 0);
+		hombre.SetVel(0, 0);
 	}
-	else if ((aux != 0) && ((hombre.GetPos().y - (hombre.GetAltura()/2)) <= aux->GetPos().y)) {
+	else if ((aux != 0) && ((hombre.GetPos().y - (hombre.GetAltura() / 2)) <= aux->GetPos().y)) {
 		salto = 0;
 		hombre.SetAc(0, 0);
 		hombre.SetVel(0, -5.0f);
@@ -198,7 +202,7 @@ void Mundo::Mueve(){
 			hombre.DisparoEsp();
 		}
 		premios.Eliminar(prem_aux);
-		
+
 	}
 	/////////////////////////
 	//CONDICIONES PARA PASARSE CADA NIVEL
@@ -237,6 +241,15 @@ void Mundo::Mueve(){
 			}
 		}
 	}
+	if (nivel == 4) {
+		if (hombre.NumPremios(Hombre::LLAVE) == 1) {
+			puerta.DibujaPuertaAbierta();
+			if (hombre.Choque(hombre, puerta)) {
+				FinLevel = true;
+				hombre.reset();
+			}
+		}
+	}
 }
 
 void Mundo::Inicializa() {
@@ -246,7 +259,7 @@ void Mundo::Inicializa() {
 	x_ojo = 7;
 	y_ojo = 21;
 	z_ojo = 70;
-	
+
 	cargarNivel();
 }
 
@@ -259,21 +272,23 @@ void Mundo::Tecla(unsigned char key) {
 		break;
 	}
 	case 'z': {
-		if (hombre.GetDispEsp()) {
-			Vector2D pos = hombre.GetPos();
-			DisparoSuper* disup = new DisparoSuper(dispder, pos);
-			disparos.agregar(disup);
-			hombre.RestarDisp();
+		if (disparos.num() == 0) {
+			if (hombre.GetDispEsp()) {
+				Vector2D pos = hombre.GetPos();
+				DisparoSuper* disup = new DisparoSuper(dispder, pos);
+				disparos.agregar(disup);
+				hombre.RestarDisp();
+			}
 		}
 		break;
 	}
-	
+
 	}
 }
 
 void Mundo::teclaEspecial(unsigned char key) {
 
-	
+
 
 	switch (key)
 	{
@@ -288,7 +303,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 		else {
 			hombre.SetPos(-20.85, hombre.GetPos().y);
 		}
-		dispder = 0; 
+		dispder = 0;
 
 		break;
 	case GLUT_KEY_RIGHT:
@@ -354,7 +369,7 @@ bool Mundo::cargarNivel() {
 
 
 	if (nivel == 1) {
-		hombre.SetPos(-10,7);
+		hombre.SetPos(-10, 7);
 		CrearBola = 0;
 
 		Enemigo1* enemigo1 = new Enemigo1(-6.0f, 12.0f, -15.0f);
@@ -363,7 +378,6 @@ bool Mundo::cargarNivel() {
 		enemigos.agregar(enemigo2);
 
 		Llave* llave = new Llave();
-		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(30, 17);
 		premios.agregar(llave);
 
@@ -413,7 +427,7 @@ bool Mundo::cargarNivel() {
 		puerta.PuertaCerrada();
 
 		for (int i = 0; i < hombre.GetVidas(); i++) {
-			Vida* aux = new Vida(-20+i*3,40);
+			Vida* aux = new Vida(-20 + i * 3, 40);
 			vidas.agregar(aux);
 		}
 	}
@@ -422,14 +436,12 @@ bool Mundo::cargarNivel() {
 		CrearBola = 0.025f;
 
 		Llave* llave = new Llave();
-		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(80, 5);
 		llave->SetLibertad(false);
 		premios.agregar(llave);
 
 		Reja* reja = new Reja();
 		reja->SetPos(80, 5);
-		reja->SetRadio(0.5);
 		premios.agregar(reja);
 
 		Pared* inferior1 = new Pared(-22, 1.01, 10, 1.01);
@@ -527,20 +539,18 @@ bool Mundo::cargarNivel() {
 
 	if (nivel == 3) {
 		hombre.SetPos(-10, 3);
-		CrearBola = 0.05f;
+		CrearBola = 0.035f;
 
 		Llave* llave = new Llave();
-		llave->SetLlave(0.25, 0.5);
 		llave->SetPos(2, 7);
 		llave->SetLibertad(false);
 		premios.agregar(llave);
 
 		Reja* reja = new Reja();
 		reja->SetPos(2, 7);
-		reja->SetRadio(0.5);
 		premios.agregar(reja);
 
-		Pared* inferior1 = new Pared(-22, 1.11, 80, 1.11);
+		Pared* inferior1 = new Pared(-22, 1.11, 10, 1.11);
 		inferior1->SetColor(0, 200, 0);
 		plataformas.Agregar(inferior1);
 
@@ -626,10 +636,59 @@ bool Mundo::cargarNivel() {
 	}
 
 	if (nivel == 4) {
-		hombre.SetPos(-10, 7);
-		CrearBola = 0.025f;
+		hombre.SetPos(-16, 7);
+		CrearBola = 0.015f;
 
-		/////// Añadir level 4 ////////////////
+		Pared* inferior1 = new Pared(-22, 1.11, -10, 1.11);
+		inferior1->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior1);
+
+		Pared* inferior2 = new Pared(49, 1.01, 85, 1.01);
+		inferior2->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior2);
+
+		Pared* inferior3 = new Pared(84, 1.11, 86, 1.11);
+		inferior3->SetColor(0, 200, 0);
+		plataformas.Agregar(inferior3);
+
+		Pared* pared1 = new Pared(-22, 1, -22, 22);
+		pared1->SetColor(0, 150, 0);
+		plataformas.Agregar(pared1);
+
+		Pared* pared2 = new Pared(86, 1, 86, 22);
+		pared2->SetColor(0, 150, 0);
+		plataformas.Agregar(pared2);
+
+		Pared* plat1 = new Pared(-14, 6, -5, 6);
+		plat1->SetColor(100, 0, 0);
+		plataformas.Agregar(plat1);
+		Pared* plat2 = new Pared(0, 10.5, 9, 10.5);
+		plat2->SetColor(100, 0, 0);
+		plataformas.Agregar(plat2);
+		Pared* plat3 = new Pared(42, 15, 51, 15);
+		plat3->SetColor(100, 0, 0);
+		plataformas.Agregar(plat3);
+		Pared* plat4 = new Pared(59, 15, 68, 15);
+		plat4->SetColor(100, 0, 0);
+		plataformas.Agregar(plat4);
+
+		PlatMovil* mov1 = new PlatMovil(18, 15, 27, 15);
+		mov1->SetColor(100, 0, 0);
+		plataformas.Agregar(mov1);
+
+		Enemigo2vidas* enemigo2 = new Enemigo2vidas(4.5f, 12.5f, 15.0f);
+		enemigos.agregar(enemigo2);
+		EnemigoFinal* enemigo4 = new EnemigoFinal(65, 3.01f, 25.0f);
+		enemigos.agregar(enemigo4);
+
+		puerta.SetPos(80, 10, 83, 0);
+		puerta.PuertaCerrada();
+
+		for (int i = 0; i < hombre.GetVidas(); i++) {
+			Vida* aux = new Vida(-20 + i * 3, 40);
+			vidas.agregar(aux);
+		}
+
 	}
 
 	if (nivel <= 4) {
@@ -649,7 +708,7 @@ void Mundo::reset() {
 		vidas.agregar(aux);
 		hombre.aumentarVida();
 	}
-	
+
 	muerte = false;
 	nivel = 0;
 }

@@ -12,10 +12,11 @@ EnemigoFinal::EnemigoFinal(float x, float y, float vx, float vy) : Enemigo1(x, y
 	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
+	tipo = true;
 
 	vidas = 5;
 
-	enemigofinal = new ETSIDI::Sprite("imagenes/enemigo.png", 2, 2, 6, 6);
+	enemigofinal = new ETSIDI::Sprite("imagenes/demoniotasmania.png", 2, 2, 5, 5);
 }
 
 EnemigoFinal::~EnemigoFinal() {

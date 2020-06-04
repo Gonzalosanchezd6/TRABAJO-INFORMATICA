@@ -12,6 +12,7 @@ Enemigo2vidas::Enemigo2vidas(float x, float y, float vx, float vy) : Enemigo1(x,
 	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
+	tipo = false;
 
 	vidas = 2;
 

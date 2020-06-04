@@ -7,6 +7,7 @@ class Enemigo1 :public Animado {
 protected:
 	friend class Interaccion;
 	float tamaño;
+	bool tipo;
 	ETSIDI::Sprite* enemigo;
 
 public:
@@ -18,4 +19,5 @@ public:
 	float GetTam();
 	virtual void restarVida();
 	virtual int GetVidas();
+	bool GetTipo() { return tipo; }
 };

@@ -12,6 +12,7 @@ Enemigo1::Enemigo1(float x, float y, float vx, float vy) {
 	velocidad.y = vy;
 	posicion.x = x;
 	posicion.y = y;
+	tipo = false;
 
 	vidas = 1;
 
@@ -64,6 +65,3 @@ void Enemigo1::restarVida() {
 int Enemigo1::GetVidas() {
 	return vidas;
 }
-
-
-
