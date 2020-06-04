@@ -10,6 +10,7 @@ private:
 	int num_llaves;
 	int num_monedas;
 	int num_disp_espec;
+	int num_vidas;
 
 public:
 	ListaPremios():Lista(), num_llaves(0), num_monedas(0), num_disp_espec(0) {}

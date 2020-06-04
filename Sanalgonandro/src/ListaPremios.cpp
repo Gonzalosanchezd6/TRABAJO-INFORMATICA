@@ -50,6 +50,12 @@ void ListaPremios::Eliminar(Premio* l) {
 			else if (lista[i]->GetTipo() == Premio::MONEDA) {
 				num_monedas++;
 			}
+			else if (lista[i]->GetTipo() == Premio::PISTOLA) {
+				num_disp_espec++;
+			}
+			else if (lista[i]->GetTipo() == Premio::VIDA) {
+				num_vidas++;
+			}
 			Lista::Eliminar(i);
 		}
 	}
@@ -107,6 +113,7 @@ int ListaPremios::GetNumPrem(Premio::objetos o) {
 	case Premio::REJA:
 		break;
 	case Premio::VIDA:
+		return num_vidas;
 		break;
 	case Premio::PISTOLA:
 		return num_disp_espec;

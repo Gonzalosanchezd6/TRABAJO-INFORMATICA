@@ -10,7 +10,7 @@ using namespace std;
 Mundo::Mundo() {
 	FinLevel = false;
 	muerte = false;
-	nivel = 0;
+	nivel = 3;
 }
 
 Mundo::~Mundo() {
@@ -110,6 +110,10 @@ void Mundo::Mueve() {
 				enemigos.restarVida(auxi);
 			}
 			enemigos.restarVida(auxi);
+			if (auxi->GetTipo()) {
+				Enemigo1* enemigo1 = new Enemigo1(PosEne.x, PosEne.y, -(auxi->GetVel().x));
+				enemigos.agregar(enemigo1);
+			}
 			if (enemigos.GetVidas(auxi) <= 0) {
 				double i = (rand() % 100);
 				if (auxi->GetTipo()) {
